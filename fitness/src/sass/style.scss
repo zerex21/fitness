@@ -1,5 +1,5 @@
 @import "./main";
-@import "./winners";
+
 
 *{
     margin: 0;
@@ -7,14 +7,12 @@
 }
 
 body{
-  background-color: black;
+  /* background-color: black; */
 }
 
-.wrapper-page,
-.wrapper-pageOne,
-.wrapper-pageTwo{
-    padding: 10px 10px 0px 10px;
-    max-width: 1600px;
+.container{
+    padding: 10px 10px 0 10px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 .wrapper-pageOne{
@@ -31,3 +29,7 @@ body{
 .block{
     display: block;
 }
+
+ .a{
+    color: red;
+ }
