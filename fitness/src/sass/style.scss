@@ -1,13 +1,6 @@
-@import "./main";
-
-
 *{
     margin: 0;
     padding: 0;
-}
-
-body{
-  /* background-color: black; */
 }
 
 .container{
@@ -15,21 +8,7 @@ body{
     max-width: 1400px;
     margin: 0 auto;
 }
-.wrapper-pageOne{
-    display: block;
-}
-.wrapper-pageTwo{
-    display: none;
-}
 
-.none{
-    display: none;
-}
-
-.block{
-    display: block;
-}
-
- .a{
-    color: red;
- }
+@import "./main";
+@import "./header";
+@import "./footer";

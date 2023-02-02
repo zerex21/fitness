@@ -1,6 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 10px 10px 0 10px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.container-main-page {
+  margin-top: 20px;
+}
+.container-main-page .connection-friends {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-image: url("././imgs/people-connected.jpg");
+  background-position: -61px 40px;
+  height: 510px;
+}
+.container-main-page .connection-friends .text-connection {
+  font-size: 24px;
+  padding-top: 20px;
+}
+.container-main-page .connection-friends .main-page__btn-join {
+  position: absolute;
+  bottom: 15px;
+  left: 30px;
+}
+.container-main-page .connection-friends .main-page__btn-join button {
+  font-size: 24px;
+  padding: 10px 10px;
+  border: 1px solid white;
+  color: white;
+  border-radius: 25px;
+  display: flex;
+  background: black;
+}
+.container-main-page .connection-friends .main-page__btn-join button:hover {
+  cursor: pointer;
+}
+.container-main-page .main-page__description-app {
+  position: relative;
+  display: flexbox;
+}
+.container-main-page .main-page__description-app h3 {
+  padding-bottom: 20px;
+}
+.container-main-page .main-page__description-app div {
+  font-size: 24px;
+  max-width: 550px;
+  text-align: justify;
+  margin: 0 100px;
+  padding: 20px 0;
+}
+.container-main-page .main-page__description-app div:nth-child(2) {
+  margin-left: auto;
+}
+.container-main-page .main-page__btn-trainings {
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+}
+.container-main-page .main-page__btn-trainings button {
+  font-size: 24px;
+  padding: 10px 10px;
+  border: 1px solid black;
+  color: black;
+  border-radius: 25px;
+  display: flex;
+  background: white;
+}
+.container-main-page .main-page__btn-trainings button:hover {
+  cursor: pointer;
+}
+
 .container-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 24px;
 }
 .container-header .logo {
@@ -64,7 +144,7 @@
   width: 30px;
   height: 30px;
 }
-.container-header .header-customization .switch-theme div img:hover {
+.container-header .header-customization .switch-theme div:hover {
   cursor: pointer;
   border: 25px;
   border-bottom: 2px solid black;
@@ -97,39 +177,45 @@
   background: black;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+.container-footer {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-body {
-  /* background-color: black; */
+.container-footer .about-developers {
+  display: flex;
+  align-items: center;
 }
-
-.container {
-  padding: 10px 10px 0 10px;
-  max-width: 1400px;
-  margin: 0 auto;
+.container-footer .about-developers .github .list-github {
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
 }
-
-.wrapper-pageOne {
-  display: block;
+.container-footer .about-developers .github .list-github li {
+  list-style-type: none;
 }
-
-.wrapper-pageTwo {
-  display: none;
+.container-footer .about-developers .github .list-github li a {
+  color: black;
+  text-decoration: none;
 }
-
-.none {
-  display: none;
+.container-footer .about-developers .github .list-github li:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
-
-.block {
-  display: block;
+.container-footer .about-developers__page {
+  font-size: 20px;
 }
-
-.a {
-  color: red;
+.container-footer .about-developers__page:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.container-footer .date-create {
+  font-size: 20px;
+}
+.container-footer .RsSchool {
+  width: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */

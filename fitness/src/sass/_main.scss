@@ -1,124 +1,80 @@
 .container{
-    &-header{
-        display: flex;
-        justify-content: space-between;
-        font-size: 24px;
+    &-main-page{
+        margin-top: 20px;
 
-        .logo{
-            width: 30px;
-            height: 30px;
-        }
-
-        .header-nav{
-            padding: 0 10px;
-            width: 700px;
-
-            .active-list{
-                text-decoration: underline;
-            }
-
-            .list-navigation{
-                display: flex;
-                justify-content: space-between;
-
-                  li{
-                    list-style-type:none;
-
-                    a{
-                        color: black;
-                        text-decoration: none;
-                        &:hover{
-                            text-decoration: underline;
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
-        }
-
-        .header-customization{
+        .connection-friends{
+            position: relative;
             display: flex;
-            padding-right: 10px;
-            width: 200px;
-            justify-content: space-between;
+            width: 100%;
+            justify-content: center;
+            background-image: url('././imgs/people-connected.jpg');
+            background-position: -61px 40px;
+            height: 510px;
 
-            .language-choose{
-                text-decoration: underline;
+            .text-connection{
+               font-size: 24px;
+               padding-top: 20px;
             }
 
-            .choose-language{
-                display: flex;
-                width: 75px;
-                justify-content: space-between;
-
-                & div:hover{
-                    cursor: pointer;
-                    text-decoration: underline;
-                }
-            }
-
-            .switch-theme{
-                display: flex;
-                width: 85px;
-                justify-content: space-between;
-
-                .theme-choose{
-                    border-bottom: 2px solid black;
-                }
-
-                .switch-theme__white,
-                .switch-theme__black{
-                    display: flex;
-                    img{
-                        width: 30px;
-                        height: 30px;
-                    }
-                }
-
-                & div img:hover{
-                    cursor: pointer;
-                    border: 25px;
-                    border-bottom: 2px solid black;
-                }
-            }
-        }
-
-        .container-header__bnt{
-            display: flex;
-            width: 190px;
-            justify-content: space-between;
-
-            button{
-                font-size: 16px;
-                padding: 5px 10px;
-                border: none;
-                border-radius: 25px;
-
-                &:hover{
-                    cursor: pointer;
-                }
-            }
-
-            .btn-signIn{
+            .main-page__btn-join{
+                position: absolute;
                 button{
-                    border: 1px solid black;
-                    border-radius: 25px;
-                    display: flex;
-                    background: white;
-                }
-            }
-
-            .btn-signUp{
-                button{
+                    font-size: 24px;
+                    padding: 10px 10px;
                     border: 1px solid white;
                     color: white;
                     border-radius: 25px;
                     display: flex;
                     background: black;
+
+                    &:hover{
+                        cursor: pointer;
+                    }
                 }
+                bottom: 15px;
+                left: 30px;
+            }
+        }
+
+        .main-page__description-app{
+         position: relative;
+         display: flexbox;
+
+            h3{
+               padding-bottom: 20px;
             }
 
+            div{
+                font-size: 24px;
+                max-width: 550px;
+                text-align: justify;
+                margin:0  100px;
+                padding:20px 0;
 
+                 &:nth-child(2){
+                    margin-left: auto;
+                }
+            }
+        }
+
+        .main-page__btn-trainings{
+            padding:60px 0;
+            display: flex;
+            justify-content: center;
+
+            button{
+                font-size: 24px;
+                padding: 10px 10px;
+                border: 1px solid black;
+                color: black;
+                border-radius: 25px;
+                display: flex;
+                background: white;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
         }
     }
 }
