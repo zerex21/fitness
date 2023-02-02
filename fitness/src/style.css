@@ -312,6 +312,109 @@
   background-color: #02718d;
 }
 
+.program-card {
+  background-color: black;
+  color: gray;
+}
+.program-card .container .program-card__image {
+  width: 100%;
+}
+.program-card .container .program-card__name {
+  margin-top: -100px;
+  margin-left: 50px;
+  font-size: 3rem;
+  color: white;
+}
+.program-card .container .line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 100px;
+}
+.program-card .container .program-card__duration {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  margin: 25px 50px 25px 50px;
+  width: 50%;
+}
+.program-card .container .program-card__duration .program-card__duration_icon {
+  width: 50px;
+  height: 50px;
+  filter: invert(100%);
+  margin-right: 50px;
+}
+.program-card .container .program-card__frequency {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  margin: 25px 50px 25px 50px;
+}
+.program-card .container .program-card__frequency .program-card__frequency_icon {
+  width: 50px;
+  height: 50px;
+  filter: invert(100%);
+  margin-right: 50px;
+}
+.program-card .container .program-card__level {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  margin: 25px 50px 25px 50px;
+  width: 50%;
+}
+.program-card .container .program-card__level .program-card__level_icon {
+  width: 50px;
+  height: 50px;
+  filter: invert(100%);
+  margin-right: 50px;
+}
+.program-card .container .program-card__time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  margin: 25px 50px 25px 50px;
+}
+.program-card .container .program-card__time .program-card__time_icon {
+  width: 50px;
+  height: 50px;
+  filter: invert(100%);
+  margin-right: 50px;
+}
+.program-card .container .program-card__description {
+  color: gray;
+  font-size: 2rem;
+  margin: 50px 0 50px 50px;
+}
+.program-card .container .program-card__equipment {
+  color: white;
+  font-size: 2rem;
+  margin-left: 50px;
+}
+.program-card .container .program-card__equipment-description {
+  color: gray;
+  font-size: 2rem;
+  margin-left: 50px;
+}
+.program-card .container .program-card__start {
+  margin: 50px auto;
+  display: block;
+  height: 100px;
+  font-size: 2rem;
+  color: black;
+  background-color: white;
+  width: 70%;
+  border-radius: 50px;
+}
+
 * {
   margin: 0;
   padding: 0;
