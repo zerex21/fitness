@@ -312,6 +312,13 @@
   background-color: #02718d;
 }
 
+.program-card {
+  background-color: black;
+  color: gray;
+}
+.program-card .container .program-card__image {
+  width: 100%;
+}
 .workout-card {
   background-color: black;
   color: gray;
@@ -325,12 +332,37 @@
   font-size: 3rem;
   color: white;
 }
+.program-card .container .line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 100px;
+}
+.program-card .container .program-card__duration {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  margin: 25px 50px 25px 50px;
+  width: 50%;
+}
+.program-card .container .program-card__duration .program-card__duration_icon {
+  width: 50px;
+  height: 50px;
+  filter: invert(100%);
+  margin-right: 50px;
+}
+.program-card .container .program-card__frequency {
 .workout-card .container .workout-card__time {
   display: flex;
   flex-direction: row;
   align-items: center;
   font-size: 2rem;
   color: white;
+  margin: 25px 50px 25px 50px;
+}
+.program-card .container .program-card__frequency .program-card__frequency_icon {
   margin: 100px 50px 25px 50px;
 }
 .workout-card .container .workout-card__time .workout-card__time_icon {
@@ -339,6 +371,7 @@
   filter: invert(100%);
   margin-right: 50px;
 }
+.program-card .container .program-card__level {
 .workout-card .container .workout-card__characteristics {
   display: flex;
   flex-direction: row;
@@ -346,6 +379,9 @@
   font-size: 2rem;
   color: white;
   margin: 25px 50px 25px 50px;
+  width: 50%;
+}
+.program-card .container .program-card__level .program-card__level_icon {
 }
 .workout-card .container .workout-card__characteristics .workout-card__characteristics_icon {
   width: 50px;
@@ -353,6 +389,7 @@
   filter: invert(100%);
   margin-right: 50px;
 }
+.program-card .container .program-card__time {
 .workout-card .container .workout-card__equipment {
   display: flex;
   flex-direction: row;
@@ -361,17 +398,28 @@
   color: white;
   margin: 25px 50px 25px 50px;
 }
+.program-card .container .program-card__time .program-card__time_icon {
 .workout-card .container .workout-card__equipment .workout-card__equipment_icon {
   width: 50px;
   height: 50px;
   filter: invert(100%);
   margin-right: 50px;
 }
+.program-card .container .program-card__description {
+  color: gray;
+  font-size: 2rem;
+  margin: 50px 0 50px 50px;
+}
+.program-card .container .program-card__equipment {
+  color: white;
+  font-size: 2rem;
+  margin-left: 50px;
 .workout-card .container .workout-card__description {
   color: gray;
   font-size: 2rem;
   margin-left: 50px;
 }
+.program-card .container .program-card__start {
 .workout-card .container .workout-card__start {
   margin: 50px auto;
   display: block;
