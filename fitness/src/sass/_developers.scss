@@ -1,0 +1,38 @@
+.container{
+  &-aboutDevelopers{
+  display: flex;
+  justify-content: space-around;
+  padding:100px 0;
+  flex-wrap: wrap;
+
+  .developer-photo{
+    display: flex;
+    justify-content: center;
+        img{
+            max-width: 300px;
+        }
+    }
+
+   .developer-name{
+    padding: 10px 0;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+   }
+
+    .developer-description{
+        max-width: 400px;
+        text-align: justify;
+        padding-bottom: 20px;
+        font-size: 20px;
+    }
+
+    .developer-github{
+        font-size: 20px;
+
+        a{  color: black;
+            text-decoration: none;
+        }
+    }
+  }
+}
