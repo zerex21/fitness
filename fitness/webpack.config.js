@@ -17,7 +17,7 @@ const baseConfig = {
                 test: /\.ts$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
-              },
+            },
             {
                 test: /\.(jpg|png|svg|jpeg|gif)$/,
                 type: 'asset/resource'
@@ -25,14 +25,14 @@ const baseConfig = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                  // Creates `style` nodes from JS strings
-                  "style-loader",
-                  // Translates CSS into CommonJS
-                  "css-loader",
-                  // Compiles Sass to CSS
-                  "sass-loader",
+                    // Creates `style` nodes from JS strings
+                    "style-loader",
+                    // Translates CSS into CommonJS
+                    "css-loader",
+                    // Compiles Sass to CSS
+                    "sass-loader",
                 ],
-              },
+            },
         ],
     },
     resolve: {
@@ -55,11 +55,11 @@ const baseConfig = {
         new CopyPlugin({
             patterns: [
                 {
-                  from: path.resolve(__dirname, 'src/img/'),
-                  to:   path.resolve(__dirname, 'dist/img/')
+                    from: path.resolve(__dirname, 'src/imgs/'),
+                    to: path.resolve(__dirname, 'dist/img/')
                 }
-              ]
-            })
+            ]
+        })
     ],
 };
 
