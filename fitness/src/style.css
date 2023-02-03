@@ -319,7 +319,14 @@
 .program-card .container .program-card__image {
   width: 100%;
 }
-.program-card .container .program-card__name {
+.workout-card {
+  background-color: black;
+  color: gray;
+}
+.workout-card .container .workout-card__image {
+  width: 100%;
+}
+.workout-card .container .workout-card__name {
   margin-top: -100px;
   margin-left: 50px;
   font-size: 3rem;
@@ -347,6 +354,7 @@
   margin-right: 50px;
 }
 .program-card .container .program-card__frequency {
+.workout-card .container .workout-card__time {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -355,12 +363,16 @@
   margin: 25px 50px 25px 50px;
 }
 .program-card .container .program-card__frequency .program-card__frequency_icon {
+  margin: 100px 50px 25px 50px;
+}
+.workout-card .container .workout-card__time .workout-card__time_icon {
   width: 50px;
   height: 50px;
   filter: invert(100%);
   margin-right: 50px;
 }
 .program-card .container .program-card__level {
+.workout-card .container .workout-card__characteristics {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -370,12 +382,15 @@
   width: 50%;
 }
 .program-card .container .program-card__level .program-card__level_icon {
+}
+.workout-card .container .workout-card__characteristics .workout-card__characteristics_icon {
   width: 50px;
   height: 50px;
   filter: invert(100%);
   margin-right: 50px;
 }
 .program-card .container .program-card__time {
+.workout-card .container .workout-card__equipment {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -384,6 +399,7 @@
   margin: 25px 50px 25px 50px;
 }
 .program-card .container .program-card__time .program-card__time_icon {
+.workout-card .container .workout-card__equipment .workout-card__equipment_icon {
   width: 50px;
   height: 50px;
   filter: invert(100%);
@@ -398,13 +414,13 @@
   color: white;
   font-size: 2rem;
   margin-left: 50px;
-}
-.program-card .container .program-card__equipment-description {
+.workout-card .container .workout-card__description {
   color: gray;
   font-size: 2rem;
   margin-left: 50px;
 }
 .program-card .container .program-card__start {
+.workout-card .container .workout-card__start {
   margin: 50px auto;
   display: block;
   height: 100px;
