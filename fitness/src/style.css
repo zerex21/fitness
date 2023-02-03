@@ -495,4 +495,54 @@ main {
   text-decoration: none;
 }
 
+.container-formSignUpAndSingIn {
+  width: 500px;
+}
+.container-formSignUpAndSingIn h3 {
+  padding: 10px 0;
+  font-size: 24px;
+}
+.container-formSignUpAndSingIn p, .container-formSignUpAndSingIn b {
+  font-size: 20px;
+}
+.container-formSignUpAndSingIn input[type=text], .container-formSignUpAndSingIn input[type=password] {
+  width: 100%;
+  padding: 15px 0;
+  margin: 5px 0 22px 0;
+  font-size: 20px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+.container-formSignUpAndSingIn input[type=text]:focus, .container-formSignUpAndSingIn input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.container-formSignUpAndSingIn hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.container-formSignUpAndSingIn .registerbtn {
+  border: 1px solid white;
+  color: white;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  background: black;
+  padding: 16px 20px;
+  font-size: 20px;
+  margin: 8px 0;
+  width: 100%;
+}
+.container-formSignUpAndSingIn .registerbtn:hover {
+  opacity: 1;
+}
+.container-formSignUpAndSingIn a {
+  color: dodgerblue;
+}
+.container-formSignUpAndSingIn .signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
 /*# sourceMappingURL=style.css.map */
