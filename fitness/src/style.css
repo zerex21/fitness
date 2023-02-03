@@ -3,10 +3,24 @@
   padding: 0;
 }
 
+body,
+html {
+  height: 100%;
+}
+
 .container {
   padding: 10px 10px 0 10px;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 .container-main-page {
@@ -182,6 +196,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex: 0 0 auto;
 }
 .container-footer .about-developers {
   display: flex;

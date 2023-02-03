@@ -1,10 +1,11 @@
 .container{
     &-footer{
+
         padding: 10px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
-
+        flex: 0 0 auto;
         .about-developers{
             display: flex;
             align-items: center;
