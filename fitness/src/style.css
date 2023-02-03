@@ -1,301 +1,185 @@
-.container-car_race {
-  margin-bottom: 45px;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.buttonsPages {
-  display: flex;
-  max-width: 220px;
-  justify-content: space-between;
-  margin-bottom: 50px;
-}
-.buttonsPages button {
-  font-size: 14px;
-  font-weight: bold;
-  width: 100px;
-  padding: 5px 0px;
-  background-color: #00a7d1;
-  border: none;
-  color: white;
-}
-.buttonsPages button:hover {
-  cursor: pointer;
-  background-color: #02718d;
-}
-.buttonsPages button:disabled,
-.buttonsPages button[disabled] {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
+.container {
+  padding: 10px 10px 0 10px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.createAndChangeCar {
-  margin-bottom: 100px;
+.container-main-page {
+  margin-top: 20px;
 }
-.createAndChangeCar .createCar,
-.createAndChangeCar .updateCar {
-  padding-bottom: 10px;
-  display: flex;
-  align-items: center;
-}
-.createAndChangeCar .createCar input,
-.createAndChangeCar .updateCar input {
-  font-size: 13px;
-  font-weight: bold;
-  padding: 5px 0;
-  margin-right: 5px;
-  border: solid 1px white;
-}
-.createAndChangeCar .btnCreateCar,
-.createAndChangeCar .btnUpdateCar {
-  width: 100px;
-}
-.createAndChangeCar .btnCreateCar button,
-.createAndChangeCar .btnUpdateCar button {
-  padding: 5px 5px;
-  border: none;
-  background-color: rgb(0, 167, 209);
-  border: none;
-  margin-left: 15px;
-  font-size: 14px;
-  font-weight: bold;
-  color: white;
-  width: 100%;
-}
-.createAndChangeCar .btnCreateCar button:hover,
-.createAndChangeCar .btnUpdateCar button:hover {
-  cursor: pointer;
-  background-color: #02718d;
-}
-.createAndChangeCar .btnCreateCar button:disabled,
-.createAndChangeCar .btnCreateCar button[disabled],
-.createAndChangeCar .btnUpdateCar button:disabled,
-.createAndChangeCar .btnUpdateCar button[disabled] {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
-.createAndChangeCar .buttonsChangeParameters {
-  margin-top: 10px;
-  display: flex;
-  max-width: 353px;
-  justify-content: space-between;
-}
-.createAndChangeCar .buttonsChangeParameters .btnReset :disabled,
-.createAndChangeCar .buttonsChangeParameters .btnRace :disabled {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
-.createAndChangeCar .buttonsChangeParameters button {
-  padding: 5px 10px;
-  font-size: 14px;
-  font-weight: bold;
-  border: none;
-  color: white;
-  background-color: #00a7d1;
-}
-.createAndChangeCar .buttonsChangeParameters button:hover {
-  cursor: pointer;
-  background-color: #02718d;
-}
-
-/* .page-garage:nth-last-child(3){
-    display: none;
-} */
-.page-garage {
-  color: white;
-  position: relative;
-}
-.page-garage .container-all-items {
-  display: none;
-}
-.page-garage .pageShow {
-  display: block;
-}
-.page-garage .alert-winner {
-  display: none;
-  position: absolute;
-  z-index: 8;
-  font-size: 30px;
-  width: 100%;
-  text-align: center;
-  background: #000;
-  opacity: 0.7;
-  height: 200%;
-}
-.page-garage h3 {
-  font-size: 20px;
-  font-weight: bold;
-}
-.page-garage .pageNum {
-  margin-top: 15px;
-}
-.page-garage .container-garage {
-  margin-top: 30px;
-}
-.page-garage .container-garage .container-garage_car-buttons {
-  display: flex;
-  /* width: 243px; */
-  padding-bottom: 10px;
-  justify-content: start;
-}
-.page-garage .container-garage .container-garage_car-buttons .btn-container {
-  display: flex;
-  justify-content: space-between;
-  width: 180px;
-  padding-right: 20px;
-}
-.page-garage .container-garage .container-garage_car-buttons button {
-  width: 80px;
-  padding: 5px 0;
-  font-size: 14px;
-  font-weight: bold;
-  background-color: #00a7d1;
-  border: none;
-  color: white;
-}
-.page-garage .container-garage .container-garage_car-buttons button:hover {
-  cursor: pointer;
-  background-color: #02718d;
-}
-.page-garage .container-garage .car-name {
-  font-size: 20px;
-  font-weight: bold;
-  display: flex;
-  margin-bottom: 10px;
-  /* color: white; */
-}
-.page-garage .container-garage .container-buttons_use {
-  /*  display: flex; */
-  width: 180px;
-  /* justify-content: space-between; */
-  padding-bottom: 10px;
-}
-.page-garage .container-garage .container-buttons_use .btn-container {
-  display: flex;
-  justify-content: space-between;
-  width: 180px;
-  /* padding-right: 20px; */
-}
-.page-garage .container-garage .container-buttons_use .btn-resetOne:disabled,
-.page-garage .container-garage .container-buttons_use .btn-startOne:disabled {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
-.page-garage .container-garage .container-buttons_use button {
-  width: 80px;
-  padding: 5px 0;
-  font-size: 14px;
-  font-weight: bold;
-  background-color: #00a7d1;
-  border: none;
-  color: white;
-}
-.page-garage .container-garage .container-buttons_use button:hover {
-  cursor: pointer;
-  background-color: #02718d;
-}
-.page-garage .container-garage .container-game {
+.container-main-page .connection-friends {
   position: relative;
   display: flex;
-  justify-content: end;
-  align-items: end;
-  border-bottom: solid 3px white;
+  width: 100%;
+  justify-content: center;
+  background-image: url("././imgs/people-connected.jpg");
+  background-position: -61px 40px;
+  height: 510px;
 }
-.page-garage .container-garage .container-game .container-img {
+.container-main-page .connection-friends .text-connection {
+  font-size: 24px;
+  padding-top: 20px;
+}
+.container-main-page .connection-friends .main-page__btn-join {
   position: absolute;
-  left: 1px;
+  bottom: 15px;
+  left: 30px;
 }
-.page-garage .container-garage .container-game .container-img .car-icon {
-  height: 80px;
-  width: 80px;
-  margin-bottom: -25px;
-  display: flex;
-  align-items: end;
-}
-.page-garage .container-garage .container-game .game-finish {
-  /*  display: flex;
-   justify-content: end; */
-  padding-right: 100px;
-}
-.page-garage .container-garage .container-game .game-finish img {
-  width: 40px;
-  height: 40px;
-}
-
-.buttonsPaginate {
-  display: flex;
-  width: 220px;
-  justify-content: space-between;
-  margin-top: 80px;
-  margin-bottom: 20px;
-}
-.buttonsPaginate button {
-  width: 100px;
-  padding: 5px 0;
-  font-size: 14px;
-  font-weight: bold;
-  background-color: #00a7d1;
-  border: none;
+.container-main-page .connection-friends .main-page__btn-join button {
+  font-size: 24px;
+  padding: 10px 10px;
+  border: 1px solid white;
   color: white;
+  border-radius: 25px;
+  display: flex;
+  background: black;
 }
-.buttonsPaginate button:hover {
+.container-main-page .connection-friends .main-page__btn-join button:hover {
   cursor: pointer;
-  background-color: #02718d;
 }
-.buttonsPaginate button:disabled,
-.buttonsPaginate button[disabled] {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
+.container-main-page .main-page__description-app {
+  position: relative;
+  display: flexbox;
 }
-
-.disabledBtn {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
-
-.wrapper-pageTwo {
-  color: white;
-}
-.wrapper-pageTwo h2 {
+.container-main-page .main-page__description-app h3 {
   padding-bottom: 20px;
 }
-.wrapper-pageTwo h3 {
-  padding-bottom: 40px;
-  font-size: 20px;
-  font-weight: bold;
+.container-main-page .main-page__description-app div {
+  font-size: 24px;
+  max-width: 550px;
+  text-align: justify;
+  margin: 0 100px;
+  padding: 20px 0;
 }
-.wrapper-pageTwo table {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  border: solid 2px white;
-  margin-bottom: 40px;
+.container-main-page .main-page__description-app div:nth-child(2) {
+  margin-left: auto;
 }
-.wrapper-pageTwo table thead th {
-  border-right: solid 2px white;
-  border-bottom: solid 2px white;
-  padding: 5px 20px;
-}
-.wrapper-pageTwo table tbody th {
-  border-right: solid 2px white;
-  border-bottom: solid 2px white;
-  padding: 0 20px;
-}
-.wrapper-pageTwo table tbody th svg {
-  height: 50px;
-  width: 50px;
-  margin-bottom: -10px;
+.container-main-page .main-page__btn-trainings {
+  padding: 60px 0;
   display: flex;
-  align-items: end;
+  justify-content: center;
+}
+.container-main-page .main-page__btn-trainings button {
+  font-size: 24px;
+  padding: 10px 10px;
+  border: 1px solid black;
+  color: black;
+  border-radius: 25px;
+  display: flex;
+  background: white;
+}
+.container-main-page .main-page__btn-trainings button:hover {
+  cursor: pointer;
 }
 
-.container-winners_btn {
+.container-header {
   display: flex;
-  width: 220px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+}
+.container-header .logo {
+  width: 30px;
+  height: 30px;
+}
+.container-header .header-nav {
+  padding: 0 10px;
+  width: 700px;
+}
+.container-header .header-nav .active-list {
+  text-decoration: underline;
+}
+.container-header .header-nav .list-navigation {
+  display: flex;
+  justify-content: space-between;
+}
+.container-header .header-nav .list-navigation li {
+  list-style-type: none;
+}
+.container-header .header-nav .list-navigation li a {
+  color: black;
+  text-decoration: none;
+}
+.container-header .header-nav .list-navigation li a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.container-header .header-customization {
+  display: flex;
+  padding-right: 10px;
+  width: 200px;
+  justify-content: space-between;
+}
+.container-header .header-customization .language-choose {
+  text-decoration: underline;
+}
+.container-header .header-customization .choose-language {
+  display: flex;
+  width: 75px;
+  justify-content: space-between;
+}
+.container-header .header-customization .choose-language div:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.container-header .header-customization .switch-theme {
+  display: flex;
+  width: 85px;
+  justify-content: space-between;
+}
+.container-header .header-customization .switch-theme .theme-choose {
+  border-bottom: 2px solid black;
+}
+.container-header .header-customization .switch-theme .switch-theme__white,
+.container-header .header-customization .switch-theme .switch-theme__black {
+  display: flex;
+}
+.container-header .header-customization .switch-theme .switch-theme__white img,
+.container-header .header-customization .switch-theme .switch-theme__black img {
+  width: 30px;
+  height: 30px;
+}
+.container-header .header-customization .switch-theme div:hover {
+  cursor: pointer;
+  border: 25px;
+  border-bottom: 2px solid black;
+}
+.container-header .container-header__bnt {
+  display: flex;
+  width: 190px;
+  justify-content: space-between;
+}
+.container-header .container-header__bnt button {
+  font-size: 16px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 25px;
+}
+.container-header .container-header__bnt button:hover {
+  cursor: pointer;
+}
+.container-header .container-header__bnt .btn-signIn button {
+  border: 1px solid black;
+  border-radius: 25px;
+  display: flex;
+  background: white;
+}
+.container-header .container-header__bnt .btn-signUp button {
+  border: 1px solid white;
+  color: white;
+  border-radius: 25px;
+  display: flex;
+  background: black;
+}
+
+.container-footer {
+  padding: 10px 0;
+  display: flex;
   justify-content: space-between;
 }
 .container-winners_btn button {
@@ -374,7 +258,6 @@
 .program-card .container .program-card__level {
 .workout-card .container .workout-card__characteristics {
   display: flex;
-  flex-direction: row;
   align-items: center;
   font-size: 2rem;
   color: white;
@@ -430,38 +313,29 @@
   width: 70%;
   border-radius: 50px;
 }
-
-* {
-  margin: 0;
-  padding: 0;
+.container-footer .about-developers .github .list-github li {
+  list-style-type: none;
 }
-
-body {
-  background-color: black;
+.container-footer .about-developers .github .list-github li a {
+  color: black;
+  text-decoration: none;
 }
-
-.wrapper-page,
-.wrapper-pageOne,
-.wrapper-pageTwo {
-  padding: 10px 10px 0px 10px;
-  max-width: 1600px;
-  margin: 0 auto;
+.container-footer .about-developers .github .list-github li:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
-
-.wrapper-pageOne {
-  display: block;
+.container-footer .about-developers__page {
+  font-size: 20px;
 }
-
-.wrapper-pageTwo {
-  display: none;
+.container-footer .about-developers__page:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
-
-.none {
-  display: none;
+.container-footer .date-create {
+  font-size: 20px;
 }
-
-.block {
-  display: block;
+.container-footer .RsSchool {
+  width: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */
