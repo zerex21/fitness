@@ -54,7 +54,7 @@
 
     <main>
 
-        <div class="main-page">
+        <!-- <div class="main-page">
             <div class="container container-main-page">
                 <div class="connection-friends">
                     <div class="text-connection">
@@ -89,8 +89,59 @@
                     <button>Перейти к тренировкам</button>
                 </div>
             </div>
-        </div>
-    <div class="active-page">
+        </div> -->
+
+       <!--  <div class="aboutDevelopers">
+            <div class="container container-aboutDevelopers">
+                <div class="developer-card">
+                    <div class="developer-photo">
+                        <img src="./src/imgs/30d52c581db742197509da30df.jpg" alt="person">
+                    </div>
+                    <h3 class="developer-name">Maria</h3>
+                    <div class="developer-description">
+                        Разработчик – широкий термин для группы специалистов, работа которых направлена на создание
+                        мобильных и компьютерных приложений, игр, баз данных и прочего программного обеспечения самых
+                        различных устройств. Разработчики в своей деятельности умело совмещают творческий подход и
+                        строгий язык программирования.
+                    </div>
+                    <div class="developer-github">
+                        <a href="https://github.com/pashkovichma" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <div class="developer-card">
+                    <div class="developer-photo">
+                        <img src="./src/imgs/30d52c581db742197509da30df.jpg" alt="person">
+                    </div>
+                    <h3 class="developer-name">Vadim</h3>
+                    <div class="developer-description">
+                        Разработчик – широкий термин для группы специалистов, работа которых направлена на создание
+                        мобильных и компьютерных приложений, игр, баз данных и прочего программного обеспечения самых
+                        различных устройств. Разработчики в своей деятельности умело совмещают творческий подход и
+                        строгий язык программирования.
+                    </div>
+                    <div class="developer-github">
+                        <a href="https://github.com/vadim-sid1993" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <div class="developer-card">
+                    <div class="developer-photo">
+                        <img src="./src/imgs/30d52c581db742197509da30df.jpg" alt="person">
+                    </div>
+                    <h3 class="developer-name">Oleg</h3>
+                    <div class="developer-description">
+                        Разработчик – широкий термин для группы специалистов, работа которых направлена на создание
+                        мобильных и компьютерных приложений, игр, баз данных и прочего программного обеспечения самых
+                        различных устройств. Разработчики в своей деятельности умело совмещают творческий подход и
+                        строгий язык программирования.
+                    </div>
+                    <div class="developer-github">
+                        <a href="https://github.com/zerex21?tab=repositories" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!--    <div class="active-page">
         <div class="container"></div>
     </div>
     <div class="program-card">
@@ -137,38 +188,68 @@
                 Без снаряжения (коврик по желанию)
             </p>
             <button class="program-card__start">
-    <div class="workout-card">
-        <div class="container">
-            <img class="workout-card__image" src="./imgs/online-fitness-classes.jpg" alt="class image">
-            <p class="workout-card__name">
-                Название тренировки
-            </p>
-            <div class="workout-card__time">
-                <img class="workout-card__time_icon" src="./imgs/time.png" alt="time">
-                <p class="workout-card__time_descrioption">
-                    время тренировки, уровень сложности
-                </p>
+
+                <div class="workout-card">
+                    <div class="container">
+                        <img class="workout-card__image" src="./imgs/online-fitness-classes.jpg" alt="class image">
+                        <p class="workout-card__name">
+                            Название тренировки
+                        </p>
+                        <div class="workout-card__time">
+                            <img class="workout-card__time_icon" src="./imgs/time.png" alt="time">
+                            <p class="workout-card__time_descrioption">
+                                время тренировки, уровень сложности
+                            </p>
+                        </div>
+                        <div class="workout-card__characteristics">
+                            <img class="workout-card__characteristics_icon" src="./imgs/sportman.png" alt="time">
+                            <p class="workout-card__characteristics_descrioption">
+                                все характеристики
+                            </p>
+                        </div>
+                        <div class="workout-card__equipment">
+                            <img class="workout-card__equipment_icon" src="./imgs/time.png" alt="time">
+                            <p class="workout-card__equipment_descrioption">
+                                необходимое оборудование
+                            </p>
+                        </div>
+                        <p class="workout-card__description">
+                            Описание тренировки
+                        </p>
+                        <button class="workout-card__start">
+                            Начать тренировку
+                        </button>
+                    </div>
+                </div> -->
+
+        <div class="formSignUpAndSingIn">
+            <div class="container container-formSignUpAndSingIn">
+                <form>
+                    <div class="container-form">
+                      <h3>Регистрация/Войти</h3>
+                      <p>Пожалуйста заполните форму</p>
+                      <hr>
+
+                     <!--  <label for="email"><b>Email</b></label>
+                      <input type="text" placeholder="Enter Email" name="email" required> -->
+
+                      <label for="nickName"><b>Имя или ник</b></label>
+                      <input type="text" placeholder="Введите имя или ник" name="nickName" required>
+
+                      <label for="psw"><b>Пароль</b></label>
+                      <input type="password" placeholder="Введите Пароль" name="psw" required>
+
+                      <hr>
+
+                      <button class="registerbtn">Регистрация/Войти</button>
+                    </div>
+
+                    <div class="container-signInUp">
+                      <p>Уже есть аккаун? <a href="#">Войти</a>.</p>
+                    </div>
+                  </form>
             </div>
-            <div class="workout-card__characteristics">
-                <img class="workout-card__characteristics_icon" src="./imgs/sportman.png" alt="time">
-                <p class="workout-card__characteristics_descrioption">
-                    все характеристики
-                </p>
-            </div>
-            <div class="workout-card__equipment">
-                <img class="workout-card__equipment_icon" src="./imgs/time.png" alt="time">
-                <p class="workout-card__equipment_descrioption">
-                    необходимое оборудование
-                </p>
-            </div>
-            <p class="workout-card__description">
-                Описание тренировки
-            </p>
-            <button class="workout-card__start">
-                Начать тренировку
-            </button>
         </div>
-    </div>
 
     </main>
 
@@ -186,7 +267,8 @@
             </div>
             <div class="date-create">2023</div>
             <div class="RsSchool">
-                <a href="https://rs.school/js/" target="_blank"><img src="./src/imgs/rs_school_js.svg" alt="RsSchool"></a>
+                <a href="https://rs.school/js/" target="_blank"><img src="./src/imgs/rs_school_js.svg"
+                        alt="RsSchool"></a>
             </div>
         </div>
     </footer>
