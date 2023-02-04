@@ -1,19 +1,24 @@
-  .container{
-    &-formSignUpAndSingIn{
-    display: flex;
-    justify-content: center;
+.formSingIn,
+.formSignUp{
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; /* Оставаться на месте */
+  z-index: 1; /* Сидеть на вершине */
+  padding-top: 100px; /* Расположение коробки */
+  left: 0;
+  top: 0;
+  width: 100%; /* Полная ширина */
+  height: 100%; /* Полная высота */
+  overflow: auto; /* Включите прокрутку, если это необходимо */
+  background-color: rgb(0,0,0); /* Цвет запасной вариант  */
+  background-color: rgba(0,0,0,0.4);
+}
 
-    display: none; /* Скрыто по умолчанию */
-    position: fixed; /* Оставаться на месте */
-    z-index: 1; /* Сидеть на вершине */
-    padding-top: 100px; /* Расположение коробки */
-    left: 0;
-    top: 0;
-    width: 100%; /* Полная ширина */
-    height: 100%; /* Полная высота */
-    overflow: auto; /* Включите прокрутку, если это необходимо */
-    background-color: rgb(0,0,0); /* Цвет запасной вариант  */
-    background-color: rgba(0,0,0,0.4);
+  .container{
+    &-formSignUp,
+    &-formSingIn{
+   /*  display: flex; */
+    /* justify-content: center; */
+
 
     .container-form{
       width: 500px;
@@ -133,15 +138,18 @@
           }
 
           /* Кнопка закрытия */
-          .close {
+          .closeSingUp,
+          .closeSingIn {
             color: black;
             float: right;
             font-size: 28px;
             font-weight: bold;
           }
 
-          .close:hover,
-          .close:focus {
+          .closeSingUp:hover,
+          .closeSingUp:focus,
+          .closeSingIn:hover,
+          .closeSingIn:focus {
             color: #000;
             text-decoration: none;
             cursor: pointer;

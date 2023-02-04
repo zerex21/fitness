@@ -1,5 +1,10 @@
-import { closeBtn, signIn } from './scripts/modal/modalSignUpIn';
+import { /* closeSingIn, closeSingUp, */closeBtn, signIn, signUp } from './scripts/modal/modalSignUpIn';
 import './style.css';
 
-closeBtn();
-signIn()
+
+signUp();
+signIn();
+/* closeSingIn();
+closeSingUp(); */
+closeBtn()
+

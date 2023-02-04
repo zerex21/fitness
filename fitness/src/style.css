@@ -441,9 +441,8 @@ main {
   text-decoration: none;
 }
 
-.container-formSignUpAndSingIn {
-  display: flex;
-  justify-content: center;
+.formSingIn,
+.formSignUp {
   display: none; /* Скрыто по умолчанию */
   position: fixed; /* Оставаться на месте */
   z-index: 1; /* Сидеть на вершине */
@@ -455,6 +454,11 @@ main {
   overflow: auto; /* Включите прокрутку, если это необходимо */
   background-color: rgb(0, 0, 0); /* Цвет запасной вариант  */
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.container-formSignUp, .container-formSingIn {
+  /*  display: flex; */
+  /* justify-content: center; */
   /*
             .modal {
               display: none;
@@ -501,7 +505,7 @@ main {
               color: white;
             } */
 }
-.container-formSignUpAndSingIn .container-form {
+.container-formSignUp .container-form, .container-formSingIn .container-form {
   width: 500px;
   height: 450px;
   background-color: white;
@@ -518,14 +522,14 @@ main {
   animation-name: animatetop;
   animation-duration: 0.4s;
 }
-.container-formSignUpAndSingIn h3 {
+.container-formSignUp h3, .container-formSingIn h3 {
   padding: 10px 0;
   font-size: 24px;
 }
-.container-formSignUpAndSingIn p, .container-formSignUpAndSingIn b {
+.container-formSignUp p, .container-formSignUp b, .container-formSingIn p, .container-formSingIn b {
   font-size: 20px;
 }
-.container-formSignUpAndSingIn input[type=text], .container-formSignUpAndSingIn input[type=password] {
+.container-formSignUp input[type=text], .container-formSignUp input[type=password], .container-formSingIn input[type=text], .container-formSingIn input[type=password] {
   width: 100%;
   padding: 15px 0;
   margin: 5px 0 22px 0;
@@ -534,15 +538,15 @@ main {
   border: none;
   background: #f1f1f1;
 }
-.container-formSignUpAndSingIn input[type=text]:focus, .container-formSignUpAndSingIn input[type=password]:focus {
+.container-formSignUp input[type=text]:focus, .container-formSignUp input[type=password]:focus, .container-formSingIn input[type=text]:focus, .container-formSingIn input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
-.container-formSignUpAndSingIn hr {
+.container-formSignUp hr, .container-formSingIn hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
-.container-formSignUpAndSingIn .registerbtn {
+.container-formSignUp .registerbtn, .container-formSingIn .registerbtn {
   border: 1px solid white;
   color: white;
   border-radius: 25px;
@@ -554,13 +558,13 @@ main {
   margin: 8px 0;
   width: 100%;
 }
-.container-formSignUpAndSingIn .registerbtn:hover {
+.container-formSignUp .registerbtn:hover, .container-formSingIn .registerbtn:hover {
   opacity: 1;
 }
-.container-formSignUpAndSingIn a {
+.container-formSignUp a, .container-formSingIn a {
   color: dodgerblue;
 }
-.container-formSignUpAndSingIn .signin {
+.container-formSignUp .signin, .container-formSingIn .signin {
   background-color: #f1f1f1;
   text-align: center;
 }
@@ -584,14 +588,21 @@ main {
     opacity: 1;
   }
 }
-.container-formSignUpAndSingIn .close {
+.container-formSignUp .closeSingUp,
+.container-formSignUp .closeSingIn, .container-formSingIn .closeSingUp,
+.container-formSingIn .closeSingIn {
   color: black;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
-.container-formSignUpAndSingIn .close:hover,
-.container-formSignUpAndSingIn .close:focus {
+.container-formSignUp .closeSingUp:hover,
+.container-formSignUp .closeSingUp:focus,
+.container-formSignUp .closeSingIn:hover,
+.container-formSignUp .closeSingIn:focus, .container-formSingIn .closeSingUp:hover,
+.container-formSingIn .closeSingUp:focus,
+.container-formSingIn .closeSingIn:hover,
+.container-formSingIn .closeSingIn:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
