@@ -4,30 +4,35 @@ const btnSignIn = document.querySelector(".btn-signIn") as HTMLElement;
 const btnSignUp = document.querySelector(".btn-signUp") as HTMLElement;
 const closeSingUp = document.querySelector(".closeSingUp") as HTMLElement;
 const closeSingIn = document.querySelector(".closeSingIn") as HTMLElement;
+const linkToSignIn = document.querySelector(".linkToSignIn") as HTMLElement;
 
-
-const signIn = () => {
+const openSignIn = ():void => {
   btnSignIn?.addEventListener('click', () => {
     if (formSignIn) formSignIn.style.display = "block";
-  })
+  });
 }
 
-const signUp = () => {
+const openSignUp = ():void => {
   btnSignUp?.addEventListener('click', () => {
-  if (formSignUp) formSignUp.style.display = "block";
-  })
+    if (formSignUp) formSignUp.style.display = "block";
+  });
 }
 
-const closeBtn = () => {
+const closeSignInUp = ():void => {
   closeSingUp?.addEventListener('click', () => {
-    console.log('up')
     if (formSignUp) formSignUp.style.display = "none";
   });
 
   closeSingIn?.addEventListener('click', () => {
-    console.log('in')
     if (formSignIn) formSignIn.style.display = "none";
-  })
+  });
 }
 
-export  {closeBtn, signIn, signUp};
+const toOpenSingIn = ():void => {
+    linkToSignIn?.addEventListener('click', () => {
+      if(linkToSignIn) formSignUp.style.display = "none";
+      formSignIn.style.display = "block";
+    })
+}
+
+export  {closeSignInUp, openSignIn, openSignUp, toOpenSingIn};
