@@ -68,7 +68,8 @@
             margin-bottom: 25px;
           }
 
-          .registerbtn {
+          .registerBtn,
+          .enterBtn {
             border: 1px solid white;
             color: white;
             border-radius: 25px;
@@ -81,8 +82,10 @@
             width: 100%;
           }
 
-          .registerbtn:hover {
+          .registerBtn:hover,
+          .enterBtn:hover {
             opacity:1;
+            cursor: pointer;
           }
 
           a {

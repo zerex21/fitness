@@ -128,6 +128,7 @@ main {
   padding-right: 10px;
   width: 200px;
   justify-content: space-between;
+  align-items: center;
 }
 .container-header .header-customization .language-choose {
   text-decoration: underline;
@@ -506,7 +507,9 @@ main {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
-.container-formSignUp .registerbtn, .container-formSingIn .registerbtn {
+.container-formSignUp .registerBtn,
+.container-formSignUp .enterBtn, .container-formSingIn .registerBtn,
+.container-formSingIn .enterBtn {
   border: 1px solid white;
   color: white;
   border-radius: 25px;
@@ -518,8 +521,11 @@ main {
   margin: 8px 0;
   width: 100%;
 }
-.container-formSignUp .registerbtn:hover, .container-formSingIn .registerbtn:hover {
+.container-formSignUp .registerBtn:hover,
+.container-formSignUp .enterBtn:hover, .container-formSingIn .registerBtn:hover,
+.container-formSingIn .enterBtn:hover {
   opacity: 1;
+  cursor: pointer;
 }
 .container-formSignUp a, .container-formSingIn a {
   color: dodgerblue;

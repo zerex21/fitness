@@ -5,6 +5,7 @@ export type Users = {
 };
 
 export interface IUsers {
+    push(tmpObj: { id: number; login: string; password: string; }): unknown;
     length: number;
     [index: number]: Users;
 }

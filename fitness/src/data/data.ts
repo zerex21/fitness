@@ -1,9 +1,9 @@
-import { IUsers, IVideos } from './../types/type';
+import { IVideos } from './../types/type';
 
 
-export let users:IUsers = [
-    {id:1, login:'name', password:123},
-]
+/* export let users:IUsers = [
+    {id:1, login:'name', password:123, purpose: {'1 2 3....'}},
+] */
 
 /************
  *
