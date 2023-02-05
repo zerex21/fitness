@@ -458,7 +458,7 @@ main {
 
 .container-formSignUp .container-form, .container-formSingIn .container-form {
   width: 500px;
-  height: 450px;
+  height: 475px;
   background-color: white;
   padding: 10px 10px;
   position: relative;
@@ -470,6 +470,15 @@ main {
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
+}
+.container-formSignUp .incorrectDataSignIn,
+.container-formSignUp .incorrectDataSignUp, .container-formSingIn .incorrectDataSignIn,
+.container-formSingIn .incorrectDataSignUp {
+  display: none;
+  padding-bottom: 20px;
+  font-size: 20px;
+  color: red;
+  text-align: center;
 }
 .container-formSignUp h3, .container-formSingIn h3 {
   padding: 10px 0;
