@@ -17,6 +17,11 @@ const pswSignUp = document.querySelector('.pswSignUp') as HTMLInputElement;
 let idForUsers = 1;
 let arrForUsers:IUsers = [];
 
+const resetValueForm = () => {
+  nickNameSignUp.value = '';
+  pswSignUp.value = '';
+}
+
 const openSignIn = ():void => {
   btnSignIn?.addEventListener('click', () => {
     if (formSignIn) formSignIn.style.display = 'block';
@@ -44,7 +49,7 @@ const toOpenSingIn = ():void => {
       if(linkToSignIn) formSignUp.style.display = 'none';
       formSignIn.style.display = 'block';
     })
-   /*  localStorage.removeItem('users') */
+    /* localStorage.removeItem('users') */
 }
 
 
@@ -52,11 +57,12 @@ const singUp = () => {
   registerBtn?.addEventListener('click', () => {
 
     let {nickName, password} = getValueSingUp();
-    if(nickName && password){
+    if(nickName && password && checkUserSignUp()){
       let tmpObj = {id:idForUsers, login: nickName, password: password, purpose: {}};
 
       if (localStorage.getItem('users')) {
         let arr: string | null = localStorage.getItem('users')
+        tmpObj.id = JSON.parse(String(arr)).length + 1;
 
         while(idForUsers < 2 ){
           for(let i = 0 ; i < JSON.parse(String(arr)).length; i++ ){
@@ -72,19 +78,39 @@ const singUp = () => {
         localStorage.setItem('users',JSON.stringify(arrForUsers))
         }
         idForUsers++;
+        resetValueForm();
         formSignUp.style.display = 'none';
     }
   });
 }
 
+const checkUserSignUp = () =>{
+  let {nickName, password} = getValueSingUp();
+
+  if (!localStorage.getItem('users')) return false;
+
+  let arr: string | null = localStorage.getItem('users');
+  let newArr = JSON.parse(String(arr));
+
+  for(let i = 0; i < newArr.length; i++){
+    if(nickName === newArr[i].login) return false
+  }
+
+  return true;
+}
+
+const checkUserSignIn = () =>{
+  let {nickName, password} = getValueSingUp();
+}
+
 const getValueSingIn = ():{nickName:string, password:string} => {
-  let nickName = nickNameSignIn.value;
+  let nickName = nickNameSignIn.value.toLowerCase();
   let password = pswSignIn.value;
   return {nickName, password};
 }
 
 const getValueSingUp = ():{nickName:string, password:string} => {
-  let nickName = nickNameSignUp.value;
+  let nickName = nickNameSignUp.value.toLowerCase();
   let password = pswSignUp.value;
   return {nickName, password};
 }
