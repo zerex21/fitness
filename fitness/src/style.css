@@ -233,61 +233,6 @@ main {
   width: 100px;
 }
 
-.wrapper-pageTwo {
-  color: white;
-}
-.wrapper-pageTwo h2 {
-  padding-bottom: 20px;
-}
-.wrapper-pageTwo h3 {
-  padding-bottom: 40px;
-  font-size: 20px;
-  font-weight: bold;
-}
-.wrapper-pageTwo table {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  border: solid 2px white;
-  margin-bottom: 40px;
-}
-.wrapper-pageTwo table thead th {
-  border-right: solid 2px white;
-  border-bottom: solid 2px white;
-  padding: 5px 20px;
-}
-.wrapper-pageTwo table tbody th {
-  border-right: solid 2px white;
-  border-bottom: solid 2px white;
-  padding: 0 20px;
-}
-.wrapper-pageTwo table tbody th svg {
-  height: 50px;
-  width: 50px;
-  margin-bottom: -10px;
-  display: flex;
-  align-items: end;
-}
-
-.container-winners_btn {
-  display: flex;
-  width: 220px;
-  justify-content: space-between;
-}
-.container-winners_btn button {
-  width: 100px;
-  padding: 5px 0;
-  font-size: 14px;
-  font-weight: bold;
-  background-color: #00a7d1;
-  border: none;
-  color: white;
-}
-.container-winners_btn button:hover {
-  cursor: pointer;
-  background-color: #02718d;
-}
-
 .workout-card {
   background-color: black;
   color: gray;
@@ -543,6 +488,46 @@ main {
 .container-formSignUpAndSingIn .signin {
   background-color: #f1f1f1;
   text-align: center;
+}
+
+.activity-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: white;
+  color: gray;
+}
+.activity-page .container .bold {
+  color: black;
+}
+.activity-page .container .active-page__total-workouts,
+.activity-page .container .active-page__total-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.activity-page .container .active-page__workout-quantity {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.activity-page .container .active-page__workout-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.activity-page .container .active-page__workout-item .active-page__video img {
+  width: 50%;
+}
+.activity-page .container .active-page__workouts-list {
+  border-top: 2px solid gray;
+  border-bottom: 1px solid gray;
+}
+.activity-page .container .active-page__workouts-list .active-page__workout-details {
+  border-top: 1px solid gray;
 }
 
 /*# sourceMappingURL=style.css.map */
