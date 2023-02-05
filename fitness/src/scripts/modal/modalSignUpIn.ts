@@ -15,7 +15,8 @@ const nickNameSignUp = document.querySelector('.nickNameSignUp') as HTMLInputEle
 const pswSignUp = document.querySelector('.pswSignUp') as HTMLInputElement;
 
 let idForUsers = 1;
-const arrForUsers:IUsers = [];
+let arrForUsers:IUsers = [];
+
 const openSignIn = ():void => {
   btnSignIn?.addEventListener('click', () => {
     if (formSignIn) formSignIn.style.display = 'block';
@@ -43,23 +44,37 @@ const toOpenSingIn = ():void => {
       if(linkToSignIn) formSignUp.style.display = 'none';
       formSignIn.style.display = 'block';
     })
+   /*  localStorage.removeItem('users') */
 }
 
 
-const singIn = () => {
-  enterBtn?.addEventListener('click', () => {
-    let {nickName, password} = getValueSingIn();
-    let tmpObj = {id:idForUsers, login: nickName, password: password, purpose: {}};
-    if (localStorage.getItem('users')) {
-      arrForUsers.push(tmpObj)
-      localStorage.setItem('users',JSON.stringify(arrForUsers))
-    }else{
+const singUp = () => {
+  registerBtn?.addEventListener('click', () => {
+
+    let {nickName, password} = getValueSingUp();
+    if(nickName && password){
+      let tmpObj = {id:idForUsers, login: nickName, password: password, purpose: {}};
+
+      if (localStorage.getItem('users')) {
+        let arr: string | null = localStorage.getItem('users')
+
+        while(idForUsers < 2 ){
+          for(let i = 0 ; i < JSON.parse(String(arr)).length; i++ ){
+            arrForUsers.push(JSON.parse(String(arr))[i])
+          }
+          break;
+        }
+
         arrForUsers.push(tmpObj)
         localStorage.setItem('users',JSON.stringify(arrForUsers))
+      } else {
+        arrForUsers.push(tmpObj)
+        localStorage.setItem('users',JSON.stringify(arrForUsers))
+        }
+        idForUsers++;
+        formSignUp.style.display = 'none';
     }
-
-  })
-  idForUsers++;
+  });
 }
 
 const getValueSingIn = ():{nickName:string, password:string} => {
@@ -75,4 +90,4 @@ const getValueSingUp = ():{nickName:string, password:string} => {
 }
 
 
-export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singIn};
+export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp};
