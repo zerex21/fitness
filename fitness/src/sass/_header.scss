@@ -85,6 +85,35 @@
             }
         }
 
+        .container-header__user{
+            display: none;
+            width: 100px;
+            justify-content: space-between;
+            align-items: center;
+
+            .nickUser{
+                padding: 0 7px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid black;
+                border-radius: 25px;
+            }
+
+            .btn-logOut{
+                button{
+                    border: 1px solid white;
+                    color: white;
+                    border-radius: 25px;
+                    display: flex;
+                    background: black;
+                    padding: 5px 10px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
         .container-header__bnt{
             display: flex;
             width: 190px;
@@ -122,5 +151,7 @@
 
 
         }
+
+
     }
 }

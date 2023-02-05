@@ -164,6 +164,31 @@ main {
   border: 25px;
   border-bottom: 2px solid black;
 }
+.container-header .container-header__user {
+  display: none;
+  width: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-header .container-header__user .nickUser {
+  padding: 0 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 25px;
+}
+.container-header .container-header__user .btn-logOut button {
+  border: 1px solid white;
+  color: white;
+  border-radius: 25px;
+  display: flex;
+  background: black;
+  padding: 5px 10px;
+}
+.container-header .container-header__user .btn-logOut button:hover {
+  cursor: pointer;
+}
 .container-header .container-header__bnt {
   display: flex;
   width: 190px;

@@ -15,6 +15,9 @@ const nickNameSignUp = document.querySelector('.nickNameSignUp') as HTMLInputEle
 const pswSignUp = document.querySelector('.pswSignUp') as HTMLInputElement;
 const incorrectDataSignUp = document.querySelector('.incorrectDataSignUp') as HTMLElement;
 const incorrectDataSignIn = document.querySelector('.incorrectDataSignIn') as HTMLElement;
+const containerHeaderUser = document.querySelector('.container-header__user') as HTMLElement;
+const containerHeaderBnt = document.querySelector('.container-header__bnt') as HTMLElement;
+const nickUser = document.querySelector('.nickUser') as HTMLElement;
 
 let idForUsers = 1;
 let arrForUsers:IUsers = [];
@@ -86,6 +89,9 @@ const singUp = () => {
         localStorage.setItem('users',JSON.stringify(arrForUsers))
         }
         idForUsers++;
+        containerHeaderUser.style.display = 'flex';
+        containerHeaderBnt.style.display ='none';
+        nickUser.innerHTML = `${nickNameSignUp.value[0]}`
         nickNameSignUp.value = '';
         pswSignUp.value = '';
         formSignUp.style.display = 'none';
@@ -98,10 +104,14 @@ const singIn = () => {
   enterBtn?.addEventListener('click', () => {
 
     if (checkUserSignIn()) {
+      containerHeaderUser.style.display = 'flex';
+      containerHeaderBnt.style.display ='none';
+      nickUser.innerHTML = `${nickNameSignIn.value[0]}`
       nickNameSignIn.value = '';
       pswSignIn.value = '';
       formSignIn.style.display = 'none';
-      incorrectDataSignIn.style.display = 'none'
+      incorrectDataSignIn.style.display = 'none';
+
     }
 
   })
