@@ -18,6 +18,7 @@ const incorrectDataSignIn = document.querySelector('.incorrectDataSignIn') as HT
 const containerHeaderUser = document.querySelector('.container-header__user') as HTMLElement;
 const containerHeaderBnt = document.querySelector('.container-header__bnt') as HTMLElement;
 const nickUser = document.querySelector('.nickUser') as HTMLElement;
+const btnLogOut = document.querySelector('.btn-logOut') as HTMLButtonElement;
 
 let idForUsers = 1;
 let arrForUsers:IUsers = [];
@@ -154,6 +155,11 @@ const checkUserSignIn = () =>{
   incorrectDataSignIn.innerHTML = `Неверный ник или пароль !`;
   return false;
 };
+
+btnLogOut?.addEventListener('click', () => {
+  containerHeaderUser.style.display = 'none';
+  containerHeaderBnt.style.display ='flex';
+})
 
 
 export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn};

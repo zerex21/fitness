@@ -87,7 +87,7 @@
 
         .container-header__user{
             display: none;
-            width: 100px;
+            width: 115px;
             justify-content: space-between;
             align-items: center;
 
@@ -102,6 +102,7 @@
 
             .btn-logOut{
                 button{
+                    font-size: 16px;
                     border: 1px solid white;
                     color: white;
                     border-radius: 25px;
