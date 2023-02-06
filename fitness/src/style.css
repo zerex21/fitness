@@ -186,6 +186,9 @@ main {
 .container-header .container-header__user .down-list_user:hover .user-purposes {
   display: block;
 }
+.container-header .container-header__user input[type=checkbox]:hover {
+  cursor: pointer;
+}
 .container-header .container-header__user .user-purposes {
   position: absolute;
   display: none;

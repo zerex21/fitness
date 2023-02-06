@@ -92,7 +92,6 @@
             justify-content: space-between;
             align-items: center;
 
-
             .nickUser{
                 z-index: 2;
                 padding: 0 7px;
@@ -107,6 +106,10 @@
             }
 
             .down-list_user:hover .user-purposes {display: block;};
+
+            input[type="checkbox"]:hover{
+                cursor: pointer;
+            }
 
             .user-purposes{
                 position: absolute;
@@ -139,9 +142,8 @@
                     }
                 }
             }
-
-
         }
+
         .container-header__bnt{
             display: flex;
             width: 190px;
@@ -176,10 +178,6 @@
                     background: black;
                 }
             }
-
-
         }
-
-
     }
 }

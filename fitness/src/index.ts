@@ -1,4 +1,4 @@
-import { closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, checkUserInSystem } from './scripts/modal/modalSignUpIn';
+import { closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, checkUserInSystem, /* checkUserPurposes */ } from './scripts/modal/modalSignUpIn';
 import './style.css';
 
 
@@ -8,4 +8,5 @@ closeSignInUp();
 toOpenSingIn();
 singUp();
 singIn();
-checkUserInSystem()
+checkUserInSystem();
+/* checkUserPurposes() */

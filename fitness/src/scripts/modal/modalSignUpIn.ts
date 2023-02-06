@@ -19,9 +19,41 @@ const containerHeaderUser = document.querySelector('.container-header__user') as
 const containerHeaderBnt = document.querySelector('.container-header__bnt') as HTMLElement;
 const nickUser = document.querySelector('.nickUser') as HTMLElement;
 const btnLogOut = document.querySelector('.btn-logOut') as HTMLButtonElement;
+const userPurposes = document.querySelector('.user-purposes');
 
 let idForUsers = 1;
 let arrForUsers:IUsers = [];
+
+
+const checkUserPurposes = () => {
+  let checkboxesChecked:string[] = [];
+  let checkboxes = document.getElementsByClassName('checkbox-user');
+
+  for (let index = 0; index < checkboxes.length; index++) {
+    if ((checkboxes[index] as HTMLInputElement).checked) {
+      checkboxesChecked.push((checkboxes[index] as HTMLInputElement).name);
+        /* console.log(checkboxesChecked); */
+    }
+  }
+  return checkboxesChecked;
+}
+
+
+userPurposes?.addEventListener('click', (e) => {
+let tmpArr: string[] = []
+/*  console.log (checkUserPurposes()); */
+  let element = e.target as HTMLInputElement;
+  if (element.tagName === "INPUT") {
+   tmpArr = checkUserPurposes();
+  }
+  if (localStorage.getItem('users')) {
+    let arr: string | null = localStorage.getItem('users');
+    let newArr = JSON.parse(String(arr));
+    newArr.map( (item: {purpose: string[]; inSystem: boolean; }) => (item.inSystem === true) ? item.purpose = tmpArr : item.purpose = []);
+    localStorage.setItem('users',JSON.stringify(newArr) );
+  }
+})
+
 
 const checkUserInSystem = () =>{
   if (!localStorage.getItem('users')) return false;
@@ -181,4 +213,4 @@ btnLogOut?.addEventListener('click', () => {
 })
 
 
-export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, checkUserInSystem};
+export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, checkUserInSystem, /* checkUserPurposes */};
