@@ -1,4 +1,17 @@
+import { closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, checkUserInSystem, checkPurposes } from './scripts/modal/modalSignUpIn';
 import './style.css';
+
+
+
+openSignIn();
+openSignUp();
+closeSignInUp();
+toOpenSingIn();
+singUp();
+singIn();
+checkUserInSystem();
+checkPurposes();
+
 import { trainingCategoryAll, openCloseList } from './scripts/training/openCloseList';
 import { trainingArrowLeftAll, trainingArrowRightAll, shiftLeft, shiftRight } from './scripts/training/shift';
 import { buttonForYou, buttonSearch, clickSearch, clickForYou } from './scripts/training/clickButton';
@@ -10,3 +23,4 @@ trainingCategoryAll.forEach((el, i) => el.addEventListener("click", () => openCl
 
 buttonForYou.addEventListener("click", clickForYou);
 buttonSearch.addEventListener("click", clickSearch);
+

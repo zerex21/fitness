@@ -48,48 +48,92 @@
                     <button>Регистрация</button>
                 </div>
             </div>
+            <div class="container-header__user">
+                <div class="down-list_user">
+                    <div class="nickUser"></div>
+                    <div class="user-purposes">
+                        <fieldset>
+                            <legend>Выберите ваши цели:</legend>
 
+                            <div>
+                              <input class="checkbox-user" type="checkbox" id="strength" name="strength">
+                              <label for="strength">Сила</label>
+                            </div>
+
+                            <div>
+                              <input class="checkbox-user" type="checkbox" id="stamina" name="stamina">
+                              <label for="stamina">Выносливость</label>
+                            </div>
+
+                            <div>
+                                <input class="checkbox-user" type="checkbox" id="move" name="move">
+                                <label for="move">Подвижность</label>
+                              </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <div class="btn-logOut">
+                    <button>Выйти</button>
+                </div>
+
+
+            </div>
         </div>
     </header>
 
     <main>
 
-        <!-- <div class="main-page">
-            <div class="container container-main-page">
-                <div class="connection-friends">
-                    <div class="text-connection">
-                        Объединяйтесь с друзьми!
-                    </div>
-                    <div class="main-page__btn-join">
-                        <button>Пригласить</button>
-                    </div>
-                </div>
-                <div class="main-page__description-app">
-                    <div>
-                        <h3>Тренировка для каждого тела и разума</h3>
-                        Приложение Fitness Club закрепит ваши привычки в фитнесе благодаря более быстрым
-                        вариантам, инструментам для постановки целей и ежедневному новому контенту. Укрепите свое
-                        мышление и мышцы под бесплатным руководством ваших любимых тренеров, спортсменов и экспертов по
-                        здоровому образу жизни.
-                    </div>
-                    <div>
-                        <h3>Начать где угодно. Достичь любой цели.</h3>
-                        Fitness Club предлагает преднамеренные, прогрессивные программы тренировок с конкретными советами по
-                        питанию, восстановлению и мышлению. Широкий спектр программ Fitness Club поможет вам добиться прогресса в
-                        соответствии с вашим графиком и с вашей скоростью.
-                    </div>
-                    <div>
-                        <h3>Наши тренеры встретят вас там, где вы находитесь</h3>
-                        Независимо от того, с чего вы начинаете, всемирное сообщество веселых и доступных тренеров Fitness Club
-                        поможет вам достичь того, к чему вы движетесь. В конце концов, приложение может помочь вам
-                        потренироваться, но это люди, которые помогают вам проявить себя.
+
+
+                <div class="formSingIn">
+                    <div class="container container-formSingIn">
+                        <div class="container-form">
+                            <div>
+                              <span class="closeSingIn">&times;</span>
+                              <h3>Войти</h3>
+                              <p>Пожалуйста заполните форму</p>
+                              <hr>
+                              <label for="nickName"><b>Ваш ник</b></label>
+                              <input class="nickNameSignIn" type="text" placeholder="Введите ник" name="nickName" required>
+
+                              <label for="psw"><b>Пароль</b></label>
+                              <input class="pswSignIn" type="password" placeholder="Введите Пароль" name="psw" required>
+                              <hr>
+                              <div class="incorrectDataSignIn"></div>
+                              <button class="enterBtn">Войти</button>
+                            </div>
+                          </div>
                     </div>
                 </div>
-                <div class="main-page__btn-trainings">
-                    <button>Перейти к тренировкам</button>
-                </div>
+
+        <div class="formSignUp">
+            <div class="container container-formSignUp">
+                <div class="container-form">
+                    <div>
+                      <span class="closeSingUp">&times;</span>
+                      <h3>Регистрация</h3>
+                      <p>Пожалуйста заполните форму</p>
+                      <hr>
+                     <!--  <label for="email"><b>Email</b></label>
+                      <input type="text" placeholder="Enter Email" name="email" required> -->
+                      <label for="nickName"><b>Ваш ник</b></label>
+                      <input class="nickNameSignUp" type="text" placeholder="Введите ник" name="nickName" required>
+
+                      <label for="psw"><b>Пароль</b></label>
+                      <input class="pswSignUp" type="password" placeholder="Введите Пароль" name="psw" required>
+                      <hr>
+                      <div class="incorrectDataSignUp"></div>
+                      <button class="registerBtn">Зарегистрироваться</button>
+                    </div>
+                    <div class="container-signInUp">
+                      <p>Уже есть аккаун? <a href="#" class="linkToSignIn">Войти</a>.</p>
+                    </div>
+                  </div>
             </div>
-        </div> -->
+        </div>
+
+
 
         <!--  <div class="aboutDevelopers">
             <div class="container container-aboutDevelopers">
@@ -488,23 +532,7 @@
     </main>
 
     <footer class="footer">
-        <div class="container container-footer">
-            <div class="about-developers">
-                <div class="github">
-                    <ul class="list-github">
-                        <li><a href="https://github.com/zerex21?tab=repositories" target="_blank">OLEG</a></li>
-                        <li><a href="https://github.com/vadim-sid1993" target="_blank">VADIM</a></li>
-                        <li><a href="https://github.com/pashkovichma" target="_blank">MARIA</a></li>
-                    </ul>
-                </div>
-                <div class="about-developers__page">Об разработчиках</div>
-            </div>
-            <div class="date-create">2023</div>
-            <div class="RsSchool">
-                <a href="https://rs.school/js/" target="_blank"><img src="./src/imgs/rs_school_js.svg"
-                        alt="RsSchool"></a>
-            </div>
-        </div>
+
     </footer>
 </body>
 

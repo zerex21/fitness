@@ -42,6 +42,7 @@
             padding-right: 10px;
             width: 200px;
             justify-content: space-between;
+            align-items: center;
 
             .language-choose{
                 text-decoration: underline;
@@ -84,6 +85,65 @@
             }
         }
 
+        .container-header__user{
+            position: relative;
+            display: none;
+            width: 115px;
+            justify-content: space-between;
+            align-items: center;
+
+            .nickUser{
+                z-index: 2;
+                padding: 0 7px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid black;
+                border-radius: 25px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            .down-list_user:hover .user-purposes {display: block;};
+
+            input[type="checkbox"]:hover{
+                cursor: pointer;
+            }
+
+            .user-purposes{
+                position: absolute;
+                display: none;
+                padding-top: 10px;
+                margin-left: -135px;
+                width: 260px;
+                z-index: 1;
+                div{
+                    padding-top: 5px;
+                }
+
+                fieldset{
+                  padding: 5px 15px;
+                }
+               }
+
+            .btn-logOut{
+                z-index: 2;
+                button{
+                    font-size: 16px;
+                    border: 1px solid white;
+                    color: white;
+                    border-radius: 25px;
+                    display: flex;
+                    background: black;
+                    padding: 5px 10px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
         .container-header__bnt{
             display: flex;
             width: 190px;
@@ -118,8 +178,6 @@
                     background: black;
                 }
             }
-
-
         }
     }
 }
