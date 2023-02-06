@@ -1,0 +1,65 @@
+.programms_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.programms_title {
+    font-size: 24px;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+}
+
+.programms_card {
+    display: flex;
+    width: 600px;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
+.programms_card:hover .programms_content img {
+    filter: brightness(0.5);
+    transform: scale(1.1);
+}
+
+.programms_content {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.programms_content img {
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.programms_content h2 {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    color: white;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.programms_card_text_1 {
+    font-size: 20px;
+    font-family: sans-serif;
+    margin: 10px 0 10px 10px;
+}
+
+.programms_card_text_2 {
+    font-size: 16px;
+    font-family: sans-serif;
+    margin: 10px 0 10px 10px
+}

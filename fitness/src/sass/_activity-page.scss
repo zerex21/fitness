@@ -1,0 +1,53 @@
+.activity-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    color: gray;
+
+    .container {
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        // justify-content: space-between;
+
+        .bold{
+            color: black;
+        }
+
+        .active-page__total-workouts, 
+        .active-page__total-time{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .active-page__workout-quantity {
+            font-size: 3rem;
+            font-weight: 900;
+        }
+
+        .active-page__workout-item{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+        
+            .active-page__video img{
+                width: 50%;
+            }
+        }
+
+        .active-page__workouts-list{
+            border-top: 2px solid gray;
+            border-bottom: 1px solid gray;
+            
+            .active-page__workout-details{
+                border-top: 1px solid gray;
+            }
+        }
+    }
+}
