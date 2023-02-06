@@ -1,10 +1,12 @@
 export type Users = {
+  inSystem(arg0: string, inSystem: boolean): {};
   id:number,
   login:string,
   password:number
 };
 
 export interface IUsers {
+    push(tmpObj: { id: number; login: string; password: string; }): {};
     length: number;
     [index: number]: Users;
 }
