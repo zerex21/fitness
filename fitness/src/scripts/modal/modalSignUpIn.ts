@@ -33,12 +33,9 @@ const checkUserInSystem = () =>{
       containerHeaderUser.style.display = 'flex';
       containerHeaderBnt.style.display ='none';
       nickUser.innerHTML = newArr[i].login;
-      /* newArr = []; */
     }
   }
-
 }
-
 
 const getValueSingIn = ():{nickName:string, password:string} => {
   let nickName = nickNameSignIn.value.toLowerCase();
@@ -109,7 +106,7 @@ const singIn = () => {
     }
   })
 }
-/* localStorage.removeItem('users') */
+
 const checkUserSignUp = () =>{
   let {nickName, password} = getValueSingUp();
   let tmpObj = {id:idForUsers, login: nickName, password: password, purpose: [], inSystem: false};
@@ -117,7 +114,6 @@ const checkUserSignUp = () =>{
   let newArr = JSON.parse(String(arr));
 
   if (localStorage.getItem('users')) {
-    /* arrForUsers = newArr */
     tmpObj.inSystem = true;
     tmpObj.id = JSON.parse(String(arr)).length + 1;
 

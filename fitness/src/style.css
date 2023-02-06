@@ -165,18 +165,43 @@ main {
   border-bottom: 2px solid black;
 }
 .container-header .container-header__user {
+  position: relative;
   display: none;
   width: 115px;
   justify-content: space-between;
   align-items: center;
 }
 .container-header .container-header__user .nickUser {
+  z-index: 2;
   padding: 0 7px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid black;
   border-radius: 25px;
+}
+.container-header .container-header__user .nickUser:hover {
+  cursor: pointer;
+}
+.container-header .container-header__user .down-list_user:hover .user-purposes {
+  display: block;
+}
+.container-header .container-header__user .user-purposes {
+  position: absolute;
+  display: none;
+  padding-top: 10px;
+  margin-left: -135px;
+  width: 260px;
+  z-index: 1;
+}
+.container-header .container-header__user .user-purposes div {
+  padding-top: 5px;
+}
+.container-header .container-header__user .user-purposes fieldset {
+  padding: 5px 15px;
+}
+.container-header .container-header__user .btn-logOut {
+  z-index: 2;
 }
 .container-header .container-header__user .btn-logOut button {
   font-size: 16px;
