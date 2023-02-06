@@ -23,6 +23,23 @@ const btnLogOut = document.querySelector('.btn-logOut') as HTMLButtonElement;
 let idForUsers = 1;
 let arrForUsers:IUsers = [];
 
+const checkUserInSystem = () =>{
+  if (!localStorage.getItem('users')) return false;
+  let arr: string | null = localStorage.getItem('users');
+  let newArr = JSON.parse(String(arr));
+
+  for (let i = 0; i < newArr.length; i++){
+    if (newArr[i].inSystem === true) {
+      containerHeaderUser.style.display = 'flex';
+      containerHeaderBnt.style.display ='none';
+      nickUser.innerHTML = newArr[i].login;
+      /* newArr = []; */
+    }
+  }
+
+}
+
+
 const getValueSingIn = ():{nickName:string, password:string} => {
   let nickName = nickNameSignIn.value.toLowerCase();
   let password = pswSignIn.value;
@@ -62,49 +79,26 @@ const toOpenSingIn = ():void => {
       if(linkToSignIn) formSignUp.style.display = 'none';
       formSignIn.style.display = 'block';
     })
-    /* localStorage.removeItem('users') */
 }
 
 const singUp = () => {
   registerBtn?.addEventListener('click', () => {
-
-    let {nickName, password} = getValueSingUp();
-    if (nickName && password && checkUserSignUp()) {
-      let tmpObj = {id:idForUsers, login: nickName, password: password, purpose: {}};
-
-      if (localStorage.getItem('users')) {
-        let arr: string | null = localStorage.getItem('users')
-        tmpObj.id = JSON.parse(String(arr)).length + 1;
-
-        while (idForUsers < 2 ) {
-          for (let i = 0 ; i < JSON.parse(String(arr)).length; i++ ) {
-            arrForUsers.push(JSON.parse(String(arr))[i]);
-          }
-          break;
-        }
-
-        arrForUsers.push(tmpObj)
-        localStorage.setItem('users',JSON.stringify(arrForUsers))
-      } else {
-        arrForUsers.push(tmpObj)
-        localStorage.setItem('users',JSON.stringify(arrForUsers))
-        }
-        idForUsers++;
-        containerHeaderUser.style.display = 'flex';
-        containerHeaderBnt.style.display ='none';
-        nickUser.innerHTML = `${nickNameSignUp.value[0]}`
-        nickNameSignUp.value = '';
-        pswSignUp.value = '';
-        formSignUp.style.display = 'none';
-        incorrectDataSignUp.style.display = 'none';
+    if ( checkUserSignUp() ) {
+      idForUsers++;
+      containerHeaderUser.style.display = 'flex';
+      containerHeaderBnt.style.display ='none';
+      nickUser.innerHTML = `${nickNameSignUp.value[0]}`
+      nickNameSignUp.value = '';
+      pswSignUp.value = '';
+      formSignUp.style.display = 'none';
+      incorrectDataSignUp.style.display = 'none';
     }
   });
 };
 
 const singIn = () => {
   enterBtn?.addEventListener('click', () => {
-
-    if (checkUserSignIn()) {
+    if ( checkUserSignIn() ) {
       containerHeaderUser.style.display = 'flex';
       containerHeaderBnt.style.display ='none';
       nickUser.innerHTML = `${nickNameSignIn.value[0]}`
@@ -112,29 +106,49 @@ const singIn = () => {
       pswSignIn.value = '';
       formSignIn.style.display = 'none';
       incorrectDataSignIn.style.display = 'none';
-
     }
-
   })
 }
-
+/* localStorage.removeItem('users') */
 const checkUserSignUp = () =>{
   let {nickName, password} = getValueSingUp();
-
-  if (!localStorage.getItem('users')) return false;
-
+  let tmpObj = {id:idForUsers, login: nickName, password: password, purpose: [], inSystem: false};
   let arr: string | null = localStorage.getItem('users');
   let newArr = JSON.parse(String(arr));
 
-  for (let i = 0; i < newArr.length; i++) {
-    if (nickName === newArr[i].login){
-      incorrectDataSignUp.style.display = 'block';
-      incorrectDataSignUp.innerHTML = `Такой ник уже существует !`;
-      return false;
-    }
-  }
+  if (localStorage.getItem('users')) {
+    /* arrForUsers = newArr */
+    tmpObj.inSystem = true;
+    tmpObj.id = JSON.parse(String(arr)).length + 1;
 
-  return true;
+    for (let i = 0; i < newArr.length; i++) {
+      if (nickName === newArr[i].login){
+        newArr[i].inSystem = false;
+        incorrectDataSignUp.style.display = 'block';
+        incorrectDataSignUp.innerHTML = `Такой ник уже существует !`;
+        return false;
+      }
+    }
+
+    while (idForUsers < 2 ) {
+      arrForUsers = [];
+      for (let i = 0 ; i < JSON.parse(String(arr)).length; i++ ) {
+        arrForUsers.push(JSON.parse(String(arr))[i]);
+        localStorage.setItem('users',JSON.stringify(arrForUsers));
+      }
+      break;
+    };
+
+    arrForUsers.push(tmpObj);
+    localStorage.setItem('users',JSON.stringify(arrForUsers));
+
+  } else {
+    tmpObj.inSystem = true;
+    arrForUsers.push(tmpObj);
+    localStorage.setItem('users',JSON.stringify(arrForUsers));
+    }
+
+    return true;
 };
 
 const checkUserSignIn = () =>{
@@ -147,7 +161,11 @@ const checkUserSignIn = () =>{
 
   for (let i = 0; i < newArr.length; i++) {
     if (nickName === newArr[i].login) {
-      if (password === newArr[i].password) return true;
+      if (password === newArr[i].password) {
+        newArr.map( (item: { inSystem: boolean; login: string;}) => (item.login === nickName) ? item.inSystem = true : item.inSystem = false);
+        localStorage.setItem('users',JSON.stringify(newArr) )
+        return true;
+      }
     }
   }
 
@@ -157,9 +175,14 @@ const checkUserSignIn = () =>{
 };
 
 btnLogOut?.addEventListener('click', () => {
+  let arr: string | null = localStorage.getItem('users');
+  let newArr = JSON.parse(String(arr));
+  newArr.map( (item: { inSystem: boolean; }) => (item.inSystem === true) ? item.inSystem = false : item.inSystem = false);
+  localStorage.setItem('users',JSON.stringify(newArr) );
+  arrForUsers = newArr;
   containerHeaderUser.style.display = 'none';
   containerHeaderBnt.style.display ='flex';
 })
 
 
-export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn};
+export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, checkUserInSystem};
