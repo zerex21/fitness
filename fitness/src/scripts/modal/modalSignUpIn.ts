@@ -24,6 +24,31 @@ const userPurposes = document.querySelector('.user-purposes');
 let idForUsers = 1;
 let arrForUsers:IUsers = [];
 
+const checkPurposes = () => {
+  let checkboxes = document.getElementsByClassName('checkbox-user');
+
+  if (localStorage.getItem('users')) {
+    let arr: string | null = localStorage.getItem('users');
+    let newArr = JSON.parse(String(arr));
+    let tmpArr:string[] = [];
+    for (let i = 0 ; i < newArr.length; i++) {
+
+      if (newArr[i].inSystem === true) {
+        tmpArr = newArr[i].purpose
+        }
+    }
+
+    if (tmpArr.length) {
+      for (let index = 0; index < checkboxes.length; index++) {
+        for (let i = 0 ; i < tmpArr.length; i++) {
+          if ((checkboxes[index] as HTMLInputElement).name === tmpArr[i]) {
+            (checkboxes[index] as HTMLInputElement).checked = true;
+          }
+        }
+      }
+    }
+  }
+}
 
 const checkUserPurposes = () => {
   let checkboxesChecked:string[] = [];
@@ -32,9 +57,9 @@ const checkUserPurposes = () => {
   for (let index = 0; index < checkboxes.length; index++) {
     if ((checkboxes[index] as HTMLInputElement).checked) {
       checkboxesChecked.push((checkboxes[index] as HTMLInputElement).name);
-        /* console.log(checkboxesChecked); */
     }
   }
+
   return checkboxesChecked;
 }
 
@@ -46,10 +71,16 @@ let tmpArr: string[] = []
   if (element.tagName === "INPUT") {
    tmpArr = checkUserPurposes();
   }
+
   if (localStorage.getItem('users')) {
     let arr: string | null = localStorage.getItem('users');
     let newArr = JSON.parse(String(arr));
-    newArr.map( (item: {purpose: string[]; inSystem: boolean; }) => (item.inSystem === true) ? item.purpose = tmpArr : item.purpose = []);
+    for (let i = 0 ; i < newArr.length; i++) {
+
+      if (newArr[i].inSystem === true) {
+        newArr[i].purpose = tmpArr;
+      }
+    }
     localStorage.setItem('users',JSON.stringify(newArr) );
   }
 })
@@ -126,7 +157,9 @@ const singUp = () => {
 };
 
 const singIn = () => {
+
   enterBtn?.addEventListener('click', () => {
+
     if ( checkUserSignIn() ) {
       containerHeaderUser.style.display = 'flex';
       containerHeaderBnt.style.display ='none';
@@ -136,6 +169,7 @@ const singIn = () => {
       formSignIn.style.display = 'none';
       incorrectDataSignIn.style.display = 'none';
     }
+    checkPurposes()
   })
 }
 
@@ -210,7 +244,16 @@ btnLogOut?.addEventListener('click', () => {
   arrForUsers = newArr;
   containerHeaderUser.style.display = 'none';
   containerHeaderBnt.style.display ='flex';
+
+  let checkboxes = document.getElementsByClassName('checkbox-user');
+
+  for (let index = 0; index < checkboxes.length; index++) {
+    if ((checkboxes[index] as HTMLInputElement).checked) {
+      (checkboxes[index] as HTMLInputElement).checked = false;
+    }
+  }
+  /* checkPurposes() */
 })
 
 
-export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, checkUserInSystem, /* checkUserPurposes */};
+export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, checkUserInSystem, checkPurposes};
