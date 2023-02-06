@@ -1,25 +1,26 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
 body,
-html{
+html {
     height: 100%;
 }
 
-.container{
+.container {
     padding: 10px 10px 0 10px;
     max-width: 1400px;
     margin: 0 auto;
 
 }
+
 body {
     display: flex;
     flex-direction: column;
 }
 
-main{
+main {
     flex: 1 0 auto;
 }
 
@@ -31,4 +32,7 @@ main{
 @import "./programCard";
 @import "./developers";
 @import "./form";
+@import "./programms_css";
+@import "./training_css.scss";
+@import "./training_search_css.scss";
 @import "./activity-page";
