@@ -113,37 +113,63 @@ const getValueSingUp = ():{nickName:string, password:string} => {
 };
 
 const openSignIn = ():void => {
-  btnSignIn?.addEventListener('click', () => {
-    if (formSignIn) formSignIn.style.display = 'block';
-  });
+ /*  btnSignIn?.addEventListener('click', () => { */
+ const formSingIn = document.querySelector('.formSingIn') as HTMLElement;
+
+    if (formSingIn) formSingIn.style.display = 'block';
+  /* }); */
 }
 
 const openSignUp = ():void => {
+  /* btnSignUp?.addEventListener('click', () => { */
+  const formSignUp = document.querySelector('.formSignUp') as HTMLElement;
+    if (formSignUp) formSignUp.style.display = 'block';
+
+ /*  }); */
+}
+
+/* const openSignUp = ():void => {
   btnSignUp?.addEventListener('click', () => {
     if (formSignUp) formSignUp.style.display = 'block';
   });
-}
+} */
 
 const closeSignInUp = ():void => {
-  closeSingUp?.addEventListener('click', () => {
-    if (formSignUp) formSignUp.style.display = 'none';
-  });
+  const formSignUp = document.querySelector('.formSignUp') as HTMLElement;
+  const formSingIn = document.querySelector('.formSingIn') as HTMLElement;
 
-  closeSingIn?.addEventListener('click', () => {
-    if (formSignIn) formSignIn.style.display = 'none';
-  });
+ /*  closeSingUp?.addEventListener('click', () => { */
+    if (formSignUp) formSignUp.style.display = 'none';
+  /* }); */
+
+/*   closeSingIn?.addEventListener('click', () => { */
+    if (formSingIn) formSingIn.style.display = 'none';
+  /* }); */
 }
+
+
 
 const toOpenSingIn = ():void => {
-    linkToSignIn?.addEventListener('click', () => {
-      if(linkToSignIn) formSignUp.style.display = 'none';
-      formSignIn.style.display = 'block';
-    })
+  const formSignUp = document.querySelector('.formSignUp') as HTMLElement;
+  const formSingIn = document.querySelector('.formSingIn') as HTMLElement;
+    /* linkToSignIn?.addEventListener('click', () => { */
+      /* if(linkToSignIn) */
+      formSignUp.style.display = 'none';
+      formSingIn.style.display = 'block';
+    /* }) */
 }
 
-const singUp = () => {
-  registerBtn?.addEventListener('click', () => {
-    if ( checkUserSignUp() ) {
+const singUp = (nickName:string, password:string) => {
+  const containerHeaderUser = document.querySelector('.container-header__user') as HTMLElement;
+  const containerHeaderBnt = document.querySelector('.container-header__bnt') as HTMLElement;
+  const nickUser = document.querySelector('.nickUser') as HTMLElement;
+  const nickNameSignUp = document.querySelector('.nickNameSignUp') as HTMLInputElement;
+  const pswSignUp = document.querySelector('.pswSignUp') as HTMLInputElement;
+  const formSignUp = document.querySelector('.formSignUp') as HTMLElement;
+  const incorrectDataSignUp = document.querySelector('.incorrectDataSignUp') as HTMLElement;
+  /* console.log('signUp',nickName, password ) */
+ /*  registerBtn?.addEventListener('click', () => { */
+    if ( checkUserSignUp(nickName, password) ) {
       idForUsers++;
       containerHeaderUser.style.display = 'flex';
       containerHeaderBnt.style.display ='none';
@@ -153,14 +179,20 @@ const singUp = () => {
       formSignUp.style.display = 'none';
       incorrectDataSignUp.style.display = 'none';
     }
-  });
+ /*  }); */
 };
 
-const singIn = () => {
+const singIn = (nickName:string, password:string) => {
+  const containerHeaderUser = document.querySelector('.container-header__user') as HTMLElement;
+  const containerHeaderBnt = document.querySelector('.container-header__bnt') as HTMLElement;
+  const nickUser = document.querySelector('.nickUser') as HTMLElement;
+  const nickNameSignIn = document.querySelector('.nickNameSignIn') as HTMLInputElement;
+  const pswSignIn = document.querySelector('.pswSignIn') as HTMLInputElement;
+  const formSignIn = document.querySelector('.formSingIn') as HTMLElement;
+  const incorrectDataSignIn = document.querySelector('.incorrectDataSignIn') as HTMLElement;
+ /*  enterBtn?.addEventListener('click', () => { */
 
-  enterBtn?.addEventListener('click', () => {
-
-    if ( checkUserSignIn() ) {
+    if ( checkUserSignIn(nickName, password) ) {
       containerHeaderUser.style.display = 'flex';
       containerHeaderBnt.style.display ='none';
       nickUser.innerHTML = `${nickNameSignIn.value[0]}`
@@ -170,11 +202,13 @@ const singIn = () => {
       incorrectDataSignIn.style.display = 'none';
     }
     checkPurposes()
-  })
+  /* }) */
 }
 
-const checkUserSignUp = () =>{
-  let {nickName, password} = getValueSingUp();
+const checkUserSignUp = (nickName:string, password:string) =>{
+  let getNickName = nickName;
+  let getPassword = password;
+  const incorrectDataSignUp = document.querySelector('.incorrectDataSignUp') as HTMLElement;
   let tmpObj = {id:idForUsers, login: nickName, password: password, purpose: [], inSystem: false};
   let arr: string | null = localStorage.getItem('users');
   let newArr = JSON.parse(String(arr));
@@ -184,7 +218,7 @@ const checkUserSignUp = () =>{
     tmpObj.id = JSON.parse(String(arr)).length + 1;
 
     for (let i = 0; i < newArr.length; i++) {
-      if (nickName === newArr[i].login){
+      if (getNickName === newArr[i].login){
         newArr[i].inSystem = false;
         incorrectDataSignUp.style.display = 'block';
         incorrectDataSignUp.innerHTML = `Такой ник уже существует !`;
@@ -213,8 +247,10 @@ const checkUserSignUp = () =>{
     return true;
 };
 
-const checkUserSignIn = () =>{
-  let {nickName, password} = getValueSingIn();
+const checkUserSignIn = (nickName:string, password:string) =>{
+  let getNickName = nickName
+  let getPassword = password;
+  const incorrectDataSignIn = document.querySelector('.incorrectDataSignIn') as HTMLElement;
 
   if (!localStorage.getItem('users')) return false;
 
@@ -222,8 +258,8 @@ const checkUserSignIn = () =>{
   let newArr = JSON.parse(String(arr));
 
   for (let i = 0; i < newArr.length; i++) {
-    if (nickName === newArr[i].login) {
-      if (password === newArr[i].password) {
+    if (getNickName === newArr[i].login) {
+      if (getPassword === newArr[i].password) {
         newArr.map( (item: { inSystem: boolean; login: string;}) => (item.login === nickName) ? item.inSystem = true : item.inSystem = false);
         localStorage.setItem('users',JSON.stringify(newArr) )
         return true;
@@ -236,24 +272,30 @@ const checkUserSignIn = () =>{
   return false;
 };
 
-btnLogOut?.addEventListener('click', () => {
-  let arr: string | null = localStorage.getItem('users');
-  let newArr = JSON.parse(String(arr));
-  newArr.map( (item: { inSystem: boolean; }) => (item.inSystem === true) ? item.inSystem = false : item.inSystem = false);
-  localStorage.setItem('users',JSON.stringify(newArr) );
-  arrForUsers = newArr;
-  containerHeaderUser.style.display = 'none';
-  containerHeaderBnt.style.display ='flex';
+const logOut = () => {
+ /*  btnLogOut?.addEventListener('click', () => { */
+ const containerHeaderUser = document.querySelector('.container-header__user') as HTMLElement;
+ const containerHeaderBnt = document.querySelector('.container-header__bnt') as HTMLElement;
+ let arr: string | null = localStorage.getItem('users');
+    let newArr = JSON.parse(String(arr));
+    newArr.map( (item: { inSystem: boolean; }) => (item.inSystem === true) ? item.inSystem = false : item.inSystem = false);
+    localStorage.setItem('users',JSON.stringify(newArr) );
+    arrForUsers = newArr;
+    containerHeaderUser.style.display = 'none';
+    containerHeaderBnt.style.display ='flex';
 
-  let checkboxes = document.getElementsByClassName('checkbox-user');
+    let checkboxes = document.getElementsByClassName('checkbox-user');
 
-  for (let index = 0; index < checkboxes.length; index++) {
-    if ((checkboxes[index] as HTMLInputElement).checked) {
-      (checkboxes[index] as HTMLInputElement).checked = false;
+    for (let index = 0; index < checkboxes.length; index++) {
+      if ((checkboxes[index] as HTMLInputElement).checked) {
+        (checkboxes[index] as HTMLInputElement).checked = false;
+      }
     }
-  }
-  /* checkPurposes() */
-})
+    /* checkPurposes() */
+  /* }) */
+}
 
 
-export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, checkUserInSystem, checkPurposes};
+
+
+export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, logOut ,checkUserInSystem, checkPurposes};

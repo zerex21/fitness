@@ -7,6 +7,7 @@ import DevelopersPage from "../developers";
 import Header from "../../core/components/header";
 import Footer from "../../core/components/footer";
 import ErrorPage, { ErrorTypes } from "../error";
+import { closeSignInUp, logOut, openSignIn, openSignUp, singIn, singUp, toOpenSingIn } from "../../scripts/modal/modalSignUpIn";
 
 export const enum PageIds {
     MainPage = 'main-page',
@@ -66,11 +67,94 @@ class App {
         });
     }
 
+
+
+    btnSignIn() {
+        let btnSignIn = document.querySelector('.btn-signIn');
+
+        btnSignIn?.addEventListener('click', () =>{
+            openSignIn();
+        })
+    }
+
+    btnSignUp() {
+        let btnSignUp = document.querySelector('.btn-signUp');
+
+        btnSignUp?.addEventListener('click', () =>{
+            openSignUp();
+        })
+    }
+
+    btnLogOut() {
+        const btnLogOut = document.querySelector('.btn-logOut') as HTMLButtonElement;
+
+        btnLogOut?.addEventListener('click', () => {
+            logOut()
+        })
+
+    }
+
+    closeForms() {
+        let closeSingUp = document.querySelector('.closeSingUp');
+        let closeSingIn = document.querySelector('.closeSingIn');
+
+        closeSingUp?.addEventListener('click', () => {
+            closeSignInUp()
+        })
+
+        closeSingIn?.addEventListener('click', () => {
+            closeSignInUp()
+        })
+    }
+
+    linkToOpenSingIn() {
+        const linkToSignIn = document.querySelector('.linkToSignIn') as HTMLElement;
+
+        linkToSignIn?.addEventListener('click', () => {
+            toOpenSingIn();
+        })
+
+    }
+
+    callSingUp() {
+        const registerBtn = document.querySelector('.registerBtn') as HTMLButtonElement;
+        const nickNameSignUp = document.querySelector('.nickNameSignUp') as HTMLInputElement;
+        const pswSignUp = document.querySelector('.pswSignUp') as HTMLInputElement;
+
+        registerBtn?.addEventListener('click', () => {
+            let nickName = nickNameSignUp.value.toLowerCase();
+            let password = pswSignUp.value;
+            singUp(nickName, password);
+        })
+    }
+
+    callSingIn() {
+        const enterBtn = document.querySelector('.enterBtn') as HTMLButtonElement;
+        const nickNameSignIn = document.querySelector('.nickNameSignIn') as HTMLInputElement;
+        const pswSignIn = document.querySelector('.pswSignIn') as HTMLInputElement;
+
+        enterBtn?.addEventListener('click', () => {
+            let nickName = nickNameSignIn.value.toLowerCase();
+            let password = pswSignIn.value;
+            singIn(nickName, password);
+        })
+    }
+
+
+
     run() {
         App.container.append(this.header.render());
         App.renderNewPage('main-page');
         App.container.append(this.footer.render());
         this.enableRouterChange();
+        this.closeForms();
+        this.btnSignIn();
+        this.btnSignUp();
+        this.btnLogOut();
+        this.linkToOpenSingIn();
+        this.callSingUp();
+        this.callSingIn();
+
     }
 }
 
