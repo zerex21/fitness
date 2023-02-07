@@ -64,9 +64,9 @@ const checkUserPurposes = () => {
 }
 
 
-userPurposes?.addEventListener('click', (e) => {
+/* userPurposes?.addEventListener('click', (e) => {
 let tmpArr: string[] = []
-/*  console.log (checkUserPurposes()); */
+
   let element = e.target as HTMLInputElement;
   if (element.tagName === "INPUT") {
    tmpArr = checkUserPurposes();
@@ -83,14 +83,16 @@ let tmpArr: string[] = []
     }
     localStorage.setItem('users',JSON.stringify(newArr) );
   }
-})
+}) */
 
 
 const checkUserInSystem = () =>{
   if (!localStorage.getItem('users')) return false;
   let arr: string | null = localStorage.getItem('users');
   let newArr = JSON.parse(String(arr));
-
+  const containerHeaderUser = document.querySelector('.container-header__user') as HTMLElement;
+  const containerHeaderBnt = document.querySelector('.container-header__bnt') as HTMLElement;
+  const nickUser = document.querySelector('.nickUser') as HTMLElement;
   for (let i = 0; i < newArr.length; i++){
     if (newArr[i].inSystem === true) {
       containerHeaderUser.style.display = 'flex';
@@ -298,4 +300,4 @@ const logOut = () => {
 
 
 
-export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, logOut ,checkUserInSystem, checkPurposes};
+export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, logOut, checkUserPurposes, checkUserInSystem, checkPurposes,};

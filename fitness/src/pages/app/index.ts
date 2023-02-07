@@ -7,7 +7,7 @@ import DevelopersPage from "../developers";
 import Header from "../../core/components/header";
 import Footer from "../../core/components/footer";
 import ErrorPage, { ErrorTypes } from "../error";
-import { closeSignInUp, logOut, openSignIn, openSignUp, singIn, singUp, toOpenSingIn } from "../../scripts/modal/modalSignUpIn";
+import { checkPurposes, checkUserInSystem, checkUserPurposes, closeSignInUp, logOut, openSignIn, openSignUp, singIn, singUp, toOpenSingIn, } from "../../scripts/modal/modalSignUpIn";
 
 export const enum PageIds {
     MainPage = 'main-page',
@@ -140,7 +140,37 @@ class App {
         })
     }
 
+    modalUserPurposes() {
+        const userPurposes = document.querySelector('.user-purposes');
+        userPurposes?.addEventListener('click', (e) => {
+            let tmpArr: string[] = []
+           /*   console.log (e.target); */
+              let element = e.target as HTMLInputElement;
+              if (element.tagName === "INPUT") {
+               tmpArr = checkUserPurposes();
+              }
 
+              if (localStorage.getItem('users')) {
+                let arr: string | null = localStorage.getItem('users');
+                let newArr = JSON.parse(String(arr));
+                for (let i = 0 ; i < newArr.length; i++) {
+
+                  if (newArr[i].inSystem === true) {
+                    newArr[i].purpose = tmpArr;
+                  }
+                }
+                localStorage.setItem('users',JSON.stringify(newArr) );
+              }
+            })
+    }
+
+    userInSystem(){
+        checkUserInSystem()
+    }
+
+    userPurposes(){
+        checkPurposes();
+    }
 
     run() {
         App.container.append(this.header.render());
@@ -154,7 +184,9 @@ class App {
         this.linkToOpenSingIn();
         this.callSingUp();
         this.callSingIn();
-
+        this.modalUserPurposes();
+        this.userInSystem();
+        this.userPurposes();
     }
 }
 
