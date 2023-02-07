@@ -1,11 +1,13 @@
 import Component from "../../templates/components";
 
 class Header extends Component {
+
     constructor(tagName: string, className: string) {
         super(tagName, className);
     }
 
     render() {
+
         this.container.innerHTML = `
         <div class="container container-header">
             <div class="logo">
@@ -17,7 +19,6 @@ class Header extends Component {
                     <li><a href="#training-page">Тренировки</a></li>
                     <li><a href="#activity-page">Активность</a></li>
                     <li><a href="#program-page">Программы</a></li>
-                    <!--   <li><a href="#">О разработчикаx</a></li> -->
                 </ul>
             </nav>
             <div class="header-customization">
@@ -44,38 +45,85 @@ class Header extends Component {
                     <button>Регистрация</button>
                 </div>
             </div>
-            <div class="formSignUpAndSingIn" style="display: none">
-                <div class="container container-formSignUpAndSingIn">
-                    <form>
-                        <div class="container-form">
+            <div class="container-header__user">
+            <div class="down-list_user">
+                <div class="nickUser"></div>
+                <div class="user-purposes">
+                    <fieldset>
+                        <legend>Выберите ваши цели:</legend>
 
-                        <h3>Регистрация/Войти</h3>
-                        <p>Пожалуйста заполните форму</p>
-                        <hr> 
-
-                    <!--  <label for="email"><b>Email</b></label>
-                        <input type="text" placeholder="Enter Email" name="email" required> -->
-
-                            <label for="nickName"><b>Имя или ник</b></label>
-                            <input type="text" placeholder="Введите имя или ник" name="nickName" required>
-
-                            <label for="psw"><b>Пароль</b></label>
-                            <input type="password" placeholder="Введите Пароль" name="psw" required>
-
-                            <hr>
-
-                            <button class="registerbtn">Регистрация/Войти</button>
+                        <div>
+                          <input class="checkbox-user" type="checkbox" id="strength" name="strength">
+                          <label for="strength">Сила</label>
                         </div>
 
-                        <div class="container-signInUp">
-                            <p>Уже есть аккаун? <a href="#">Войти</a>.</p>
+                        <div>
+                          <input class="checkbox-user" type="checkbox" id="stamina" name="stamina">
+                          <label for="stamina">Выносливость</label>
                         </div>
-                    </form>
+
+                        <div>
+                            <input class="checkbox-user" type="checkbox" id="move" name="move">
+                            <label for="move">Подвижность</label>
+                          </div>
+                    </fieldset>
                 </div>
             </div>
-        </div>`;
+            <div class="btn-logOut">
+                <button>Выйти</button>
+            </div>
+        </div>
+        <div class="formSingIn">
+        <div class="container container-formSingIn">
+            <div class="container-form">
+                <div>
+                  <span class="closeSingIn">&times;</span>
+                  <h3>Войти</h3>
+                  <p>Пожалуйста заполните форму</p>
+                  <hr>
+                  <label for="nickName"><b>Ваш ник</b></label>
+                  <input class="nickNameSignIn" type="text" placeholder="Введите ник" name="nickName" required>
+
+                  <label for="psw"><b>Пароль</b></label>
+                  <input class="pswSignIn" type="password" placeholder="Введите Пароль" name="psw" required>
+                  <hr>
+                  <div class="incorrectDataSignIn"></div>
+                  <button class="enterBtn">Войти</button>
+                </div>
+              </div>
+        </div>
+    </div>
+
+<div class="formSignUp">
+<div class="container container-formSignUp">
+    <div class="container-form">
+        <div>
+          <span class="closeSingUp">&times;</span>
+          <h3>Регистрация</h3>
+          <p>Пожалуйста заполните форму</p>
+          <hr>
+         <!--  <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required> -->
+          <label for="nickName"><b>Ваш ник</b></label>
+          <input class="nickNameSignUp" type="text" placeholder="Введите ник" name="nickName" required>
+
+          <label for="psw"><b>Пароль</b></label>
+          <input class="pswSignUp" type="password" placeholder="Введите Пароль" name="psw" required>
+          <hr>
+          <div class="incorrectDataSignUp"></div>
+          <button class="registerBtn">Зарегистрироваться</button>
+        </div>
+        <div class="container-signInUp">
+          <p>Уже есть аккаун? <a href="#" class="linkToSignIn">Войти</a>.</p>
+        </div>
+      </div>
+</div>
+</div>
+        </div>
+        `;
         return this.container;
     }
+
 }
 
 export default Header;
