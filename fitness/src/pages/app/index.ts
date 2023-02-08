@@ -7,6 +7,9 @@ import DevelopersPage from "../developers";
 import Header from "../../core/components/header";
 import Footer from "../../core/components/footer";
 import ErrorPage, { ErrorTypes } from "../error";
+import { clickForYou, clickSearch } from "../../scripts/training/clickButton";
+import openCloseList from "../../scripts/training/openCloseList";
+import { shiftLeft, shiftRight } from "../../scripts/training/shift";
 
 export const enum PageIds {
     MainPage = 'main-page',
@@ -63,7 +66,23 @@ class App {
         window.addEventListener('hashchange', () => {
             const hash = window.location.hash.slice(1);
             App.renderNewPage(hash);
+            this.clickBtnTraining();
         });
+    }
+
+    clickBtnTraining() {
+        const buttonForYou = document.querySelector(".button_for_you") as HTMLElement;
+        const buttonSearch = document.querySelector(".button_search") as HTMLElement;
+        buttonForYou?.addEventListener("click", clickForYou);
+        buttonSearch?.addEventListener("click", clickSearch);
+
+        const trainingCategoryAll = document.querySelectorAll(".training_category_composite") as NodeListOf<HTMLElement>;
+        trainingCategoryAll.forEach((el, i) => el.addEventListener("click", () => openCloseList(i)));
+
+        const trainingArrowLeftAll = document.querySelectorAll(".training_arrow_left") as NodeListOf<HTMLElement>;
+        const trainingArrowRightAll = document.querySelectorAll(".training_arrow_right") as NodeListOf<HTMLElement>;
+        trainingArrowRightAll.forEach((el, i) => el.addEventListener("click", () => shiftLeft(i)));
+        trainingArrowLeftAll.forEach((el, i) => el.addEventListener("click", () => shiftRight(i)));
     }
 
     run() {
