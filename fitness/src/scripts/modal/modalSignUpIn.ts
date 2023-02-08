@@ -1,26 +1,5 @@
 import { IUsers } from './../../types/type';
 
-const formSignUp = document.querySelector('.formSignUp') as HTMLElement;
-const formSignIn = document.querySelector('.formSingIn') as HTMLElement;
-const btnSignIn = document.querySelector('.btn-signIn') as HTMLElement;
-const btnSignUp = document.querySelector('.btn-signUp') as HTMLElement;
-const closeSingUp = document.querySelector('.closeSingUp') as HTMLElement;
-const closeSingIn = document.querySelector('.closeSingIn') as HTMLElement;
-const linkToSignIn = document.querySelector('.linkToSignIn') as HTMLElement;
-const registerBtn = document.querySelector('.registerBtn') as HTMLButtonElement;
-const enterBtn = document.querySelector('.enterBtn') as HTMLButtonElement;
-const nickNameSignIn = document.querySelector('.nickNameSignIn') as HTMLInputElement;
-const pswSignIn = document.querySelector('.pswSignIn') as HTMLInputElement;
-const nickNameSignUp = document.querySelector('.nickNameSignUp') as HTMLInputElement;
-const pswSignUp = document.querySelector('.pswSignUp') as HTMLInputElement;
-const incorrectDataSignUp = document.querySelector('.incorrectDataSignUp') as HTMLElement;
-const incorrectDataSignIn = document.querySelector('.incorrectDataSignIn') as HTMLElement;
-const containerHeaderUser = document.querySelector('.container-header__user') as HTMLElement;
-const containerHeaderBnt = document.querySelector('.container-header__bnt') as HTMLElement;
-const nickUser = document.querySelector('.nickUser') as HTMLElement;
-const btnLogOut = document.querySelector('.btn-logOut') as HTMLButtonElement;
-const userPurposes = document.querySelector('.user-purposes');
-
 let idForUsers = 1;
 let arrForUsers:IUsers = [];
 
@@ -64,35 +43,15 @@ const checkUserPurposes = () => {
 }
 
 
-/* userPurposes?.addEventListener('click', (e) => {
-let tmpArr: string[] = []
-
-  let element = e.target as HTMLInputElement;
-  if (element.tagName === "INPUT") {
-   tmpArr = checkUserPurposes();
-  }
-
-  if (localStorage.getItem('users')) {
-    let arr: string | null = localStorage.getItem('users');
-    let newArr = JSON.parse(String(arr));
-    for (let i = 0 ; i < newArr.length; i++) {
-
-      if (newArr[i].inSystem === true) {
-        newArr[i].purpose = tmpArr;
-      }
-    }
-    localStorage.setItem('users',JSON.stringify(newArr) );
-  }
-}) */
-
-
 const checkUserInSystem = () =>{
   if (!localStorage.getItem('users')) return false;
+
   let arr: string | null = localStorage.getItem('users');
   let newArr = JSON.parse(String(arr));
   const containerHeaderUser = document.querySelector('.container-header__user') as HTMLElement;
   const containerHeaderBnt = document.querySelector('.container-header__bnt') as HTMLElement;
   const nickUser = document.querySelector('.nickUser') as HTMLElement;
+
   for (let i = 0; i < newArr.length; i++){
     if (newArr[i].inSystem === true) {
       containerHeaderUser.style.display = 'flex';
@@ -102,51 +61,27 @@ const checkUserInSystem = () =>{
   }
 }
 
-const getValueSingIn = ():{nickName:string, password:string} => {
-  let nickName = nickNameSignIn.value.toLowerCase();
-  let password = pswSignIn.value;
-  return {nickName, password};
-};
-
-const getValueSingUp = ():{nickName:string, password:string} => {
-  let nickName = nickNameSignUp.value.toLowerCase();
-  let password = pswSignUp.value;
-  return {nickName, password};
-};
-
 const openSignIn = ():void => {
- /*  btnSignIn?.addEventListener('click', () => { */
  const formSingIn = document.querySelector('.formSingIn') as HTMLElement;
 
     if (formSingIn) formSingIn.style.display = 'block';
-  /* }); */
 }
 
 const openSignUp = ():void => {
-  /* btnSignUp?.addEventListener('click', () => { */
   const formSignUp = document.querySelector('.formSignUp') as HTMLElement;
-    if (formSignUp) formSignUp.style.display = 'block';
 
- /*  }); */
+    if (formSignUp) formSignUp.style.display = 'block';
 }
 
-/* const openSignUp = ():void => {
-  btnSignUp?.addEventListener('click', () => {
-    if (formSignUp) formSignUp.style.display = 'block';
-  });
-} */
 
 const closeSignInUp = ():void => {
   const formSignUp = document.querySelector('.formSignUp') as HTMLElement;
   const formSingIn = document.querySelector('.formSingIn') as HTMLElement;
 
- /*  closeSingUp?.addEventListener('click', () => { */
     if (formSignUp) formSignUp.style.display = 'none';
-  /* }); */
 
-/*   closeSingIn?.addEventListener('click', () => { */
     if (formSingIn) formSingIn.style.display = 'none';
-  /* }); */
+
 }
 
 
@@ -154,11 +89,10 @@ const closeSignInUp = ():void => {
 const toOpenSingIn = ():void => {
   const formSignUp = document.querySelector('.formSignUp') as HTMLElement;
   const formSingIn = document.querySelector('.formSingIn') as HTMLElement;
-    /* linkToSignIn?.addEventListener('click', () => { */
-      /* if(linkToSignIn) */
+
       formSignUp.style.display = 'none';
       formSingIn.style.display = 'block';
-    /* }) */
+
 }
 
 const singUp = (nickName:string, password:string) => {
@@ -169,8 +103,7 @@ const singUp = (nickName:string, password:string) => {
   const pswSignUp = document.querySelector('.pswSignUp') as HTMLInputElement;
   const formSignUp = document.querySelector('.formSignUp') as HTMLElement;
   const incorrectDataSignUp = document.querySelector('.incorrectDataSignUp') as HTMLElement;
-  /* console.log('signUp',nickName, password ) */
- /*  registerBtn?.addEventListener('click', () => { */
+
     if ( checkUserSignUp(nickName, password) ) {
       idForUsers++;
       containerHeaderUser.style.display = 'flex';
@@ -181,7 +114,7 @@ const singUp = (nickName:string, password:string) => {
       formSignUp.style.display = 'none';
       incorrectDataSignUp.style.display = 'none';
     }
- /*  }); */
+
 };
 
 const singIn = (nickName:string, password:string) => {
@@ -192,7 +125,6 @@ const singIn = (nickName:string, password:string) => {
   const pswSignIn = document.querySelector('.pswSignIn') as HTMLInputElement;
   const formSignIn = document.querySelector('.formSingIn') as HTMLElement;
   const incorrectDataSignIn = document.querySelector('.incorrectDataSignIn') as HTMLElement;
- /*  enterBtn?.addEventListener('click', () => { */
 
     if ( checkUserSignIn(nickName, password) ) {
       containerHeaderUser.style.display = 'flex';
@@ -204,7 +136,6 @@ const singIn = (nickName:string, password:string) => {
       incorrectDataSignIn.style.display = 'none';
     }
     checkPurposes()
-  /* }) */
 }
 
 const checkUserSignUp = (nickName:string, password:string) =>{
@@ -214,6 +145,8 @@ const checkUserSignUp = (nickName:string, password:string) =>{
   let tmpObj = {id:idForUsers, login: nickName, password: password, purpose: [], inSystem: false};
   let arr: string | null = localStorage.getItem('users');
   let newArr = JSON.parse(String(arr));
+
+  if( !getNickName || !getPassword ) return false
 
   if (localStorage.getItem('users')) {
     tmpObj.inSystem = true;
@@ -275,7 +208,7 @@ const checkUserSignIn = (nickName:string, password:string) =>{
 };
 
 const logOut = () => {
- /*  btnLogOut?.addEventListener('click', () => { */
+
  const containerHeaderUser = document.querySelector('.container-header__user') as HTMLElement;
  const containerHeaderBnt = document.querySelector('.container-header__bnt') as HTMLElement;
  let arr: string | null = localStorage.getItem('users');
@@ -293,8 +226,6 @@ const logOut = () => {
         (checkboxes[index] as HTMLInputElement).checked = false;
       }
     }
-    /* checkPurposes() */
-  /* }) */
 }
 
 
