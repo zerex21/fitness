@@ -74,7 +74,21 @@ class App {
         });
     }
 
+    clickBtnTraining() {
+        const buttonForYou = document.querySelector(".button_for_you") as HTMLElement;
+        const buttonSearch = document.querySelector(".button_search") as HTMLElement;
+        buttonForYou?.addEventListener("click", clickForYou);
+        buttonSearch?.addEventListener("click", clickSearch);
 
+        const trainingCategoryAll = document.querySelectorAll(".training_category_composite") as NodeListOf<HTMLElement>;
+        trainingCategoryAll.forEach((el, i) => el.addEventListener("click", () => openCloseList(i)));
+
+        const trainingArrowLeftAll = document.querySelectorAll(".training_arrow_left") as NodeListOf<HTMLElement>;
+        const trainingArrowRightAll = document.querySelectorAll(".training_arrow_right") as NodeListOf<HTMLElement>;
+        trainingArrowRightAll.forEach((el, i) => el.addEventListener("click", () => shiftLeft(i)));
+        trainingArrowLeftAll.forEach((el, i) => el.addEventListener("click", () => shiftRight(i)));
+
+    }
 
 
     btnSignIn() {
@@ -178,22 +192,8 @@ class App {
 
     userPurposes(){
         checkPurposes();
-
-    clickBtnTraining() {
-        const buttonForYou = document.querySelector(".button_for_you") as HTMLElement;
-        const buttonSearch = document.querySelector(".button_search") as HTMLElement;
-        buttonForYou?.addEventListener("click", clickForYou);
-        buttonSearch?.addEventListener("click", clickSearch);
-
-        const trainingCategoryAll = document.querySelectorAll(".training_category_composite") as NodeListOf<HTMLElement>;
-        trainingCategoryAll.forEach((el, i) => el.addEventListener("click", () => openCloseList(i)));
-
-        const trainingArrowLeftAll = document.querySelectorAll(".training_arrow_left") as NodeListOf<HTMLElement>;
-        const trainingArrowRightAll = document.querySelectorAll(".training_arrow_right") as NodeListOf<HTMLElement>;
-        trainingArrowRightAll.forEach((el, i) => el.addEventListener("click", () => shiftLeft(i)));
-        trainingArrowLeftAll.forEach((el, i) => el.addEventListener("click", () => shiftRight(i)));
-
     }
+
 
     run() {
         App.container.append(this.header.render());
