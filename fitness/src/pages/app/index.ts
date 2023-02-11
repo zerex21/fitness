@@ -15,6 +15,7 @@ import openCloseList from "../../scripts/training/openCloseList";
 import { shiftLeft, shiftRight } from "../../scripts/training/shift";
 
 
+
 export const enum PageIds {
     MainPage = 'main-page',
     TrainingPage = 'training-page',
@@ -73,6 +74,7 @@ class App {
             this.clickBtnTraining();
         });
     }
+
 
     clickBtnTraining() {
         const buttonForYou = document.querySelector(".button_for_you") as HTMLElement;
@@ -186,13 +188,43 @@ class App {
             })
     }
 
-    userInSystem(){
+    userInSystem() {
         checkUserInSystem()
     }
 
-    userPurposes(){
+    userPurposes() {
         checkPurposes();
     }
+
+    callRenderContainerVideos() {
+
+        window.addEventListener('hashchange', () => {
+
+            /*********
+             * Переделать выпадающий список > изменить выпадание по клику на картинку             *
+             *
+             * перенести выпадающий ul в div
+             *
+             * попытаться console.log(target.closest('.training_category_list')?.getElementsByTagName('LI'))
+             *
+             *
+             * ************************ */
+
+
+
+            let trainingSearchContainer = document.querySelector('.training_search_container');
+            let elTagName = document.getElementsByTagName('LI');
+            trainingSearchContainer?.addEventListener('click', (e) => {
+             const target = e.target as HTMLElement;
+            /* console.log(target.closest('.training_category_list')?.getElementsByTagName('LI')) */
+            console.log(target)
+            /* alert(target) */
+            })
+        });
+
+
+        }
+
 
 
     run() {
@@ -210,6 +242,7 @@ class App {
         this.modalUserPurposes();
         this.userInSystem();
         this.userPurposes();
+        this.callRenderContainerVideos();
     }
 }
 

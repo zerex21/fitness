@@ -151,12 +151,27 @@ class TrainingPage extends Page{
             <div class="training_category training_category_composite">
                 <img src="../imgs/group_muscle.jpg" alt="">
                 <h3 class="training_name_category">Группы мышц</h3>
-            </div>
-            <ul class="training_category_list">
+
+
+
+
+
+
+
+
+                <ul class="training_category_list">
                 <li>Пресс и корпус</li>
                 <li>Руки и плечи</li>
                 <li>Ягодицы и ноги</li>
             </ul>
+
+
+
+
+
+
+            </div>
+
             <div class="training_category training_category_composite">
                 <img src="../imgs/purpose.jpg" alt="">
                 <h3 class="training_name_category">Цель тренировки</h3>
@@ -184,147 +199,18 @@ class TrainingPage extends Page{
                 <img src="../imgs/training_1.jpg" alt="">
                 <h3 class="training_name_category">Все тренировки</h3>
             </div>
+          </div>
+          </div>
+
+
+
+
+       <div class="training_container_videos">
+
         </div>
-    </div>
-
-      <div class="training_container_videos">
-      <div class="workout-card">
-                    <div class="container">
-                        <img class="workout-card__image" src="./imgs/online-fitness-classes.jpg" alt="class image">
-                        <p class="workout-card__name">
-                            Название тренировки
-                        </p>
-                        <div class="workout-card__time">
-                            <img class="workout-card__time_icon" src="./imgs/time.png" alt="time">
-                            <p class="workout-card__time_descrioption">
-                                время тренировки, уровень сложности
-                            </p>
-                        </div>
-                        <div class="workout-card__characteristics">
-                            <img class="workout-card__characteristics_icon" src="./imgs/sportman.png" alt="time">
-                            <p class="workout-card__characteristics_descrioption">
-                                все характеристики
-                            </p>
-                        </div>
-                        <div class="workout-card__equipment">
-                            <img class="workout-card__equipment_icon" src="./imgs/time.png" alt="time">
-                            <p class="workout-card__equipment_descrioption">
-                                необходимое оборудование
-                            </p>
-                        </div>
-                        <p class="workout-card__description">
-                            Описание тренировки
-                        </p>
-                        <button class="workout-card__start">
-                            Начать тренировку
-                        </button>
-                    </div>
-                    </div>
-
-                    <div class="workout-card">
-                    <div class="container">
-                        <img class="workout-card__image" src="./imgs/online-fitness-classes.jpg" alt="class image">
-                        <p class="workout-card__name">
-                            Название тренировки
-                        </p>
-                        <div class="workout-card__time">
-                            <img class="workout-card__time_icon" src="./imgs/time.png" alt="time">
-                            <p class="workout-card__time_descrioption">
-                                время тренировки, уровень сложности
-                            </p>
-                        </div>
-                        <div class="workout-card__characteristics">
-                            <img class="workout-card__characteristics_icon" src="./imgs/sportman.png" alt="time">
-                            <p class="workout-card__characteristics_descrioption">
-                                все характеристики
-                            </p>
-                        </div>
-                        <div class="workout-card__equipment">
-                            <img class="workout-card__equipment_icon" src="./imgs/time.png" alt="time">
-                            <p class="workout-card__equipment_descrioption">
-                                необходимое оборудование
-                            </p>
-                        </div>
-                        <p class="workout-card__description">
-                            Описание тренировки
-                        </p>
-                        <button class="workout-card__start">
-                            Начать тренировку
-                        </button>
-                    </div>
-                    </div>
-
-                    <div class="workout-card">
-                    <div class="container">
-                        <img class="workout-card__image" src="./imgs/online-fitness-classes.jpg" alt="class image">
-                        <p class="workout-card__name">
-                            Название тренировки
-                        </p>
-                        <div class="workout-card__time">
-                            <img class="workout-card__time_icon" src="./imgs/time.png" alt="time">
-                            <p class="workout-card__time_descrioption">
-                                время тренировки, уровень сложности
-                            </p>
-                        </div>
-                        <div class="workout-card__characteristics">
-                            <img class="workout-card__characteristics_icon" src="./imgs/sportman.png" alt="time">
-                            <p class="workout-card__characteristics_descrioption">
-                                все характеристики
-                            </p>
-                        </div>
-                        <div class="workout-card__equipment">
-                            <img class="workout-card__equipment_icon" src="./imgs/time.png" alt="time">
-                            <p class="workout-card__equipment_descrioption">
-                                необходимое оборудование
-                            </p>
-                        </div>
-                        <p class="workout-card__description">
-                            Описание тренировки
-                        </p>
-                        <button class="workout-card__start">
-                            Начать тренировку
-                        </button>
-                    </div>
-                    </div>
-
-                    <div class="workout-card">
-                    <div class="container">
-                        <img class="workout-card__image" src="./imgs/online-fitness-classes.jpg" alt="class image">
-                        <p class="workout-card__name">
-                            Название тренировки
-                        </p>
-                        <div class="workout-card__time">
-                            <img class="workout-card__time_icon" src="./imgs/time.png" alt="time">
-                            <p class="workout-card__time_descrioption">
-                                время тренировки, уровень сложности
-                            </p>
-                        </div>
-                        <div class="workout-card__characteristics">
-                            <img class="workout-card__characteristics_icon" src="./imgs/sportman.png" alt="time">
-                            <p class="workout-card__characteristics_descrioption">
-                                все характеристики
-                            </p>
-                        </div>
-                        <div class="workout-card__equipment">
-                            <img class="workout-card__equipment_icon" src="./imgs/time.png" alt="time">
-                            <p class="workout-card__equipment_descrioption">
-                                необходимое оборудование
-                            </p>
-                        </div>
-                        <p class="workout-card__description">
-                            Описание тренировки
-                        </p>
-                        <button class="workout-card__start">
-                            Начать тренировку
-                        </button>
-                    </div>
-                    </div>
 
 
       </div>
-
-      </div>
-
     </div> `;
         return this.container;
     }
