@@ -291,71 +291,75 @@ main {
 .workout-card {
   background-color: black;
   color: gray;
+  width: 340px;
+  position: relative;
+  margin: 10px 5px;
 }
 .workout-card .container .workout-card__image {
   width: 100%;
 }
 .workout-card .container .workout-card__name {
-  margin-top: -100px;
+  position: absolute;
+  margin-top: -65px;
   margin-left: 50px;
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: white;
 }
 .workout-card .container .workout-card__time {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1rem;
   color: white;
-  margin: 100px 50px 25px 50px;
+  margin: 15px 10px;
 }
 .workout-card .container .workout-card__time .workout-card__time_icon {
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
   filter: invert(100%);
-  margin-right: 50px;
+  margin-right: 20px;
 }
 .workout-card .container .workout-card__characteristics {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1rem;
   color: white;
-  margin: 25px 50px 25px 50px;
+  margin: 15px 10px;
 }
 .workout-card .container .workout-card__characteristics .workout-card__characteristics_icon {
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
   filter: invert(100%);
-  margin-right: 50px;
+  margin-right: 20px;
 }
 .workout-card .container .workout-card__equipment {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1rem;
   color: white;
-  margin: 25px 50px 25px 50px;
+  margin: 15px 10px;
 }
 .workout-card .container .workout-card__equipment .workout-card__equipment_icon {
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
   filter: invert(100%);
-  margin-right: 50px;
+  margin-right: 20px;
 }
 .workout-card .container .workout-card__description {
   color: gray;
-  font-size: 2rem;
-  margin-left: 50px;
+  font-size: 1rem;
+  margin-left: 25px;
 }
 .workout-card .container .workout-card__start {
-  margin: 50px auto;
+  margin: 25px auto;
   display: block;
-  height: 100px;
-  font-size: 2rem;
+  height: 35px;
+  font-size: 0.9rem;
   color: black;
   background-color: white;
-  width: 70%;
+  width: 45%;
   border-radius: 50px;
 }
 
@@ -718,6 +722,7 @@ body {
 
 .training_container {
   margin: 20px;
+  display: none;
 }
 
 .training_title {
@@ -864,6 +869,12 @@ body {
 
 .training_none {
   display: none;
+}
+
+.training_container_videos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .activity-page {

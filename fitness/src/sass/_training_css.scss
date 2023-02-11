@@ -14,6 +14,7 @@ body {
 
 .training_container {
     margin: 20px;
+    display: none;
 }
 
 .training_title {
@@ -160,4 +161,10 @@ body {
 
 .training_none {
     display: none;
+}
+
+.training_container_videos{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
