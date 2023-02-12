@@ -12,7 +12,7 @@ import { checkPurposes, checkUserInSystem, checkUserPurposes, closeSignInUp, log
 
 import { clickForYou, clickSearch } from "../../scripts/training/clickButton";
 import openCloseList from "../../scripts/training/openCloseList";
-import { shiftLeft, shiftRight } from "../../scripts/training/shift";
+import { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderRecommendation } from "../../scripts/training/shift";
 
 
 export const enum PageIds {
@@ -87,14 +87,15 @@ class App {
         const trainingArrowRightAll = document.querySelectorAll(".training_arrow_right") as NodeListOf<HTMLElement>;
         trainingArrowRightAll.forEach((el, i) => el.addEventListener("click", () => shiftLeft(i)));
         trainingArrowLeftAll.forEach((el, i) => el.addEventListener("click", () => shiftRight(i)));
-
+        createSliderNew();
+        createSliderHome();
+        createSliderRecommendation();
     }
-
 
     btnSignIn() {
         let btnSignIn = document.querySelector('.btn-signIn');
 
-        btnSignIn?.addEventListener('click', () =>{
+        btnSignIn?.addEventListener('click', () => {
             openSignIn();
         })
     }
@@ -102,7 +103,7 @@ class App {
     btnSignUp() {
         let btnSignUp = document.querySelector('.btn-signUp');
 
-        btnSignUp?.addEventListener('click', () =>{
+        btnSignUp?.addEventListener('click', () => {
             openSignUp();
         })
     }
@@ -166,31 +167,31 @@ class App {
         const userPurposes = document.querySelector('.user-purposes');
         userPurposes?.addEventListener('click', (e) => {
             let tmpArr: string[] = []
-           /*   console.log (e.target); */
-              let element = e.target as HTMLInputElement;
-              if (element.tagName === "INPUT") {
-               tmpArr = checkUserPurposes();
-              }
+            /*   console.log (e.target); */
+            let element = e.target as HTMLInputElement;
+            if (element.tagName === "INPUT") {
+                tmpArr = checkUserPurposes();
+            }
 
-              if (localStorage.getItem('users')) {
+            if (localStorage.getItem('users')) {
                 let arr: string | null = localStorage.getItem('users');
                 let newArr = JSON.parse(String(arr));
-                for (let i = 0 ; i < newArr.length; i++) {
+                for (let i = 0; i < newArr.length; i++) {
 
-                  if (newArr[i].inSystem === true) {
-                    newArr[i].purpose = tmpArr;
-                  }
+                    if (newArr[i].inSystem === true) {
+                        newArr[i].purpose = tmpArr;
+                    }
                 }
-                localStorage.setItem('users',JSON.stringify(newArr) );
-              }
-            })
+                localStorage.setItem('users', JSON.stringify(newArr));
+            }
+        })
     }
 
-    userInSystem(){
+    userInSystem() {
         checkUserInSystem()
     }
 
-    userPurposes(){
+    userPurposes() {
         checkPurposes();
     }
 

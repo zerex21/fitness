@@ -1,6 +1,6 @@
 import Page from "../../core/templates/pages";
 
-class TrainingPage extends Page{
+class TrainingPage extends Page {
     constructor(id: string) {
         super(id);
     }
@@ -20,39 +20,7 @@ class TrainingPage extends Page{
                 <div class="training_slider">
                     <div class="training_arrow training_arrow_left">&lt;</div>
                     <div class="training_kind_container">
-                        <ul class="training_list">
-                            <li class="training_card">
-                                <img src="../imgs/training_1.jpg" alt="">
-                                <div class="training_card_content">
-                                    <p class="training_card_content_text">Длительность: 10 мин</p>
-                                    <p class="training_card_content_text">Уровень: начинающий</p>
-                                    <p class="training_card_content_text">Снаряжения: без снаряжения</p>
-                                </div>
-                            </li>
-                            <li class="training_card">
-                                <img src="../imgs/training_2.jpg" alt="">
-                                <div class="training_card_content">
-                                    <p class="training_card_content_text">Длительность: 10 мин</p>
-                                    <p class="training_card_content_text">Уровень: начинающий</p>
-                                    <p class="training_card_content_text">Снаряжения: без снаряжения</p>
-                                </div>
-                            </li>
-                            <li class="training_card">
-                                <img src="../imgs/training_3.jpg" alt="">
-                                <div class="training_card_content">
-                                    <p class="training_card_content_text">Длительность: 10 мин</p>
-                                    <p class="training_card_content_text">Уровень: начинающий</p>
-                                    <p class="training_card_content_text">Снаряжения: без снаряжения</p>
-                                </div>
-                            </li>
-                            <li class="training_card">
-                                <img src="../imgs/training_4.jpg" alt="">
-                                <div class="training_card_content">
-                                    <p class="training_card_content_text">Длительность: 10 мин</p>
-                                    <p class="training_card_content_text">Уровень: начинающий</p>
-                                    <p class="training_card_content_text">Снаряжения: без снаряжения</p>
-                                </div>
-                            </li>
+                        <ul class="training_list slider_new">
                         </ul>
                     </div>
                     <div class="training_arrow training_arrow_right">&gt;</div>
@@ -63,39 +31,7 @@ class TrainingPage extends Page{
                 <div class="training_slider">
                     <div class="training_arrow training_arrow_left">&lt;</div>
                     <div class="training_kind_container">
-                        <ul class="training_list">
-                            <li class="training_card">
-                                <img src="../imgs/training_1.jpg" alt="">
-                                <div class="training_card_content">
-                                    <p class="training_card_content_text">Длительность: 10 мин</p>
-                                    <p class="training_card_content_text">Уровень: начинающий</p>
-                                    <p class="training_card_content_text">Снаряжения: без снаряжения</p>
-                                </div>
-                            </li>
-                            <li class="training_card">
-                                <img src="../imgs/training_2.jpg" alt="">
-                                <div class="training_card_content">
-                                    <p class="training_card_content_text">Длительность: 10 мин</p>
-                                    <p class="training_card_content_text">Уровень: начинающий</p>
-                                    <p class="training_card_content_text">Снаряжения: без снаряжения</p>
-                                </div>
-                            </li>
-                            <li class="training_card">
-                                <img src="../imgs/training_3.jpg" alt="">
-                                <div class="training_card_content">
-                                    <p class="training_card_content_text">Длительность: 10 мин</p>
-                                    <p class="training_card_content_text">Уровень: начинающий</p>
-                                    <p class="training_card_content_text">Снаряжения: без снаряжения</p>
-                                </div>
-                            </li>
-                            <li class="training_card">
-                                <img src="../imgs/training_4.jpg" alt="">
-                                <div class="training_card_content">
-                                    <p class="training_card_content_text">Длительность: 10 мин</p>
-                                    <p class="training_card_content_text">Уровень: начинающий</p>
-                                    <p class="training_card_content_text">Снаряжения: без снаряжения</p>
-                                </div>
-                            </li>
+                        <ul class="training_list slider_recommendation">
                         </ul>
                     </div>
                     <div class="training_arrow training_arrow_right">&gt;</div>
@@ -106,39 +42,7 @@ class TrainingPage extends Page{
                 <div class="training_slider">
                     <div class="training_arrow training_arrow_left">&lt;</div>
                     <div class="training_kind_container">
-                        <ul class="training_list">
-                            <li class="training_card">
-                                <img src="../imgs/training_1.jpg" alt="">
-                                <div class="training_card_content">
-                                    <p class="training_card_content_text">Длительность: 10 мин</p>
-                                    <p class="training_card_content_text">Уровень: начинающий</p>
-                                    <p class="training_card_content_text">Снаряжения: без снаряжения</p>
-                                </div>
-                            </li>
-                            <li class="training_card">
-                                <img src="../imgs/training_2.jpg" alt="">
-                                <div class="training_card_content">
-                                    <p class="training_card_content_text">Длительность: 10 мин</p>
-                                    <p class="training_card_content_text">Уровень: начинающий</p>
-                                    <p class="training_card_content_text">Снаряжения: без снаряжения</p>
-                                </div>
-                            </li>
-                            <li class="training_card">
-                                <img src="../imgs/training_3.jpg" alt="">
-                                <div class="training_card_content">
-                                    <p class="training_card_content_text">Длительность: 10 мин</p>
-                                    <p class="training_card_content_text">Уровень: начинающий</p>
-                                    <p class="training_card_content_text">Снаряжения: без снаряжения</p>
-                                </div>
-                            </li>
-                            <li class="training_card">
-                                <img src="../imgs/training_4.jpg" alt="">
-                                <div class="training_card_content">
-                                    <p class="training_card_content_text">Длительность: 10 мин</p>
-                                    <p class="training_card_content_text">Уровень: начинающий</p>
-                                    <p class="training_card_content_text">Снаряжения: без снаряжения</p>
-                                </div>
-                            </li>
+                        <ul class="training_list slider_home">
                         </ul>
                     </div>
                     <div class="training_arrow training_arrow_right">&gt;</div>

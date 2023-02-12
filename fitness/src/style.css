@@ -756,13 +756,11 @@ body {
 .training_kind {
   display: flex;
   flex-direction: column;
-  /* align-items: center;
-  justify-content: center; */
 }
 
 .training_kind_container {
   display: flex;
-  width: 600px;
+  width: 1240px;
   overflow: hidden;
 }
 
@@ -774,17 +772,17 @@ body {
 }
 
 .training_card {
-  width: 600px;
-  height: 400px;
+  width: 400px;
+  height: 267px;
   list-style-type: none;
   position: relative;
 }
 
 .training_card img {
-  width: 600px;
-  height: 400px;
+  width: 400px;
+  height: 267px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .training_card_content {
@@ -796,7 +794,7 @@ body {
 .training_card_content_text {
   color: white;
   font-family: sans-serif;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .training_content,
