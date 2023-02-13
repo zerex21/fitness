@@ -13,6 +13,7 @@ import { checkPurposes, checkUserInSystem, checkUserPurposes, closeSignInUp, log
 import { clickForYou, clickSearch } from "../../scripts/training/clickButton";
 import openCloseList from "../../scripts/training/openCloseList";
 import { shiftLeft, shiftRight } from "../../scripts/training/shift";
+import { renderContainerVideo } from "../../scripts/training/callFunc";
 
 
 
@@ -82,7 +83,7 @@ class App {
         buttonForYou?.addEventListener("click", clickForYou);
         buttonSearch?.addEventListener("click", clickSearch);
 
-        const trainingCategoryAll = document.querySelectorAll(".training_category_composite") as NodeListOf<HTMLElement>;
+        const trainingCategoryAll = document.querySelectorAll(".training_category_img") as NodeListOf<HTMLElement>;
         trainingCategoryAll.forEach((el, i) => el.addEventListener("click", () => openCloseList(i)));
 
         const trainingArrowLeftAll = document.querySelectorAll(".training_arrow_left") as NodeListOf<HTMLElement>;
@@ -202,28 +203,21 @@ class App {
 
             /*********
              * Переделать выпадающий список > изменить выпадание по клику на картинку             *
-             *
              * перенести выпадающий ul в div
-             *
              * попытаться console.log(target.closest('.training_category_list')?.getElementsByTagName('LI'))
-             *
-             *
              * ************************ */
 
+     /*      let trainingSearchContainer = document.querySelector('.training_search_container');
+          trainingSearchContainer?.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement;
+              if (target.closest('.training_category_list')) {
+                console.log(target.innerText)
+              }
+            }) */
 
-
-            let trainingSearchContainer = document.querySelector('.training_search_container');
-            let elTagName = document.getElementsByTagName('LI');
-            trainingSearchContainer?.addEventListener('click', (e) => {
-             const target = e.target as HTMLElement;
-            /* console.log(target.closest('.training_category_list')?.getElementsByTagName('LI')) */
-            console.log(target)
-            /* alert(target) */
-            })
+            renderContainerVideo()
         });
-
-
-        }
+    }
 
 
 

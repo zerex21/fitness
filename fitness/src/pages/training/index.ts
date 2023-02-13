@@ -149,7 +149,7 @@ class TrainingPage extends Page{
         <div class="training_search_container training_none">
             <input class="training_input_search" type="text" name="" id="" placeholder="Поиск">
             <div class="training_category training_category_composite">
-                <img src="../imgs/group_muscle.jpg" alt="">
+                <img class="training_category_img" src="../imgs/group_muscle.jpg" alt="">
                 <h3 class="training_name_category">Группы мышц</h3>
 
 
@@ -173,24 +173,33 @@ class TrainingPage extends Page{
             </div>
 
             <div class="training_category training_category_composite">
-                <img src="../imgs/purpose.jpg" alt="">
+                <img class="training_category_img" src="../imgs/purpose.jpg" alt="">
                 <h3 class="training_name_category">Цель тренировки</h3>
-            </div>
-            <ul class="training_category_list">
+
+
+
+                <ul class="training_category_list">
                 <li>Выносливость</li>
                 <li>Подвижность</li>
                 <li>Сила</li>
                 <li>Йога</li>
             </ul>
-            <div class="training_category training_category_composite">
-                <img src="../imgs/outfit.jpeg" alt="">
-                <h3 class="training_name_category">Снаряжение</h3>
+
             </div>
-            <ul class="training_category_list">
+
+            <div class="training_category training_category_composite">
+                <img class="training_category_img" src="../imgs/outfit.jpeg" alt="">
+                <h3 class="training_name_category">Снаряжение</h3>
+
+                <ul class="training_category_list">
                 <li>Без снаряжения</li>
                 <li>Базовое снаряжение</li>
                 <li>Все снаряжения зала</li>
             </ul>
+
+
+            </div>
+
             <div class="training_category">
                 <img src="../imgs/short.jpg" alt="">
                 <h3 class="training_name_category">Короткие тренировки</h3>

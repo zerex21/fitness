@@ -723,6 +723,7 @@ body {
 
 .training_container {
   margin: 20px;
+  display: none;
 }
 
 .training_title {

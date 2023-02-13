@@ -26,6 +26,7 @@ export type VideosCategory = {
 };
 
 export interface IVideosCategory {
+  map: any;
   length: number;
   [index: number]:VideosCategory;
 }
