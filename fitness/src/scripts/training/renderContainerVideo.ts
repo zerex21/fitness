@@ -1,4 +1,4 @@
-import { VIDEOS } from './../../data/data';
+import { VIDEOS } from '../../data/data';
 import { renderWorkOutCard } from './renderWorkOutCard';
 
 
@@ -46,17 +46,24 @@ let typeVideo:string = '';
         break;
     } */
 let trainingContainer = document.querySelector('.training_container');
-let trainingContainerAll = document.querySelector('.training_container__all') as HTMLElement;
+let trainingContainerAll = document.querySelector('.training_container_videos') as HTMLElement;
 let data = VIDEOS.armAndShoulder;
-
 let divVideos = '';
-
+let tmpOutfit = '';
 for (let i = 0; i < data.length; i++){
-  divVideos = data.map( (item: { previewPhoto: string; purpose: string; duration: number; outfit: string; }) => renderWorkOutCard(item.previewPhoto, item.purpose, item.duration, '',item.outfit ) )
+  divVideos = data.map( (item: { previewPhoto: string; duration: number;purpose: string;  outfit: string; }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, '', item.outfit,  ))
 }
 
-if (trainingContainerAll)
-trainingContainerAll.innerHTML = divVideos
+if (trainingContainerAll){
+  for (let y = 0; y < divVideos.length; y++){
+
+    if(divVideos[y] === ',') return false;
+    trainingContainerAll.innerHTML += divVideos[y];
+
+  }
+
+}
+
 
   /* let trainingSearchContainer = document.querySelector('.training_container');
   trainingSearchContainer?.addEventListener('click', (e) => {

@@ -13,7 +13,7 @@ import { checkPurposes, checkUserInSystem, checkUserPurposes, closeSignInUp, log
 import { clickForYou, clickSearch } from "../../scripts/training/clickButton";
 import openCloseList from "../../scripts/training/openCloseList";
 import { shiftLeft, shiftRight } from "../../scripts/training/shift";
-import { renderContainerVideo } from "../../scripts/training/callFunc";
+import { renderContainerVideo } from "../../scripts/training/renderContainerVideo";
 
 
 

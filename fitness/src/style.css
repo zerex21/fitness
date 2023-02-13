@@ -293,7 +293,7 @@ main {
   color: gray;
   width: 340px;
   position: relative;
-  margin: 10px 5px;
+  margin: 10px 10px;
 }
 .workout-card .container .workout-card__image {
   width: 100%;
@@ -723,7 +723,6 @@ body {
 
 .training_container {
   margin: 20px;
-  display: none;
 }
 
 .training_title {
@@ -808,6 +807,7 @@ body {
 .training_content,
 .training_search_container {
   margin: 20px;
+  display: none;
 }
 
 .training_input_search {

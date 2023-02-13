@@ -151,55 +151,31 @@ class TrainingPage extends Page{
             <div class="training_category training_category_composite">
                 <img class="training_category_img" src="../imgs/group_muscle.jpg" alt="">
                 <h3 class="training_name_category">Группы мышц</h3>
-
-
-
-
-
-
-
-
                 <ul class="training_category_list">
                 <li>Пресс и корпус</li>
                 <li>Руки и плечи</li>
                 <li>Ягодицы и ноги</li>
             </ul>
-
-
-
-
-
-
             </div>
-
             <div class="training_category training_category_composite">
                 <img class="training_category_img" src="../imgs/purpose.jpg" alt="">
                 <h3 class="training_name_category">Цель тренировки</h3>
-
-
-
                 <ul class="training_category_list">
                 <li>Выносливость</li>
                 <li>Подвижность</li>
                 <li>Сила</li>
                 <li>Йога</li>
             </ul>
-
             </div>
-
             <div class="training_category training_category_composite">
                 <img class="training_category_img" src="../imgs/outfit.jpeg" alt="">
                 <h3 class="training_name_category">Снаряжение</h3>
-
                 <ul class="training_category_list">
                 <li>Без снаряжения</li>
                 <li>Базовое снаряжение</li>
                 <li>Все снаряжения зала</li>
             </ul>
-
-
             </div>
-
             <div class="training_category">
                 <img src="../imgs/short.jpg" alt="">
                 <h3 class="training_name_category">Короткие тренировки</h3>
@@ -210,15 +186,7 @@ class TrainingPage extends Page{
             </div>
           </div>
           </div>
-
-
-
-
-       <div class="training_container_videos">
-
-        </div>
-
-
+       <div class="training_container_videos"></div>
       </div>
     </div> `;
         return this.container;
