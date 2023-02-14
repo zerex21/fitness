@@ -176,11 +176,11 @@ class TrainingPage extends Page{
                 <li>Все снаряжения зала</li>
             </ul>
             </div>
-            <div class="training_category">
+            <div class="training_category short_training">
                 <img src="../imgs/short.jpg" alt="">
                 <h3 class="training_name_category">Короткие тренировки</h3>
             </div>
-            <div class="training_category">
+            <div class="training_category all_training">
                 <img src="../imgs/training_1.jpg" alt="">
                 <h3 class="training_name_category">Все тренировки</h3>
             </div>
