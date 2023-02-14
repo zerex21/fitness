@@ -807,7 +807,7 @@ body {
 .training_content,
 .training_search_container {
   margin: 20px;
-  display: none;
+  /* display: none; */
 }
 
 .training_input_search {

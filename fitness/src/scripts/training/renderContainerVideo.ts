@@ -1,57 +1,83 @@
+import { IVideosCategory, VideosCategory } from './../../types/type';
 import { VIDEOS } from '../../data/data';
 import { renderWorkOutCard } from './renderWorkOutCard';
 
+let typeVideo:IVideosCategory;
+let tmpArrOutfit:IVideosCategory = [];
+let tmpString:string | VideosCategory;
 
-export let renderContainerVideo = (/* value:string */) =>{
-let typeVideo:string = '';
-    /* switch (value) {
+export let renderContainerVideo = (value:string) =>{
+
+    switch (value) {
         case 'Пресс и корпус':
-        typeVideo = 'pressAndBody';
+        typeVideo = VIDEOS.pressAndBody;
         break;
 
         case 'Руки и плечи':
-        typeVideo = 'armAndShoulder';
+        typeVideo = VIDEOS.armAndShoulder;
         break;
 
         case 'Ягодицы и ноги':
-        typeVideo = 'cheekAndFeet';
+        typeVideo = VIDEOS.cheekAndFeet;
         break;
 
         case 'Выносливость':
-        typeVideo = 'stamina';
+        tmpString = 'stamina';
         break;
 
         case 'Подвижность':
-        typeVideo = 'move';
+        tmpString = 'move';
         break;
 
         case 'Сила':
-        typeVideo = 'strength';
+        tmpString = 'strength';
         break;
 
         case 'Йога':
-        typeVideo = 'yoga';
+        typeVideo = VIDEOS.yoga;
         break;
 
         case 'Без снаряжения':
-        typeVideo = 'none'
+        tmpString = 'none'
         break;
 
         case 'Базовое снаряжение':
-        typeVideo = 'base'
+        tmpString = 'base'
         break;
 
         case 'Все снаряжения зала':
-        typeVideo = 'all'
+        tmpString = 'all'
         break;
-    } */
+    }
 let trainingContainer = document.querySelector('.training_container');
 let trainingContainerAll = document.querySelector('.training_container_videos') as HTMLElement;
-let data = VIDEOS.armAndShoulder;
+trainingContainerAll.innerHTML = '';
+/* let data = typeVideo; */
 let divVideos = '';
-let tmpOutfit = '';
-for (let i = 0; i < data.length; i++){
-  divVideos = data.map( (item: { previewPhoto: string; duration: number;purpose: string;  outfit: string; }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, '', item.outfit,  ))
+let lengthArr:Number | number = Number(VIDEOS.length);
+
+if(typeVideo) {
+ /*  console.log('typeVideo',typeVideo) */
+  for (let i = 0; i < typeVideo.length; i++){
+    divVideos = typeVideo.map( (item: { previewPhoto: string; duration: number;purpose: string;  outfit: string; }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, '', item.outfit,  ))
+  }
+}
+
+if(tmpString) {
+  for(let item in VIDEOS){
+
+    for(let i = 0; i < VIDEOS[item].length; i++){
+      console.log(VIDEOS[item])
+      if (VIDEOS[item][i].purpose === tmpString || VIDEOS[item][i].outfit === tmpString) {
+        tmpArrOutfit.push(VIDEOS[item][i])
+      }
+    }
+  }
+
+
+  for (let i = 0; i < tmpArrOutfit.length; i++){
+    divVideos = tmpArrOutfit.map( (item: { previewPhoto: string; duration: number;purpose: string;  outfit: string; }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, '', item.outfit,  ))
+  }
 }
 
 if (trainingContainerAll){
@@ -65,7 +91,7 @@ if (trainingContainerAll){
 }
 
 
-  /* let trainingSearchContainer = document.querySelector('.training_container');
+/*   let trainingSearchContainer = document.querySelector('.training_container');
   trainingSearchContainer?.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
     console.log(target.closest('.training_category_list'))
@@ -74,5 +100,4 @@ if (trainingContainerAll){
 
 
 }
-
 

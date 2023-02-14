@@ -207,15 +207,17 @@ class App {
              * попытаться console.log(target.closest('.training_category_list')?.getElementsByTagName('LI'))
              * ************************ */
 
-     /*      let trainingSearchContainer = document.querySelector('.training_search_container');
+          let trainingSearchContainer = document.querySelector('.training_search_container');
           trainingSearchContainer?.addEventListener('click', (e) => {
             const target = e.target as HTMLElement;
               if (target.closest('.training_category_list')) {
-                console.log(target.innerText)
+                const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+                if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
+                renderContainerVideo(target.innerText);
               }
-            }) */
+            })
 
-            renderContainerVideo()
+
         });
     }
 

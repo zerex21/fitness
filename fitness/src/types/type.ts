@@ -12,6 +12,7 @@ export interface IUsers {
 }
 
 export interface IVideos {
+
     [index: string]: IVideosCategory;
 }
 
@@ -26,7 +27,9 @@ export type VideosCategory = {
 };
 
 export interface IVideosCategory {
+  push: any;
   map: any;
   length: number;
   [index: number]:VideosCategory;
 }
+
