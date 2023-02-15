@@ -15,6 +15,7 @@ import openCloseList from "../../scripts/training/openCloseList";
 import { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderRecommendation  } from "../../scripts/training/shift";
 import { renderContainerVideo } from "../../scripts/training/renderContainerVideo";
 import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRecommendationSlider } from "../../scripts/training/modalWindow";
+import { openModalWindowPlay } from "../../scripts/training/playVideoTrainingSearch";
 
 interface IEvent extends Event {
     closest: string
@@ -250,7 +251,33 @@ class App {
         });
     }
 
+  playVideoSearch(){
+    window.addEventListener('hashchange', () => {
+        const trainingContainerVideos = document.querySelector('.training_container_videos') as HTMLElement;
+        const fon = document.querySelector(".training_fon") as HTMLElement;
+        const buttonClose = document.querySelector(".close_modal_window");
+        trainingContainerVideos?.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement;
+            if (target.closest('.workout-card')) {
 
+                openModalWindowPlay(String(target.closest('.workout-card')?.getAttribute('data-index')))
+            }
+        })
+
+        buttonClose?.addEventListener("click", () => {
+            const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
+            modalWindow.classList.add("training_none");
+            fon.classList.add("training_none");
+        })
+        fon?.addEventListener("click", () => {
+            const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
+            modalWindow.classList.add("training_none");
+            fon.classList.add("training_none");
+        })
+
+    })
+
+  }
 
     run() {
         const hash = window.location.hash.slice(1);
@@ -270,6 +297,7 @@ class App {
         this.userInSystem();
         this.userPurposes();
         this.callRenderContainerVideos();
+        this.playVideoSearch()
     }
 }
 

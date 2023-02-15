@@ -30,12 +30,12 @@ let checkValues = (equipment:string, purpose:string) => {
     return {equipment, purpose}
 }
 
-export const renderWorkOutCard = (img:string, name:string= 'empty', time:number, purpose:string, description:string = 'empty', equipment: string ) => {
+export const renderWorkOutCard = (img:string, name:string= 'empty', time:number, purpose:string, description:string = 'empty', equipment: string, id:number ) => {
 
     ( {equipment, purpose}  = checkValues(equipment, purpose) )
 
     return(`
-    <div class="workout-card">
+    <div class="workout-card" data-index = ${id}>
     <div class="container">
         <img class="workout-card__image" src="${img}" alt="class image">
         <p class="workout-card__name">

@@ -17,6 +17,7 @@ export interface IVideos {
 }
 
 export type VideosCategory = {
+    id?:number,
     tag:string,
     previewPhoto:string,
     purpose: string,
