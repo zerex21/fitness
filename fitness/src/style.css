@@ -707,6 +707,7 @@ main {
   margin: 10px 0 10px 10px;
 }
 
+/* @import "../../style/base/constants"; */
 * {
   margin: 0;
   padding: 0;
@@ -761,13 +762,11 @@ body {
 .training_kind {
   display: flex;
   flex-direction: column;
-  /* align-items: center;
-  justify-content: center; */
 }
 
 .training_kind_container {
   display: flex;
-  width: 600px;
+  width: 1240px;
   overflow: hidden;
 }
 
@@ -785,11 +784,24 @@ body {
   position: relative;
 }
 
+.training_card {
+  width: 400px;
+  height: 267px;
+  list-style-type: none;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.training_card:hover {
+  opacity: 0.5;
+}
+
 .training_card img {
-  width: 600px;
-  height: 400px;
+  width: 400px;
+  height: 267px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .training_card_content {
@@ -801,7 +813,7 @@ body {
 .training_card_content_text {
   color: white;
   font-family: sans-serif;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .training_content,
@@ -864,6 +876,50 @@ body {
   border-radius: 10px 10px 0 0;
 }
 
+.training_modal_window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+}
+
+.training_video {
+  width: 1000px;
+  height: 563px;
+  border: 2px solid black;
+}
+
+.close_modal_window {
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close_modal_window:hover {
+  opacity: 0.5;
+}
+
+.training_fon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
 .training_active {
   display: block;
 }
@@ -872,6 +928,7 @@ body {
   display: none;
 }
 
+/*************************/
 .training_container_videos {
   display: flex;
   justify-content: space-evenly;

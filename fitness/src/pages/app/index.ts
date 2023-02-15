@@ -12,9 +12,13 @@ import { checkPurposes, checkUserInSystem, checkUserPurposes, closeSignInUp, log
 
 import { clickForYou, clickSearch } from "../../scripts/training/clickButton";
 import openCloseList from "../../scripts/training/openCloseList";
-import { shiftLeft, shiftRight } from "../../scripts/training/shift";
+import { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderRecommendation  } from "../../scripts/training/shift";
 import { renderContainerVideo } from "../../scripts/training/renderContainerVideo";
+import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRecommendationSlider } from "../../scripts/training/modalWindow";
 
+interface IEvent extends Event {
+    closest: string
+}
 
 
 export const enum PageIds {
@@ -83,13 +87,35 @@ class App {
         buttonForYou?.addEventListener("click", clickForYou);
         buttonSearch?.addEventListener("click", clickSearch);
 
-        const trainingCategoryAll = document.querySelectorAll(".training_category_img") as NodeListOf<HTMLElement>;
+        const trainingCategoryAll = document.querySelectorAll(".training_category_composite") as NodeListOf<HTMLElement>;
         trainingCategoryAll.forEach((el, i) => el.addEventListener("click", () => openCloseList(i)));
 
         const trainingArrowLeftAll = document.querySelectorAll(".training_arrow_left") as NodeListOf<HTMLElement>;
         const trainingArrowRightAll = document.querySelectorAll(".training_arrow_right") as NodeListOf<HTMLElement>;
         trainingArrowRightAll.forEach((el, i) => el.addEventListener("click", () => shiftLeft(i)));
         trainingArrowLeftAll.forEach((el, i) => el.addEventListener("click", () => shiftRight(i)));
+        createSliderNew();
+        createSliderHome();
+        createSliderRecommendation();
+
+        const containerSliderNew = document.querySelector(".slider_new");
+        const fon = document.querySelector(".training_fon") as HTMLElement;
+        containerSliderNew?.addEventListener('click', openModalWindowNewSlider);
+        const containerSliderHome = document.querySelector(".slider_home");
+        containerSliderHome?.addEventListener('click', openModalWindowHomeSlider);
+        const containerSliderRecommendation = document.querySelector(".slider_recommendation");
+        containerSliderRecommendation?.addEventListener('click', openModalWindowRecommendationSlider);
+        const buttonClose = document.querySelector(".close_modal_window");
+        buttonClose?.addEventListener("click", () => {
+            const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
+            modalWindow.classList.add("training_none");
+            fon.classList.add("training_none");
+        })
+        fon?.addEventListener("click", () => {
+            const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
+            modalWindow.classList.add("training_none");
+            fon.classList.add("training_none");
+        })
 
     }
 

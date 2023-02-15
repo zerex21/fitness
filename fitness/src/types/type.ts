@@ -33,3 +33,12 @@ export interface IVideosCategory {
   [index: number]:VideosCategory;
 }
 
+export interface ITraining {
+  tag: string,
+  previewPhoto: string,
+  purpose: string,
+  muscle: string,
+  duration: number,
+  forHome: boolean,
+  outfit: string
+}
