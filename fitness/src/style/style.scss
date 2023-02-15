@@ -1,0 +1,54 @@
+/* * {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+.container {
+    padding: 10px 10px 0 10px;
+    max-width: 1400px;
+    margin: 0 auto;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+ */
+
+
+@import "./base/normalize";
+@import "./base/base";
+@import "./base/constants";
+@import "./components/buttons";
+@import "../core/components/header/header";
+@import "../core/components/header/form";
+@import "../core/components/footer/footer";
+@import "../pages/main/main";
+@import "../pages/training/training";
+@import "../pages/training/workoutCard";
+@import "../pages/activity/activity-page";
+@import "../pages/program/programms_css";
+@import "../pages/program/programCard";
+@import "../pages/developers/developers";
+
+
+/* @import "./main";
+@import "./header";
+@import "./footer";
+@import "./workoutCard";
+@import "./programCard";
+@import "./developers";
+@import "./form";
+@import "./programms_css";
+@import "./training_css.scss";
+@import "./activity-page"; */

@@ -253,8 +253,10 @@ class App {
 
 
     run() {
+        const hash = window.location.hash.slice(1);
         App.container.append(this.header.render());
-        App.renderNewPage('main-page');
+        hash ? App.renderNewPage(hash) : App.renderNewPage('main-page');
+       /*  App.renderNewPage('main-page'); */
         App.container.append(this.footer.render());
         this.enableRouterChange();
         this.closeForms();

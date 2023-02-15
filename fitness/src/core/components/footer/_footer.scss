@@ -1,3 +1,5 @@
+@import "../../../style/base/constants";
+
 .container{
     &-footer{
         padding: 10px 10px;
@@ -21,7 +23,7 @@
                     list-style-type:none;
 
                     a{
-                        color: black;
+                        color: $color-black;
                         text-decoration: none;
                     }
 
@@ -34,7 +36,7 @@
             }
 
             &__page{
-                font-size: 20px;
+                font-size: $size-medium;
 
                 &:hover{
                     cursor: pointer;
@@ -43,7 +45,7 @@
             }
         }
         .date-create{
-            font-size: 20px;
+            font-size: $size-medium;
         }
 
         .RsSchool{
