@@ -17,6 +17,7 @@ export const VIDEOS:IVideos = {
   armAndShoulder:[
     {
       id: 1,
+      name:'Как накачать большой бицепс! Секретами делится Jay Hardbody',
       tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/Y3FHMXGx34A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       previewPhoto:'./src/imgs/preview/maxresdefault.jpg',
       purpose: 'strength',
@@ -27,6 +28,7 @@ export const VIDEOS:IVideos = {
     },
     {
       id: 2,
+      name:'Проработка БИЦЕПСА на скамье Скотта. Набор упражнений.',
       tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/xtFsz7zsM2U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       previewPhoto:'./src/imgs/preview/2.jpg',
       purpose: 'strength',
@@ -37,6 +39,7 @@ export const VIDEOS:IVideos = {
     },
     {
       id: 3,
+      name:'Тренировка бицепсов Sergio Oliva',
       tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/nO6_fnA_R1I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       previewPhoto:'./src/imgs/preview/3.jpg',
       purpose: 'strength',
@@ -47,6 +50,7 @@ export const VIDEOS:IVideos = {
     },
     {
       id: 4,
+      name:'Супер плечи',
       tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/ep1XhVpH7rw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       previewPhoto:'./src/imgs/preview/4.jpg',
       purpose: 'strength',
@@ -57,6 +61,7 @@ export const VIDEOS:IVideos = {
     },
     {
       id: 5,
+      name:'Тренировка с Рич Пиана (Rich Piana). Дельты',
       tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/dbxcE1YQbMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       previewPhoto:'./src/imgs/preview/5.jpg',
       purpose: 'strength',
@@ -67,6 +72,7 @@ export const VIDEOS:IVideos = {
     },
     {
       id: 6,
+      name:'Тренировка Дуэйна THE ROCK Джонсона - ДЕЛЬТЫ',
       tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/srLZWnPyYR8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       previewPhoto:'./src/imgs/preview/6.jpg',
       purpose: 'strength',
@@ -80,6 +86,7 @@ export const VIDEOS:IVideos = {
   cheekAndFeet:[
       {
         id: 7,
+        name:'The Rock. Тренировка Дуэйна Джонсона - НОГИ!!!',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/hkgcsbOkKzw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/7.jpg',
         purpose: 'strength',
@@ -90,6 +97,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 8,
+        name:'Тренировка Stephanie Danae. Упражнения для ног',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/k6OV2UVyrrk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/8.jpg',
         purpose: 'strength',
@@ -100,6 +108,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 9,
+        name:'НАКАЧАТЬ ПОПУ ДОМА ЗА 5 МИНУТ БЕЗ ТРЕНАЖЕРОВ! ',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/3WKvjYmFLOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/9.jpg',
         purpose: 'stamina',
@@ -110,6 +119,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 10,
+        name:'АКТИВАЦИЯ ЯГОДИЦ НА 99% | ТРЕНИРОВКА ДЛЯ ПОЛНОГО КОНТРОЛЯ МЫШЦ',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/WBVl85HFP58" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/10.jpg',
         purpose: 'stamina',
@@ -123,6 +133,7 @@ export const VIDEOS:IVideos = {
   pressAndBody:[
       {
         id: 11,
+        name:'Супер-пресс за 5 мин в день',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/LEckrZsihTQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/11.jpg',
         purpose: 'stamina',
@@ -133,6 +144,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 12,
+        name:'Супер ПРЕСС',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/AbgdZ9okLu4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/12.jpg',
         purpose: 'strength',
@@ -143,6 +155,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 13,
+        name:'Супер ПРЕСС 2',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/LFGkvW7CNoc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/13.jpg',
         purpose: 'strength',
@@ -153,6 +166,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 14,
+        name:'Тренировка на все тело для новичков',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/e1GbGNYIGB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/14.jpg',
         purpose: 'stamina',
@@ -163,6 +177,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 15,
+        name:'Готовим тело к лету! Тренировка на ВСЕ ТЕЛО!',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/IMfY13lrfgc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/15.jpg',
         purpose: 'stamina',
@@ -173,6 +188,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 16,
+        name:'Высокоинтенсивная Интервальная Тренировка для ВСЕГО ТЕЛА',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/Ib44QCcjsU8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/16.jpg',
         purpose: 'stamina',
@@ -186,6 +202,7 @@ export const VIDEOS:IVideos = {
   yoga:[
       {
         id: 17,
+        name:'Утренний комплекс йоги в домашних условиях ',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/NCSKTE6BPvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/22.jpg',
         purpose: 'move',
@@ -196,6 +213,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 18,
+        name:'ВЕЧЕРНЯЯ ЙОГА для расслабления',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/E1JT1CKEOuA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/23.jpg',
         purpose: 'move',
@@ -206,6 +224,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 19,
+        name:'Йога для начинающих в домашних условиях',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/hj1_a7umGNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/24.jpg',
         purpose: 'move',
@@ -216,6 +235,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 20,
+        name:'Йога для жиросжигания',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/J0pzwoaXFJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/25.jpg',
         purpose: 'move',
@@ -226,6 +246,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 21,
+        name:'Гибкое тело за 30 минут — Йога для начинающих.',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/E5i4rDc_GA8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/26.jpg',
         purpose: 'move',
@@ -236,6 +257,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 22,
+        name:'Легкий комплекс йоги для похудения',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/hjklQnYRz_8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/27.jpg',
         purpose: 'move',
@@ -246,6 +268,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 23,
+        name:'Вечерняя йога для начинающих в домашних условиях',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/m62MFlPacpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/28.jpg',
         purpose: 'move',
@@ -256,6 +279,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 24,
+        name:'Йога для новичков',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/U9UmAhFIm_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/29.jpg',
         purpose: 'move',
@@ -266,6 +290,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 25,
+        name:'ДЕЛАЙ КАЖДОЕ УТРО! Нежная ЙОГА и ПИЛАТЕС ',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/vyfXzvR6FMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/30.jpg',
         purpose: 'move',
@@ -279,6 +304,7 @@ export const VIDEOS:IVideos = {
   readyProgram:[
       {
         id: 26,
+        name:'Пресс, плечи, трицепс на спортплощадке. Денис Семенихин.',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/tk0OPNxPsts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/17.jpg',
         purpose: 'strength',
@@ -289,6 +315,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 27,
+        name:'Супер-программа тренировок на спортплощадке. 10 минут в день.',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/gxplizjhqiw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/18.jpg',
         purpose: 'strength',
@@ -299,6 +326,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 28,
+        name:'Тренировка с весом тела на спортплощадке за 20 минут.',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/FVpMj2rEJnY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/19.jpg',
         purpose: 'strength',
@@ -309,6 +337,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 29,
+        name:'16 лучших упражнений с эспандерами',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/RZl1POnPKgk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/20.jpg',
         purpose: 'strength',
@@ -319,6 +348,7 @@ export const VIDEOS:IVideos = {
       },
       {
         id: 30,
+        name:'Эффективная и быстрая тренировка на спортплощадке.',
         tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/zDDI-oWLk0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         previewPhoto:'./src/imgs/preview/21.jpg',
         purpose: 'strength',

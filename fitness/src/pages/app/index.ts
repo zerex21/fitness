@@ -16,6 +16,7 @@ import { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderR
 import { renderContainerVideo } from "../../scripts/training/renderContainerVideo";
 import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRecommendationSlider } from "../../scripts/training/modalWindow";
 import { openModalWindowPlay } from "../../scripts/training/playVideoTrainingSearch";
+import { playVideoSearch, renderListSearch } from "../../scripts/training/playSearchVideo";
 
 interface IEvent extends Event {
     closest: string
@@ -227,7 +228,8 @@ class App {
     callRenderContainerVideos() {
 
         window.addEventListener('hashchange', () => {
-          let trainingSearchContainer = document.querySelector('.training_search_container');
+          const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+
 
           trainingSearchContainer?.addEventListener('click', (e) => {
             const target = e.target as HTMLElement;
@@ -259,7 +261,6 @@ class App {
         trainingContainerVideos?.addEventListener('click', (e) => {
             const target = e.target as HTMLElement;
             if (target.closest('.workout-card')) {
-
                 openModalWindowPlay(String(target.closest('.workout-card')?.getAttribute('data-index')))
             }
         })
@@ -279,11 +280,48 @@ class App {
 
   }
 
+  getValueInputSearch(){
+    window.addEventListener('hashchange', () => {
+        const trainingInputSearch = document.querySelector('.training_input_search') as HTMLInputElement;
+        trainingInputSearch?.addEventListener('keyup', () => {
+            renderListSearch(trainingInputSearch.value)
+        })
+    })
+  }
+
+  playListVideoSearch(){
+    window.addEventListener('hashchange', () => {
+        const optionsSearch = document.querySelector('.options_search') as HTMLElement;
+        const trainingInputSearch = document.querySelector('.training_input_search') as HTMLInputElement;
+        optionsSearch?.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement;
+            playVideoSearch(target.innerText);
+            trainingInputSearch.value = '';
+            optionsSearch.style.display = 'none';
+        })
+    })
+  }
+
+  closeRenderContainerVideo(){
+    window.addEventListener('hashchange', () => {
+        const trainingContainerVideos = document.querySelector('.training_container_videos') as HTMLElement;
+        const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+        const buttonForYou = document.querySelector('.button_for_you') as HTMLElement;
+        const buttonSearch = document.querySelector('.button_search') as HTMLElement;
+
+        buttonForYou?.addEventListener('click', () => {
+            trainingContainerVideos.innerHTML = '';
+            trainingSearchContainer.style.display = 'none';
+         });
+        buttonSearch?.addEventListener('click', () => trainingSearchContainer.style.display = 'block')
+    })
+
+  }
+
     run() {
         const hash = window.location.hash.slice(1);
         App.container.append(this.header.render());
         hash ? App.renderNewPage(hash) : App.renderNewPage('main-page');
-       /*  App.renderNewPage('main-page'); */
         App.container.append(this.footer.render());
         this.enableRouterChange();
         this.closeForms();
@@ -297,7 +335,10 @@ class App {
         this.userInSystem();
         this.userPurposes();
         this.callRenderContainerVideos();
-        this.playVideoSearch()
+        this.playVideoSearch();
+        this.getValueInputSearch();
+        this.playListVideoSearch();
+        this.closeRenderContainerVideo();
     }
 }
 

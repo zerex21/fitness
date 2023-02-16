@@ -69,7 +69,7 @@ export let renderContainerVideo = (value: string) => {
 
   if (typeVideo) {
     for (let i = 0; i < typeVideo.length; i++) {
-      divVideos = typeVideo.map((item: { previewPhoto: string; duration: number; purpose: string; outfit: string; id:number }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, '', item.outfit, item.id))
+      divVideos = typeVideo.map((item: { previewPhoto: string; duration: number; purpose: string; name:string; outfit: string; id:number }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, item.name, item.outfit, item.id))
     }
   }
 
@@ -88,7 +88,7 @@ export let renderContainerVideo = (value: string) => {
 
 
     for (let i = 0; i < tmpArrOutfit.length; i++) {
-      divVideos = tmpArrOutfit.map((item: { previewPhoto: string; duration: number; purpose: string; outfit: string; id:number }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, '', item.outfit, item.id))
+      divVideos = tmpArrOutfit.map((item: { previewPhoto: string; duration: number; purpose: string; name:string; outfit: string; id:number }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, item.name, item.outfit, item.id))
     }
   }
 
@@ -121,7 +121,7 @@ export let renderContainerVideo = (value: string) => {
     }
 
     for (let i = 0; i < tmpArrOutfit.length; i++) {
-      divVideos = tmpArrOutfit.map((item: { previewPhoto: string; duration: number; purpose: string; outfit: string; id:number}) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, '', item.outfit, item.id))
+      divVideos = tmpArrOutfit.map((item: { previewPhoto: string; duration: number; purpose: string; name:string; outfit: string; id:number}) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, item.name, item.outfit, item.id))
     }
   }
 
@@ -135,4 +135,3 @@ export let renderContainerVideo = (value: string) => {
 
   }
 }
-
