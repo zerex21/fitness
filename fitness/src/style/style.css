@@ -996,7 +996,7 @@ body {
 
 .options_search {
   padding-bottom: 10px;
-  height: 160px;
+  max-height: 160px;
   background-color: white;
   width: 330px;
   overflow: auto;

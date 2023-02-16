@@ -18,10 +18,6 @@ import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRec
 import { openModalWindowPlay } from "../../scripts/training/playVideoTrainingSearch";
 import { playVideoSearch, renderListSearch } from "../../scripts/training/playSearchVideo";
 
-interface IEvent extends Event {
-    closest: string
-}
-
 
 export const enum PageIds {
     MainPage = 'main-page',
@@ -109,16 +105,28 @@ class App {
         containerSliderRecommendation?.addEventListener('click', openModalWindowRecommendationSlider);
         const buttonClose = document.querySelector(".close_modal_window");
         buttonClose?.addEventListener("click", () => {
+            const player = document.querySelector("iframe") as HTMLElement;
+            player.remove();
             const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
             modalWindow.classList.add("training_none");
             fon.classList.add("training_none");
         })
         fon?.addEventListener("click", () => {
+            const player = document.querySelector("iframe") as HTMLElement;
+            player.remove();
             const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
             modalWindow.classList.add("training_none");
             fon.classList.add("training_none");
         })
 
+    }
+
+    renderSliders() {
+        window.addEventListener("load", () => {
+            createSliderNew();
+            createSliderHome();
+            createSliderRecommendation();
+        })
     }
 
 
@@ -339,6 +347,8 @@ class App {
         this.getValueInputSearch();
         this.playListVideoSearch();
         this.closeRenderContainerVideo();
+        this.clickBtnTraining();
+        this.renderSliders();
     }
 }
 
