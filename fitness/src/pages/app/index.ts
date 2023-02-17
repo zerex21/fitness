@@ -1,3 +1,4 @@
+import { closeBurgerMenu } from './../../scripts/header/burgerMenu';
 import MainPage from "../main";
 import Page from "../../core/templates/pages";
 import TrainingPage from "../training";
@@ -16,6 +17,7 @@ import { renderContainerVideo } from "../../scripts/training/renderContainerVide
 import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRecommendationSlider } from "../../scripts/training/modalWindow";
 import { openModalWindowPlay } from "../../scripts/training/playVideoTrainingSearch";
 import { playVideoSearch, renderListSearch } from "../../scripts/training/playSearchVideo";
+
 
 
 
@@ -331,11 +333,45 @@ class App {
             trainingContainerVideos.innerHTML = '';
             trainingSearchContainer.style.display = 'none';
          });
+
         buttonSearch?.addEventListener('click', () => trainingSearchContainer.style.display = 'block')
     }
 
   }
 
+  openBurgerMenu(){
+    const menuBtn = document.querySelector('.menu-btn') as HTMLElement;
+    const headerNav = document.querySelector('.header-nav') as HTMLElement;
+    const body = document.body as HTMLElement;
+    menuBtn?.addEventListener('click',(e) => {
+        menuBtn.classList.toggle('openBRM');
+        headerNav.classList.toggle('navBRM');
+        (menuBtn.classList.contains('openBRM') ? headerNav.style.display = 'block': headerNav.style.display = 'none')
+        body.classList.toggle('shadowBody');
+        (body.classList.contains('shadowBody')) ? body.style.overflow = 'hidden' :body.style.overflow = 'auto';
+        closeBurgerMenu()
+    })
+  }
+
+  checkResizeWindow(){
+    window.addEventListener(`resize`, (e) => {
+        const headerNav = document.querySelector('.header-nav') as HTMLElement;
+        const menuBtn = document.querySelector('.menu-btn') as HTMLElement;
+        const body = document.body as HTMLElement;
+        if(!headerNav.classList.contains('navBRM'))
+        (window.innerWidth >= 1001) ? headerNav.style.display = 'block' : headerNav.style.display = 'none';
+
+        if (window.innerWidth >= 1001){
+            menuBtn.classList.remove('openBRM')
+            headerNav.classList.remove('navBRM');
+            /* headerNav.style.display = 'none'; */
+            body.classList.remove('shadowBody');
+        }
+
+        (body.classList.contains('shadowBody')) ? body.style.overflow = 'hidden' :body.style.overflow = 'auto';
+
+      })
+  }
 
     run() {
         const hash = window.location.hash.slice(1);
@@ -343,6 +379,8 @@ class App {
         hash ? App.renderNewPage(hash) : App.renderNewPage('main-page');
         App.container.append(this.footer.render());
         this.enableRouterChange();
+        this.openBurgerMenu();
+        this.checkResizeWindow();
         this.closeForms();
         this.btnSignIn();
         this.btnSignUp();
@@ -360,6 +398,7 @@ class App {
         this.closeRenderContainerVideo();
         this.clickBtnTraining();
         this.renderSliders();
+
     }
 }
 

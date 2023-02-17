@@ -15,10 +15,10 @@ class Header extends Component {
             </div>
             <nav class="header-nav">
                 <ul class="list-navigation">
-                    <li class="active-list"><a href="#main-page">Главная</a></li>
-                    <li><a href="#training-page">Тренировки</a></li>
-                    <li><a href="#activity-page">Активность</a></li>
-                    <li><a href="#program-page">Программы</a></li>
+                    <li class="nav-list__item active-list"><a href="#main-page">Главная</a></li>
+                    <li class="nav-list__item"><a href="#training-page">Тренировки</a></li>
+                    <li class="nav-list__item"><a href="#activity-page">Активность</a></li>
+                    <li class="nav-list__item"><a href="#program-page">Программы</a></li>
                 </ul>
             </nav>
             <div class="header-customization">

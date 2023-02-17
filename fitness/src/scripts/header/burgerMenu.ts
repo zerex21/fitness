@@ -1,50 +1,21 @@
-/* let burgerBtn = document.querySelector('.menu-btn');
-let headerNav = document.querySelector('.header-nav');
-let designed = document.querySelector('.designed')
-let logoBurger = document.querySelector('.logo_burger')
-let burgerSpan2 = document.querySelector('.menu-btn__span2')
-let burgerSpan1 = document.querySelector('.menu-btn__span1')
-let burgerSpan3 = document.querySelector('.menu-btn__span3')
-let navigationLinks = document.querySelector('.navigationLinks')
-let body = document.body
+export const closeBurgerMenu = () => {
+    const menuBtn = document.querySelector('.menu-btn') as HTMLElement;
+    const listNavigation = document.querySelector('.list-navigation') as HTMLElement;
+    const headerNav = document.querySelector('.header-nav') as HTMLElement;
+    const body = document.body as HTMLElement;
 
+    if(menuBtn.classList.contains('openBRM')){
 
-let closeAdditions = () =>{
-    headerNav.style.display = 'none';
-    body.classList.remove('shadow')
-    logoBurger.style.display = "none" ;
-    burgerBtn.classList.remove('close');
-    designed.style.display = 'none'
-    body.classList.remove('scroll')
+        listNavigation.addEventListener('click', (e) => {
+            let element = e.target as HTMLInputElement;
+            if(element.closest('.nav-list__item')){
+                menuBtn.classList.remove('openBRM')
+                headerNav.classList.remove('navBRM');
+                headerNav.style.display = 'none';
+                body.classList.remove('shadowBody');
+                (body.classList.contains('shadowBody')) ? body.style.overflow = 'hidden' :body.style.overflow = 'auto';
+            }
+        })
+
+    }
 }
-
-let burgerToggle = () =>{
-    burgerBtn.addEventListener('click',(e)=>{
-        headerNav.style.display = headerNav.style.display === "block" ?"none" : "block";
-        burgerBtn.classList.toggle('close')
-        body.classList.toggle('scroll')
-        designed.style.display = designed.style.display === "block" ?"none" : "block";
-        logoBurger.style.display = logoBurger.style.display === "block" ?"none" : "block";
-        body.classList.toggle('shadow');
-    })
-
-
-}
-
-
-let closeBurger = () =>{
-    document.addEventListener( 'click', (e) => {
-        const withinBoundaries = e.composedPath().includes(headerNav);
-        if ( ! withinBoundaries && e.target !=burgerSpan1 && e.target !=burgerSpan2 && e.target !=burgerSpan3 ) {
-            closeAdditions()
-        }
-
-        if(e.target.tagName === 'A'){
-            closeAdditions()
-        }
-
-    })
-}
-
-
-export  {burgerToggle, closeBurger}; */
