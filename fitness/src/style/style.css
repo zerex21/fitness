@@ -545,7 +545,7 @@ main {
 }
 .container-header .container-header__bnt {
   display: flex;
-  width: 190px;
+  width: 200px;
   justify-content: space-between;
 }
 .container-header .container-header__bnt button {
@@ -626,7 +626,7 @@ main {
   .container-header .header-customization {
     padding-left: 15px;
     position: absolute;
-    right: 245px;
+    right: 255px;
   }
   .container .menu-btn {
     display: block;
@@ -1317,6 +1317,41 @@ body {
   flex-wrap: wrap;
 }
 
+@media (max-width: 740px) {
+  .training_container {
+    margin: 0px;
+  }
+  .training_category {
+    width: 440px;
+  }
+  .training_category img {
+    width: 440px;
+    height: 300px;
+  }
+  .training_category_list li {
+    width: 422px;
+  }
+}
+@media (max-width: 521px) {
+  .training_category {
+    width: 290px;
+  }
+  .options_search {
+    width: 245px;
+  }
+  .training_name_category {
+    top: 30px;
+    font-size: 25px;
+  }
+  .training_category img {
+    width: 262px;
+    height: 205px;
+  }
+  .training_category_list li {
+    width: 247px;
+    padding: 7px 0px 7px 11px;
+  }
+}
 .workout-card {
   background-color: black;
   color: gray;
