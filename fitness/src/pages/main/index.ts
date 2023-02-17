@@ -8,13 +8,13 @@ class MainPage extends Page{
     render() {
         this.container.innerHTML = `
         <div class="main-page">
-            <div class="container container-main-page">
+            <div class="container main-page__container">
                 <div class="connection-friends">
                     <div class="text-connection">
                         Объединяйтесь с друзьми!
                     </div>
                     <div class="main-page__btn-join">
-                        <button>Пригласить</button>
+                        <button class="button-black">Пригласить</button>
                     </div>
                 </div>
                 <div class="main-page__description-app">
@@ -39,7 +39,7 @@ class MainPage extends Page{
                     </div>
                 </div>
                 <div class="main-page__btn-trainings">
-                    <button onclick="window.location.href='#training-page'">Перейти к тренировкам</button>
+                    <button class="button-black" onclick="window.location.href='#training-page'">Перейти к тренировкам</button>
                 </div>
             </div>
         </div>`;

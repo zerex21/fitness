@@ -1,0 +1,47 @@
+@import "../../style/base/constants";
+@import "../../style/components/buttons";
+
+
+.main-page__container{
+    margin-top: 20px;
+    .connection-friends{
+        position: relative;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        background-image: url('../imgs/people-connected.jpg');
+        background-position: -61px 40px;
+        height: 510px;
+        .text-connection{
+           font-size: $size-regular;
+           padding-top: 20px;
+        }
+        .main-page__btn-join{
+            position: absolute;
+            bottom: 15px;
+            left: 30px;
+        }
+    }
+    .main-page__description-app{
+     position: relative;
+     display: flexbox;
+        h3{
+           padding-bottom: 20px;
+        }
+        div{
+            font-size: $size-regular;
+            max-width: 550px;
+            text-align: justify;
+            margin:0  100px;
+            padding:20px 0;
+             &:nth-child(2){
+                margin-left: auto;
+            }
+        }
+    }
+    .main-page__btn-trainings{
+        padding:60px 0;
+        display: flex;
+        justify-content: center;
+    }
+}
