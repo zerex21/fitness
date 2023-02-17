@@ -1,0 +1,89 @@
+@import "../base/constants";
+
+.button-black{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $size-regular;
+    padding: 10px 10px;
+    border: 1px solid $color-white;
+    color: $color-white;
+    border-radius: 25px;
+    background: $color-black;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.button-white{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $size-regular;
+    padding: 10px;
+    border: 1px solid $color-black;
+    color: $color-black;
+    border-radius: 25px;
+    background: $color-white;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.button-black_header{
+    font-size: $size-small;
+    padding: 5px 10px;
+    border: 1px solid $color-white;
+    color: $color-white;
+    border-radius: 25px;
+    display: flex;
+    background: $color-black;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.button-white_header{
+    font-size: $size-small;
+    padding: 5px 10px;
+    border: 1px solid $color-black;
+    color: $color-black;
+    border-radius: 25px;
+    display: flex;
+    background: $color-white;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.button-black_menu{
+    font-size: $size-regular;
+    padding: 10px 10px;
+    border: 1px solid $color-white;
+    color: $color-white;
+    border-radius: 25px;
+    display: flex;
+    background: $color-black;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.button-white_menu{
+    font-size: $size-regular;
+    padding: 10px;
+    border: 1px solid $color-black;
+    color: $color-black;
+    border-radius: 25px;
+    display: flex;
+    background: $color-white;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
