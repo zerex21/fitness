@@ -11,15 +11,13 @@ import ErrorPage, { ErrorTypes } from "../error";
 import { checkPurposes, checkUserInSystem, checkUserPurposes, closeSignInUp, logOut, openSignIn, openSignUp, singIn, singUp, toOpenSingIn, } from "../../scripts/modal/modalSignUpIn";
 import { clickForYou, clickSearch } from "../../scripts/training/clickButton";
 import openCloseList from "../../scripts/training/openCloseList";
-import { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderRecommendation  } from "../../scripts/training/shift";
+
+import { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderRecommendation } from "../../scripts/training/shift";
+
 import { renderContainerVideo } from "../../scripts/training/renderContainerVideo";
 import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRecommendationSlider } from "../../scripts/training/modalWindow";
 import { openModalWindowPlay } from "../../scripts/training/playVideoTrainingSearch";
 import { playVideoSearch, renderListSearch } from "../../scripts/training/playSearchVideo";
-import { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderRecommendation } from "../../scripts/training/shift";
-import { renderContainerVideo } from "../../scripts/training/renderContainerVideo";
-import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRecommendationSlider } from "../../scripts/training/modalWindow";
-
 
 
 export const enum PageIds {
@@ -77,7 +75,10 @@ class App {
         window.addEventListener('hashchange', () => {
             const hash = window.location.hash.slice(1);
             App.renderNewPage(hash);
-            this.clickBtnTraining();
+            // this.clickBtnTraining();
+            if (hash === "training-page") {
+                this.clickBtnTraining();
+            }
         });
     }
 
@@ -120,28 +121,22 @@ class App {
             const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
             modalWindow.classList.add("training_none");
             fon.classList.add("training_none");
-
-        })
-
-    }
-
-
-        })
-
-
-    renderSliders() {
         window.addEventListener("load", () => {
             createSliderNew();
             createSliderHome();
             createSliderRecommendation();
         })
-    }
-
-    renderSliders() {
-        window.addEventListener("load", () => {
-            createSliderNew();
-            createSliderHome();
-            createSliderRecommendation();
+        const checkboxAll = document.querySelectorAll(".checkbox-user");
+        checkboxAll.forEach((el) => el.addEventListener("input", () => {
+            setTimeout(createSliderRecommendation, 100)
+        }))
+        const btnLogOut = document.querySelector(".btn-logOut");
+        btnLogOut?.addEventListener("click", () => {
+            setTimeout(createSliderRecommendation, 100)
+        })
+        const btnEnter = document.querySelector(".enterBtn");
+        btnEnter?.addEventListener("click", () => {
+            setTimeout(createSliderRecommendation, 100)
         })
     }
 
@@ -294,11 +289,75 @@ class App {
                     if (trainingSearchContainer) trainingSearchContainer.style.display = 'none'
                     renderContainerVideo('all_training');
                 }
-
             })
         });
     }
 
+
+    playVideoSearch() {
+        window.addEventListener('hashchange', () => {
+            const trainingContainerVideos = document.querySelector('.training_container_videos') as HTMLElement;
+            const fon = document.querySelector(".training_fon") as HTMLElement;
+            const buttonClose = document.querySelector(".close_modal_window");
+            trainingContainerVideos?.addEventListener('click', (e) => {
+                const target = e.target as HTMLElement;
+                if (target.closest('.workout-card')) {
+                    openModalWindowPlay(String(target.closest('.workout-card')?.getAttribute('data-index')))
+                }
+            })
+
+            buttonClose?.addEventListener("click", () => {
+                const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
+                modalWindow.classList.add("training_none");
+                fon.classList.add("training_none");
+            })
+            fon?.addEventListener("click", () => {
+                const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
+                modalWindow.classList.add("training_none");
+                fon.classList.add("training_none");
+            })
+
+        })
+
+    }
+
+    getValueInputSearch() {
+        window.addEventListener('hashchange', () => {
+            const trainingInputSearch = document.querySelector('.training_input_search') as HTMLInputElement;
+            trainingInputSearch?.addEventListener('keyup', () => {
+                renderListSearch(trainingInputSearch.value)
+            })
+        })
+    }
+
+    playListVideoSearch() {
+        window.addEventListener('hashchange', () => {
+            const optionsSearch = document.querySelector('.options_search') as HTMLElement;
+            const trainingInputSearch = document.querySelector('.training_input_search') as HTMLInputElement;
+            optionsSearch?.addEventListener('click', (e) => {
+                const target = e.target as HTMLElement;
+                playVideoSearch(target.innerText);
+                trainingInputSearch.value = '';
+                optionsSearch.style.display = 'none';
+            })
+        })
+    }
+
+    closeRenderContainerVideo() {
+        window.addEventListener('hashchange', () => {
+            const trainingContainerVideos = document.querySelector('.training_container_videos') as HTMLElement;
+            const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+            const buttonForYou = document.querySelector('.button_for_you') as HTMLElement;
+            const buttonSearch = document.querySelector('.button_search') as HTMLElement;
+
+            buttonForYou?.addEventListener('click', () => {
+                trainingContainerVideos.innerHTML = '';
+                trainingSearchContainer.style.display = 'none';
+            });
+            buttonSearch?.addEventListener('click', () => trainingSearchContainer.style.display = 'block')
+        })
+
+    }
 
   playVideoSearch(){
     window.addEventListener('hashchange', () => {
@@ -387,8 +446,10 @@ class App {
         this.getValueInputSearch();
         this.playListVideoSearch();
         this.closeRenderContainerVideo();
-        this.clickBtnTraining();
-        this.renderSliders();
+        if (hash === "training-page") {
+            this.clickBtnTraining();
+        }
+
     }
 }
 
