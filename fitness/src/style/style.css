@@ -1015,6 +1015,7 @@ body {
   cursor: pointer;
 }
 
+
 .training_category {
   position: relative;
   margin-bottom: 20px;
@@ -1182,8 +1183,10 @@ body {
   margin-right: 20px;
 }
 .workout-card .container .workout-card__description {
+
   color: navajowhite;
   font-size: 1.1rem;
+
   margin-left: 25px;
 }
 .workout-card .container .workout-card__start {
@@ -1517,5 +1520,18 @@ body {
   color: black;
   text-decoration: none;
 }
+
+
+/* @import "./main";
+@import "./header";
+@import "./footer";
+@import "./workoutCard";
+@import "./programCard";
+@import "./developers";
+@import "./form";
+@import "./programms_css";
+@import "./training_css.scss";
+@import "./activity-page"; */
+
 
 /*# sourceMappingURL=style.css.map */

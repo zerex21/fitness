@@ -127,7 +127,9 @@ export let renderContainerVideo = (value: string) => {
   }
 
   if (trainingContainerAll) {
+
     trainingContainerAll.innerHTML = '';
+
     for (let y = 0; y < divVideos.length; y++) {
 
       if (divVideos[y] === ',') return false;
@@ -136,3 +138,4 @@ export let renderContainerVideo = (value: string) => {
 
   }
 }
+
