@@ -69,11 +69,12 @@ export let renderContainerVideo = (value: string) => {
 
   if (typeVideo) {
     for (let i = 0; i < typeVideo.length; i++) {
-      divVideos = typeVideo.map((item: { previewPhoto: string; duration: number; purpose: string; outfit: string; }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, '', item.outfit,))
+      divVideos = typeVideo.map((item: { previewPhoto: string; duration: number; purpose: string; name:string; outfit: string; id:number }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, item.name, item.outfit, item.id))
     }
   }
 
   if (tmpString) {
+    tmpArrOutfit = [];
     for (let item in VIDEOS) {
 
       if (item === 'homeTraining') break;
@@ -88,7 +89,7 @@ export let renderContainerVideo = (value: string) => {
 
 
     for (let i = 0; i < tmpArrOutfit.length; i++) {
-      divVideos = tmpArrOutfit.map((item: { previewPhoto: string; duration: number; purpose: string; outfit: string; }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, '', item.outfit,))
+      divVideos = tmpArrOutfit.map((item: { previewPhoto: string; duration: number; purpose: string; name:string; outfit: string; id:number }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, item.name, item.outfit, item.id))
     }
   }
 
@@ -121,11 +122,13 @@ export let renderContainerVideo = (value: string) => {
     }
 
     for (let i = 0; i < tmpArrOutfit.length; i++) {
-      divVideos = tmpArrOutfit.map((item: { previewPhoto: string; duration: number; purpose: string; outfit: string; }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, '', item.outfit,))
+      divVideos = tmpArrOutfit.map((item: { previewPhoto: string; duration: number; purpose: string; name:string; outfit: string; id:number}) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, item.name, item.outfit, item.id))
     }
   }
 
   if (trainingContainerAll) {
+
+    trainingContainerAll.innerHTML = '';
 
     for (let y = 0; y < divVideos.length; y++) {
 
