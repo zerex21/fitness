@@ -131,7 +131,7 @@ function createSliderRecommendation(): void {
 
     }
     if (sliderRecommendationContent.length === 0) {
-        for (let i = 0; i < allTraining.length; i++) {
+    for (let i = 0; i < allTraining.length; i++) {
             if (allTraining[i].purpose === "strength") {
                 sliderRecommendationContent.push(allTraining[i]);
             }

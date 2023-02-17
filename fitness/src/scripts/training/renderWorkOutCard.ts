@@ -30,6 +30,7 @@ let checkValues = (equipment:string, purpose:string) => {
     return {equipment, purpose}
 }
 
+
 export const renderWorkOutCard = (img:string, name:string= 'empty', time:number, purpose:string, description:string = 'empty', equipment: string, id:number ) => {
 
     ( {equipment, purpose}  = checkValues(equipment, purpose) )
