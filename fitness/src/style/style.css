@@ -426,7 +426,7 @@ main {
   height: 30px;
 }
 .container-header .header-nav {
-  padding: 0 10px;
+  padding: 0 15px;
   width: 700px;
 }
 .container-header .header-nav .active-list {
@@ -449,7 +449,7 @@ main {
 }
 .container-header .header-customization {
   display: flex;
-  padding-right: 10px;
+  padding-right: 15px;
   width: 200px;
   justify-content: space-between;
   align-items: center;
@@ -460,6 +460,7 @@ main {
 .container-header .header-customization .choose-language {
   display: flex;
   width: 75px;
+  padding-right: 15px;
   justify-content: space-between;
 }
 .container-header .header-customization .choose-language div:hover {
@@ -569,7 +570,125 @@ main {
   display: flex;
   background: black;
 }
+.container .menu-btn {
+  width: 0px;
+  /*  width: 18px; */
+  height: 30px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding-right: 32px;
+}
+.container .menu-btn span {
+  width: 28px;
+  /*  width: 18px; */
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  /* top: 45%; */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: black;
+  border: radius 2px;
+  transition: all 0.5s;
+}
+.container .menu-btn span:nth-of-type(2) {
+  /*  top: calc(50% - 5px); */
+  top: calc(50% - 6px);
+}
+.container .menu-btn span:nth-of-type(3) {
+  /*  top: calc(43% + 5px); */
+  top: calc(43% + 8px);
+}
+.container .menu-btn {
+  display: none;
+}
+.container .menu-btn:hover {
+  cursor: pointer;
+}
 
+@media (max-width: 1000px) {
+  .container-header .header-nav {
+    display: none;
+  }
+  .container-header .container-header__bnt,
+  .container-header .container-header__user {
+    padding-right: 15px;
+  }
+  .container-header .container-header__bnt {
+    position: absolute;
+    right: 46px;
+  }
+  .container-header .container-header__user {
+    position: absolute;
+    right: 46px;
+  }
+  .container-header .header-customization {
+    padding-left: 15px;
+    position: absolute;
+    right: 245px;
+  }
+  .container .menu-btn {
+    display: block;
+  }
+}
+@media (max-width: 520px) {
+  .container-header .logo {
+    width: 22px;
+    height: 25px;
+  }
+  .container-header .header-nav {
+    display: none;
+  }
+  .container-header .container-header__bnt {
+    right: 40px;
+    width: 120px;
+    padding-right: 5px;
+  }
+  .container-header .container-header__bnt .btn-signIn button {
+    font-size: 9px;
+    padding: 5px 6px;
+  }
+  .container-header .container-header__bnt .btn-signUp button {
+    font-size: 9px;
+    padding: 5px 6px;
+  }
+  .container-header .container-header__user {
+    max-width: 82px;
+    right: 35px;
+  }
+  .container-header .container-header__user .nickUser {
+    width: 7px;
+    font-size: 17px;
+  }
+  .container-header .container-header__user .btn-logOut button {
+    font-size: 10px;
+  }
+  .container-header .header-customization {
+    padding-left: 3px;
+    width: 100px;
+    right: 172px;
+    padding-right: 0px;
+  }
+  .container-header .header-customization .choose-language {
+    font-size: 15px;
+    max-width: 57px;
+    padding-right: 5px;
+  }
+  .container-header .header-customization .switch-theme {
+    width: 60px;
+    align-items: center;
+    font-size: 20px;
+  }
+  .container-header .header-customization .switch-theme .switch-theme__white img,
+  .container-header .header-customization .switch-theme .switch-theme__black img {
+    width: 20px;
+    height: 20px;
+  }
+  .container .menu-btn {
+    display: block;
+  }
+}
 .formSingIn,
 .formSignUp {
   display: none;
@@ -585,6 +704,15 @@ main {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+.container-formSignUp .container-signInUp, .container-formSingIn .container-signInUp {
+  display: flex;
+}
+.container-formSignUp .container-signInUp .linkToSignIn, .container-formSingIn .container-signInUp .linkToSignIn {
+  padding-left: 5px;
+  cursor: pointer;
+  color: #0085ef;
+  text-decoration: underline;
+}
 .container-formSignUp .container-form, .container-formSingIn .container-form {
   width: 500px;
   height: 475px;
@@ -754,6 +882,41 @@ main {
   width: 100px;
 }
 
+@media (max-width: 701px) {
+  .container-footer .about-developers {
+    font-size: 13px;
+  }
+  .container-footer .about-developers .github .list-github {
+    width: 140px;
+  }
+  .container-footer .about-developers__page {
+    font-size: 13px;
+  }
+  .container-footer .date-create {
+    font-size: 13px;
+  }
+  .container-footer .RsSchool {
+    width: 70px;
+  }
+}
+@media (max-width: 501px) {
+  .container-footer .about-developers {
+    font-size: 10px;
+  }
+  .container-footer .about-developers .github .list-github {
+    width: 100px;
+    padding-right: 10px;
+  }
+  .container-footer .about-developers__page {
+    font-size: 10px;
+  }
+  .container-footer .date-create {
+    font-size: 10px;
+  }
+  .container-footer .RsSchool {
+    width: 50px;
+  }
+}
 .button-black {
   display: flex;
   align-items: center;
@@ -880,6 +1043,39 @@ main {
   justify-content: center;
 }
 
+@media (max-width: 772px) {
+  .main-page__container .main-page__description-app h3 {
+    font-size: 20px;
+  }
+  .main-page__container .main-page__description-app div {
+    font-size: 20px;
+  }
+  .main-page__container .main-page__description-app div:nth-child(2) {
+    margin: 0px 100px;
+  }
+}
+@media (max-width: 630px) {
+  .main-page__container .main-page__btn-trainings .button-black {
+    font-size: 18px;
+  }
+  .main-page__container .connection-friends .text-connection {
+    font-size: 20px;
+  }
+  .main-page__container .connection-friends .main-page__btn-join .button-black {
+    padding: 7px 7px;
+    font-size: 18px;
+  }
+  .main-page__container .main-page__description-app h3 {
+    font-size: 15px;
+  }
+  .main-page__container .main-page__description-app div {
+    font-size: 15px;
+    margin: 0px 50px;
+  }
+  .main-page__container .main-page__description-app div:nth-child(2) {
+    margin: 0px 50px;
+  }
+}
 /* @import "../../style/base/constants"; */
 * {
   margin: 0;
@@ -1015,7 +1211,6 @@ body {
   cursor: pointer;
 }
 
-
 .training_category {
   position: relative;
   margin-bottom: 20px;
@@ -1116,7 +1311,6 @@ body {
   display: none;
 }
 
-/*************************/
 .training_container_videos {
   display: flex;
   justify-content: space-evenly;
@@ -1183,10 +1377,10 @@ body {
   margin-right: 20px;
 }
 .workout-card .container .workout-card__description {
-
   color: navajowhite;
   font-size: 1.1rem;
-
+  color: gray;
+  font-size: 1rem;
   margin-left: 25px;
 }
 .workout-card .container .workout-card__start {
@@ -1520,18 +1714,5 @@ body {
   color: black;
   text-decoration: none;
 }
-
-
-/* @import "./main";
-@import "./header";
-@import "./footer";
-@import "./workoutCard";
-@import "./programCard";
-@import "./developers";
-@import "./form";
-@import "./programms_css";
-@import "./training_css.scss";
-@import "./activity-page"; */
-
 
 /*# sourceMappingURL=style.css.map */

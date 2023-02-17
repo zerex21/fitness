@@ -73,6 +73,11 @@ class Header extends Component {
                 <button>Выйти</button>
             </div>
         </div>
+        <div class="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
         <div class="formSingIn">
         <div class="container container-formSingIn">
             <div class="container-form">
@@ -114,7 +119,7 @@ class Header extends Component {
           <button class="registerBtn">Зарегистрироваться</button>
         </div>
         <div class="container-signInUp">
-          <p>Уже есть аккаун? <a href="#" class="linkToSignIn">Войти</a>.</p>
+          <p>Уже есть аккаун? <p class="linkToSignIn">Войти.</p></p>
         </div>
       </div>
 </div>

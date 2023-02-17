@@ -11,7 +11,7 @@
         }
 
         .header-nav{
-            padding: 0 10px;
+            padding: 0 15px;
             width: 700px;
 
             .active-list{
@@ -39,7 +39,7 @@
 
         .header-customization{
             display: flex;
-            padding-right: 10px;
+            padding-right: 15px;
             width: 200px;
             justify-content: space-between;
             align-items: center;
@@ -51,6 +51,7 @@
             .choose-language{
                 display: flex;
                 width: 75px;
+                padding-right: 15px;
                 justify-content: space-between;
 
                 & div:hover{
@@ -179,5 +180,166 @@
                 }
             }
         }
+    }
+
+    .menu-btn {
+        width: 0px;
+       /*  width: 18px; */
+        height: 30px;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+        padding-right: 32px;
+      }
+
+      .menu-btn span {
+        width: 28px;
+       /*  width: 18px; */
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        /* top: 45%; */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: black;
+        border: radius 2px;
+        transition: all 0.5s;
+      }
+
+      .menu-btn span:nth-of-type(2) {
+       /*  top: calc(50% - 5px); */
+       top: calc(50% - 6px);
+      }
+
+      .menu-btn span:nth-of-type(3) {
+       /*  top: calc(43% + 5px); */
+       top: calc(43% + 8px);
+      }
+
+      .menu-btn {
+        display: none;
+      }
+
+      .menu-btn:hover {
+        cursor: pointer;
+      }
+}
+
+@media (max-width:1000px) {
+    .container{
+        &-header{
+            .header-nav{
+                display: none;
+            }
+
+            .container-header__bnt,
+            .container-header__user{
+                padding-right: 15px;
+            }
+
+            .container-header__bnt{
+                position: absolute;
+                right: 46px;
+            }
+
+            .container-header__user{
+                position: absolute;
+                right: 46px;
+            }
+
+            .header-customization{
+                padding-left: 15px;
+                position: absolute;
+                right: 245px;
+            }
+        }
+
+        .menu-btn {
+            display: block;
+          }
+    }
+}
+
+@media (max-width:520px) {
+    .container{
+        &-header{
+
+            .logo{
+                width: 22px;
+                height: 25px;
+            }
+            .header-nav{
+                display: none;
+            }
+
+            .container-header__bnt{
+                right: 40px;
+                width: 120px;
+                padding-right: 5px;
+                .btn-signIn{
+                    button{
+                        font-size: 9px;
+                        padding: 5px 6px;
+                    }
+                }
+
+                .btn-signUp{
+                    button{
+                       font-size: 9px;
+                       padding: 5px 6px;
+                    }
+                }
+            }
+
+            .container-header__user{
+                max-width: 82px;
+                right: 35px;
+                .nickUser{
+                  width: 7px;
+                  font-size: 17px;
+                }
+
+                .btn-logOut{
+
+                    button{
+                        font-size: 10px;
+                    }
+                }
+            }
+
+            .header-customization{
+                padding-left: 3px;
+                width: 100px;
+                right: 172px;
+                padding-right: 0px;
+
+                .choose-language{
+                   font-size: 15px;
+                   max-width: 57px;
+                   padding-right: 5px;
+                }
+
+                .switch-theme{
+                    width: 60px;
+                    align-items: center;
+                    font-size: 20px;
+
+                    .switch-theme__white,
+                    .switch-theme__black{
+
+                        img{
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        .menu-btn {
+            display: block;
+          }
     }
 }

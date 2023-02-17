@@ -16,9 +16,7 @@ import { renderContainerVideo } from "../../scripts/training/renderContainerVide
 import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRecommendationSlider } from "../../scripts/training/modalWindow";
 import { openModalWindowPlay } from "../../scripts/training/playVideoTrainingSearch";
 import { playVideoSearch, renderListSearch } from "../../scripts/training/playSearchVideo";
-import { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderRecommendation } from "../../scripts/training/shift";
-import { renderContainerVideo } from "../../scripts/training/renderContainerVideo";
-import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRecommendationSlider } from "../../scripts/training/modalWindow";
+
 
 
 
@@ -126,16 +124,6 @@ class App {
     }
 
 
-        })
-
-
-    renderSliders() {
-        window.addEventListener("load", () => {
-            createSliderNew();
-            createSliderHome();
-            createSliderRecommendation();
-        })
-    }
 
     renderSliders() {
         window.addEventListener("load", () => {
@@ -251,9 +239,7 @@ class App {
     callRenderContainerVideos() {
 
         window.addEventListener('hashchange', () => {
-
-          const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-
+          let trainingSearchContainer = document.querySelector('.training_search_container');
 
           trainingSearchContainer?.addEventListener('click', (e) => {
             const target = e.target as HTMLElement;
@@ -273,32 +259,9 @@ class App {
                 if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
                 renderContainerVideo('all_training');
               }
-
-            let trainingSearchContainer = document.querySelector('.training_search_container');
-
-            trainingSearchContainer?.addEventListener('click', (e) => {
-                const target = e.target as HTMLElement;
-                if (target.closest('.training_category_list')) {
-                    const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-                    if (trainingSearchContainer) trainingSearchContainer.style.display = 'none'
-                    renderContainerVideo(target.innerText);
-                }
-                if (target.closest('.short_training')) {
-                    const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-                    if (trainingSearchContainer) trainingSearchContainer.style.display = 'none'
-                    renderContainerVideo('short_training');
-                }
-
-                if (target.closest('.all_training')) {
-                    const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-                    if (trainingSearchContainer) trainingSearchContainer.style.display = 'none'
-                    renderContainerVideo('all_training');
-                }
-
             })
         });
     }
-
 
   playVideoSearch(){
     window.addEventListener('hashchange', () => {
