@@ -522,6 +522,7 @@ main {
   margin-left: -135px;
   width: 260px;
   z-index: 1;
+  background-color: white;
 }
 .container-header .container-header__user .user-purposes div {
   padding-top: 5px;
@@ -647,8 +648,6 @@ main {
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
-  overflow: hidden;
-  /*  z-index: 1; */
 }
 
 @media (max-width: 1000px) {
