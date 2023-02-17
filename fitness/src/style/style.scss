@@ -1,0 +1,14 @@
+@import "./base/normalize";
+@import "./base/base";
+@import "./base/constants";
+@import "./components/buttons";
+@import "../core/components/header/header";
+@import "../core/components/header/form";
+@import "../core/components/footer/footer";
+@import "../pages/main/main";
+@import "../pages/training/training";
+@import "../pages/training/workoutCard";
+@import "../pages/activity/activity-page";
+@import "../pages/program/programms_css";
+@import "../pages/program/programCard";
+@import "../pages/developers/developers";

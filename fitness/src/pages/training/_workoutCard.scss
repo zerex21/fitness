@@ -1,0 +1,87 @@
+.workout-card{
+    background-color: black;
+    color: gray;
+    width: 340px;
+    position: relative;
+    margin: 10px 10px;
+
+    .container{
+        .workout-card__image {
+            width: 100%;
+        }
+
+        .workout-card__name{
+            position: absolute;
+            margin-top: -65px;
+            margin-left: 50px;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .workout-card__time{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 1rem;
+            color: white;
+            margin: 15px 10px;
+
+            .workout-card__time_icon{
+                width: 20px;
+                height: 20px;
+                filter: invert(100%);
+                margin-right: 20px;
+            }
+        }
+
+        .workout-card__characteristics{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 1rem;
+            color: white;
+            margin: 15px 10px;
+
+            .workout-card__characteristics_icon{
+                width: 20px;
+                height: 20px;
+                filter: invert(100%);
+                margin-right: 20px;
+            }
+        }
+
+        .workout-card__equipment{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 1rem;
+            color: white;
+            margin: 15px 10px;
+
+            .workout-card__equipment_icon{
+                width: 20px;
+                height: 20px;
+                filter: invert(100%);
+                margin-right: 20px;
+            }
+        }
+
+        .workout-card__description{
+            color: navajowhite;
+            font-size: 1.1rem;
+            margin-left: 25px;
+        }
+
+        .workout-card__start{
+            margin: 25px auto;
+            display: block;
+            height: 35px;
+            font-size: 0.9rem;
+            color: black;
+            background-color: white;
+            width: 50%;
+            border-radius: 50px;
+            border: none;
+        }
+    }
+}

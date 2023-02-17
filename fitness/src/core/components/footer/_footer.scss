@@ -1,0 +1,55 @@
+@import "../../../style/base/constants";
+
+.container{
+    &-footer{
+        padding: 10px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 0 0 auto;
+
+        .about-developers{
+            display: flex;
+            align-items: center;
+
+            .github{
+              .list-github{
+                width: 170px;
+                display: flex;
+                justify-content: space-between;
+                padding-right: 20px;
+
+                li{
+                    list-style-type:none;
+
+                    a{
+                        color: $color-black;
+                        text-decoration: none;
+                    }
+
+                    &:hover{
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+              }
+            }
+
+            &__page{
+                font-size: $size-medium;
+
+                &:hover{
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+        .date-create{
+            font-size: $size-medium;
+        }
+
+        .RsSchool{
+            width: 100px;
+        }
+    }
+}

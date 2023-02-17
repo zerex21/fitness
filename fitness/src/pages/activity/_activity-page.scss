@@ -1,0 +1,52 @@
+@import "../../style/base/constants";
+@import "../../style/components/buttons";
+
+.activity-page {
+
+    .container {
+
+        .bold{
+            color: $color-black;
+        }
+
+        .active-page__total-workouts,
+        .active-page__total-time{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .active-page__workout-quantity {
+            font-size: $size-large;
+            font-weight: 900;
+        }
+
+        .active-page__workout-item{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            .active-page__video img{
+                width: 370px;
+            }
+        }
+
+        .active-page__workouts-list{
+            border-top: 2px solid $color-grey;
+            border-bottom: 1px solid $color-grey;
+
+            .active-page__workout-details{
+                border-top: 1px solid $color-grey;
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+
+                .active-page__aim-muscles-time{
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}

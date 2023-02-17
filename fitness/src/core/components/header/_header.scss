@@ -1,0 +1,183 @@
+.container{
+    &-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24px;
+
+        .logo{
+            width: 30px;
+            height: 30px;
+        }
+
+        .header-nav{
+            padding: 0 10px;
+            width: 700px;
+
+            .active-list{
+                text-decoration: underline;
+            }
+
+            .list-navigation{
+                display: flex;
+                justify-content: space-between;
+
+                  li{
+                    list-style-type:none;
+
+                    a{
+                        color: black;
+                        text-decoration: none;
+                        &:hover{
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
+        .header-customization{
+            display: flex;
+            padding-right: 10px;
+            width: 200px;
+            justify-content: space-between;
+            align-items: center;
+
+            .language-choose{
+                text-decoration: underline;
+            }
+
+            .choose-language{
+                display: flex;
+                width: 75px;
+                justify-content: space-between;
+
+                & div:hover{
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+
+            .switch-theme{
+                display: flex;
+                width: 85px;
+                justify-content: space-between;
+
+                .theme-choose{
+                    border-bottom: 2px solid black;
+                }
+
+                .switch-theme__white,
+                .switch-theme__black{
+                    display: flex;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                & div:hover{
+                    cursor: pointer;
+                    border: 25px;
+                    border-bottom: 2px solid black;
+                }
+            }
+        }
+
+        .container-header__user{
+            position: relative;
+            display: none;
+            width: 115px;
+            justify-content: space-between;
+            align-items: center;
+
+            .nickUser{
+                z-index: 2;
+                padding: 0 7px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid black;
+                border-radius: 25px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            .down-list_user:hover .user-purposes {display: block;};
+
+            input[type="checkbox"]:hover{
+                cursor: pointer;
+            }
+
+            .user-purposes{
+                position: absolute;
+                display: none;
+                padding-top: 10px;
+                margin-left: -135px;
+                width: 260px;
+                z-index: 1;
+                div{
+                    padding-top: 5px;
+                }
+
+                fieldset{
+                  padding: 5px 15px;
+                }
+               }
+
+            .btn-logOut{
+                z-index: 2;
+                button{
+                    font-size: 16px;
+                    border: 1px solid white;
+                    color: white;
+                    border-radius: 25px;
+                    display: flex;
+                    background: black;
+                    padding: 5px 10px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .container-header__bnt{
+            display: flex;
+            width: 190px;
+            justify-content: space-between;
+
+            button{
+                font-size: 16px;
+                padding: 5px 10px;
+                border: none;
+                border-radius: 25px;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            .btn-signIn{
+                button{
+                    border: 1px solid black;
+                    border-radius: 25px;
+                    display: flex;
+                    background: white;
+                }
+            }
+
+            .btn-signUp{
+                button{
+                    border: 1px solid white;
+                    color: white;
+                    border-radius: 25px;
+                    display: flex;
+                    background: black;
+                }
+            }
+        }
+    }
+}

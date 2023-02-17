@@ -12,10 +12,13 @@ export interface IUsers {
 }
 
 export interface IVideos {
+
     [index: string]: IVideosCategory;
 }
 
 export type VideosCategory = {
+    id?:number,
+    name?:string,
     tag:string,
     previewPhoto:string,
     purpose: string,
@@ -26,6 +29,18 @@ export type VideosCategory = {
 };
 
 export interface IVideosCategory {
+  push: any;
+  map: any;
   length: number;
   [index: number]:VideosCategory;
+}
+
+export interface ITraining {
+  tag: string,
+  previewPhoto: string,
+  purpose: string,
+  muscle: string,
+  duration: number,
+  forHome: boolean,
+  outfit: string
 }
