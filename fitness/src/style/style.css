@@ -840,6 +840,44 @@ main {
   cursor: pointer;
 }
 
+@media (max-width: 600px) {
+  .container-formSignUp .container-form, .container-formSingIn .container-form {
+    width: 420px;
+    height: 440px;
+  }
+}
+@media (max-width: 500px) {
+  .container-formSignUp .container-form, .container-formSingIn .container-form {
+    width: 270px;
+    height: 380px;
+  }
+  .container-formSignUp .enterBtn,
+  .container-formSignUp .registerBtn, .container-formSingIn .enterBtn,
+  .container-formSingIn .registerBtn {
+    padding: 14px 20px;
+    font-size: 19px;
+  }
+  .container-formSignUp h3, .container-formSingIn h3 {
+    font-size: 20px;
+  }
+  .container-formSignUp hr, .container-formSingIn hr {
+    margin-bottom: 10px;
+  }
+  .container-formSignUp p, .container-formSingIn p {
+    font-size: 17px;
+  }
+  .container-formSignUp .nickNameSignIn,
+  .container-formSignUp .pswSignIn,
+  .container-formSignUp .nickNameSignUp,
+  .container-formSignUp .pswSignUp, .container-formSingIn .nickNameSignIn,
+  .container-formSingIn .pswSignIn,
+  .container-formSingIn .nickNameSignUp,
+  .container-formSingIn .pswSignUp {
+    padding: 11px 0;
+    margin: 5px 0 22px 0;
+    font-size: 17px;
+  }
+}
 .container-footer {
   padding: 10px 10px;
   display: flex;
