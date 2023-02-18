@@ -10,6 +10,8 @@ for (let key in VIDEOS) {
     }
 }
 
+allTraining.splice(29, 16);
+
 let sliderRecommendationContent: ITraining[] = [];
 let countAll = new Array(3).fill(0);
 let positionAll = new Array(3).fill(0);
@@ -93,39 +95,49 @@ function createSliderRecommendation(): void {
     if (sliderRecommendationContent.length !== 0) {
         sliderRecommendationContent.splice(0, sliderRecommendationContent.length);
     };
-    let localRecommendation = localStorage.getItem("purpose");
-    let inSystem = localStorage.getItem("inSystem");
-    if (localRecommendation?.length !== 0 && localRecommendation !== null) {
-        for (let i = 0; i < localRecommendation.length; i++) {
-            if (localRecommendation[i] === "strength") {
-                for (let i = 0; i < allTraining.length; i++) {
-                    if (allTraining[i].purpose === "strength") {
-                        sliderRecommendationContent.push(allTraining[i]);
-                    }
-                }
-            }
-            if (localRecommendation[i] === "stamina") {
-                for (let i = 0; i < allTraining.length; i++) {
-                    if (allTraining[i].purpose === "stamina") {
-                        sliderRecommendationContent.push(allTraining[i]);
-                    }
-                }
-            }
-            if (localRecommendation[i] === "move") {
-                for (let i = 0; i < allTraining.length; i++) {
-                    if (allTraining[i].purpose === "move") {
-                        sliderRecommendationContent.push(allTraining[i]);
-                    }
+
+    let arrJson: string | null = localStorage.getItem('users');
+    let arrLocal = JSON.parse(String(arrJson));
+
+    if (arrLocal !== null) {
+        for (let i = 0; i < arrLocal.length; i++) {
+            let purposeArr = arrLocal[i].purpose;
+            if (arrLocal[i].inSystem === true && purposeArr.length !== 0) {
+                for (let i = 0; i < purposeArr.length; i++) {
+                    if (purposeArr[i] === "strength") {
+                        for (let i = 0; i < allTraining.length; i++) {
+                            if (allTraining[i].purpose === "strength") {
+                                sliderRecommendationContent.push(allTraining[i]);
+                            }
+                        }
+                    };
+                    if (purposeArr[i] === "stamina") {
+                        for (let i = 0; i < allTraining.length; i++) {
+                            if (allTraining[i].purpose === "stamina") {
+                                sliderRecommendationContent.push(allTraining[i]);
+                            }
+                        }
+                    };
+                    if (purposeArr[i] === "move") {
+                        for (let i = 0; i < allTraining.length; i++) {
+                            if (allTraining[i].purpose === "move") {
+                                sliderRecommendationContent.push(allTraining[i]);
+                            }
+                        }
+                    };
                 }
             }
         }
-    } else {
-        for (let i = 0; i < allTraining.length; i++) {
+
+    }
+    if (sliderRecommendationContent.length === 0) {
+    for (let i = 0; i < allTraining.length; i++) {
             if (allTraining[i].purpose === "strength") {
                 sliderRecommendationContent.push(allTraining[i]);
             }
         }
     }
+
     maxCount[1] = sliderRecommendationContent.length;
     const sliderNew = document.querySelector(".slider_recommendation") as HTMLElement;
     sliderNew.innerHTML = ' ';

@@ -12,15 +12,13 @@ import ErrorPage, { ErrorTypes } from "../error";
 import { checkPurposes, checkUserInSystem, checkUserPurposes, closeSignInUp, logOut, openSignIn, openSignUp, singIn, singUp, toOpenSingIn, } from "../../scripts/modal/modalSignUpIn";
 import { clickForYou, clickSearch } from "../../scripts/training/clickButton";
 import openCloseList from "../../scripts/training/openCloseList";
-import { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderRecommendation  } from "../../scripts/training/shift";
+
+import { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderRecommendation } from "../../scripts/training/shift";
+
 import { renderContainerVideo } from "../../scripts/training/renderContainerVideo";
 import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRecommendationSlider } from "../../scripts/training/modalWindow";
 import { openModalWindowPlay } from "../../scripts/training/playVideoTrainingSearch";
 import { playVideoSearch, renderListSearch } from "../../scripts/training/playSearchVideo";
-
-
-
-
 
 export const enum PageIds {
     MainPage = 'main-page',
@@ -77,16 +75,18 @@ class App {
         window.addEventListener('hashchange', () => {
             const hash = window.location.hash.slice(1);
             App.renderNewPage(hash);
-            this.clickBtnTraining();
+
             this.callRenderContainerVideos();
             this.closeRenderContainerVideo();
             this.playListVideoSearch();
             this.getValueInputSearch();
             this.playVideoSearch();
+            // this.clickBtnTraining();
+            if (hash === "training-page") {
+                this.clickBtnTraining();
+            }
         });
     }
-
-
     clickBtnTraining() {
         const buttonForYou = document.querySelector(".button_for_you") as HTMLElement;
         const buttonSearch = document.querySelector(".button_search") as HTMLElement;
@@ -124,19 +124,26 @@ class App {
             player.remove();
             const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
             modalWindow.classList.add("training_none");
-            fon.classList.add("training_none");
+            fon.classList.add("training_none")
+        });
 
-        })
-
-    }
-
-
-
-    renderSliders() {
         window.addEventListener("load", () => {
             createSliderNew();
             createSliderHome();
             createSliderRecommendation();
+
+        })
+        const checkboxAll = document.querySelectorAll(".checkbox-user");
+        checkboxAll.forEach((el) => el.addEventListener("input", () => {
+            setTimeout(createSliderRecommendation, 100)
+        }))
+        const btnLogOut = document.querySelector(".btn-logOut");
+        btnLogOut?.addEventListener("click", () => {
+            setTimeout(createSliderRecommendation, 100)
+        })
+        const btnEnter = document.querySelector(".enterBtn");
+        btnEnter?.addEventListener("click", () => {
+            setTimeout(createSliderRecommendation, 100)
         })
     }
 
@@ -260,6 +267,7 @@ class App {
               renderContainerVideo('short_training');
             }
 
+
             if(target.closest('.all_training')){
               const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
               if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
@@ -268,6 +276,35 @@ class App {
           })
        }
     }
+
+ 
+   callRenderContainerVideos() {
+       let urlObj = new URL(window.location.href);
+       if((urlObj.hash) === '#training-page'){
+        let trainingSearchContainer = document.querySelector('.training_search_container');
+
+        trainingSearchContainer?.addEventListener('click', (e) => {
+          const target = e.target as HTMLElement;
+            if (target.closest('.training_category_list')) {
+              const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+              if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
+              renderContainerVideo(target.innerText);
+            }
+            if(target.closest('.short_training')){
+              const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+              if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
+              renderContainerVideo('short_training');
+            }
+
+            if(target.closest('.all_training')){
+              const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+              if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
+              renderContainerVideo('all_training');
+            }
+          })
+       }
+    }
+
 
   playVideoSearch(){
     let urlObj = new URL(window.location.href);
@@ -335,8 +372,8 @@ class App {
          });
 
         buttonSearch?.addEventListener('click', () => trainingSearchContainer.style.display = 'block')
-    }
 
+    }
   }
 
   openBurgerMenu(){
@@ -396,8 +433,10 @@ class App {
         this.getValueInputSearch();
         this.playListVideoSearch();
         this.closeRenderContainerVideo();
-        this.clickBtnTraining();
-        this.renderSliders();
+
+        if (hash === "training-page") {
+            this.clickBtnTraining();
+        }
 
     }
 }
