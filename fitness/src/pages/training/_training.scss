@@ -16,7 +16,7 @@ body {
 }
 
 .training_container {
-    margin: 20px;
+    margin: 20px 0;
 }
 
 .training_title {
@@ -104,8 +104,7 @@ body {
 
 .training_content,
 .training_search_container {
-    margin: 20px;
-    /* display: none; */
+    margin: 20px 0;
 }
 
 .training_input_search {
@@ -114,7 +113,7 @@ body {
     margin: 20px 0;
 }
 
-.options_search{
+.options_search {
     padding-bottom: 10px;
     max-height: 160px;
     background-color: white;
@@ -123,10 +122,10 @@ body {
     overflow-y: scroll;
     position: absolute;
     z-index: 2;
-    margin-top: -15px ;
+    margin-top: -15px;
     display: none;
 
-    li{
+    li {
         list-style-type: none;
         padding: 5px 0px;
         border: 1px solid black;
@@ -236,53 +235,85 @@ body {
     display: none;
 }
 
-.training_container_videos{
+.training_container_videos {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
-@media (max-width:740px) {
-
-    .training_container{
-        margin: 0px;
+@media screen and (min-width: 740px) and (max-width: 1399px) {
+    .training_arrow {
+        width: 25px;
+        font-size: 20px;
     }
 
-    .training_category {
-        width: 440px;
+    .training_slider {
+        gap: 5px;
     }
 
-    .training_category img {
-        width: 440px;
-        height: 300px;
+    .training_kind_container {
+        width: 605px;
     }
 
-    .training_category_list li {
-        width: 422px;
+    .training_list {
+        gap: 5px;
+    }
+
+    .training_card {
+        width: 300px;
+        height: 200px;
+    }
+
+    .training_card img {
+        width: 300px;
+        height: 200px;
+    }
+
+    .training_video {
+        width: 560px;
+        height: 315px;
     }
 }
 
-@media (max-width:521px) {
-
-    .training_category {
-        width: 290px;
+@media screen and (min-width: 320px) and (max-width: 739px) {
+    .training_arrow {
+        width: 25px;
+        font-size: 20px;
     }
 
-    .options_search{
-        width: 245px;
-    }
-    .training_name_category{
-      top: 30px;
-      font-size: 25px;
+    .training_slider {
+        gap: 5px;
     }
 
-    .training_category img {
-        width: 262px;
-        height: 205px;
+    .training_kind_container {
+        width: 240px;
     }
 
-    .training_category_list li {
-        width: 247px;
-        padding: 7px 0px 7px 11px;
+    .training_list {
+        gap: 5px;
+    }
+
+    .training_card {
+        width: 240px;
+        height: 160px;
+    }
+
+    .training_card img {
+        width: 240px;
+        height: 160px;
+    }
+
+    .training_card_content_text {
+        font-size: 16px;
+    }
+
+    .training_video {
+        width: 300px;
+        height: 170px;
+    }
+
+    .close_modal_window {
+        top: -20px;
+        width: 20px;
     }
 }
