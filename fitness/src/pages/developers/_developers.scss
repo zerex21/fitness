@@ -5,6 +5,10 @@
     padding:100px 0;
     flex-wrap: wrap;
 
+    .developer-card{
+        padding:15px 10px ;
+    }
+
     .developer-photo{
       display: flex;
       justify-content: center;
@@ -34,5 +38,44 @@
               text-decoration: none;
           }
       }
+    }
+  }
+
+  @media (max-width:1001px) {
+    .container{
+        &-aboutDevelopers{
+
+            .developer-photo{
+                    img{
+                        max-width: 250px;
+                    }
+                }
+
+                .developer-description{
+                    max-width: 350px;
+                    font-size: 17px;
+                }
+
+                .developer-name{
+                    font-size: 21px;
+                }
+
+                .developer-github{
+                    font-size: 18px;
+                }
+        }
+    }
+  }
+
+  @media (max-width:740px) {
+    .container{
+        &-aboutDevelopers{
+            padding:20px 0;
+
+            .developer-card{
+                padding:20px 15px ;
+            }
+
+        }
     }
   }

@@ -61,6 +61,8 @@ let checkValue = (value: string): { typeVideo: IVideosCategory, tmpString: strin
 }
 
 export let renderContainerVideo = (value: string) => {
+  tmpString = '' ;
+  tmpStringType = '';
   ({ typeVideo, tmpString, tmpStringType } = checkValue(value))
 
   let trainingContainerAll = document.querySelector('.training_container_videos') as HTMLElement;
@@ -68,12 +70,15 @@ export let renderContainerVideo = (value: string) => {
   let divVideos = '';
 
   if (typeVideo) {
+    divVideos = '';
+    tmpArrOutfit = [];
     for (let i = 0; i < typeVideo.length; i++) {
       divVideos = typeVideo.map((item: { previewPhoto: string; duration: number; purpose: string; name:string; outfit: string; id:number }) => renderWorkOutCard(item.previewPhoto, '', item.duration, item.purpose, item.name, item.outfit, item.id))
     }
   }
 
   if (tmpString) {
+    divVideos = '';
     tmpArrOutfit = [];
     for (let item in VIDEOS) {
 
@@ -94,7 +99,8 @@ export let renderContainerVideo = (value: string) => {
   }
 
   if (tmpStringType) {
-
+  /*    divVideos = '';
+    tmpArrOutfit = []; */
     if (tmpStringType === 'all_training') {
       for (let item in VIDEOS) {
 
@@ -108,6 +114,8 @@ export let renderContainerVideo = (value: string) => {
     }
 
     if (tmpStringType === 'short_training') {
+     /*  divVideos = '';
+      tmpArrOutfit = []; */
       for (let item in VIDEOS) {
 
         if (item === 'homeTraining') break;
