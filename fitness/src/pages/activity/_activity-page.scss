@@ -40,7 +40,7 @@
             .active-page__workout-details{
                 border-top: 1px solid $color-grey;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 width: 100%;
 
                 .active-page__aim-muscles-time{
@@ -48,5 +48,11 @@
                 }
             }
         }
+    }
+}
+
+@media (min-width: $screen-mobile) {
+    .active-page__workout-details{
+        flex-direction: row !important;
     }
 }
