@@ -1,3 +1,4 @@
+import { closeBurgerMenu } from './../../scripts/header/burgerMenu';
 import MainPage from "../main";
 import Page from "../../core/templates/pages";
 import TrainingPage from "../training";
@@ -18,7 +19,6 @@ import { renderContainerVideo } from "../../scripts/training/renderContainerVide
 import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRecommendationSlider } from "../../scripts/training/modalWindow";
 import { openModalWindowPlay } from "../../scripts/training/playVideoTrainingSearch";
 import { playVideoSearch, renderListSearch } from "../../scripts/training/playSearchVideo";
-
 
 export const enum PageIds {
     MainPage = 'main-page',
@@ -75,6 +75,12 @@ class App {
         window.addEventListener('hashchange', () => {
             const hash = window.location.hash.slice(1);
             App.renderNewPage(hash);
+
+            this.callRenderContainerVideos();
+            this.closeRenderContainerVideo();
+            this.playListVideoSearch();
+            this.getValueInputSearch();
+            this.playVideoSearch();
             // this.clickBtnTraining();
             if (hash === "training-page") {
                 this.clickBtnTraining();
@@ -120,10 +126,12 @@ class App {
             modalWindow.classList.add("training_none");
             fon.classList.add("training_none")
         });
+
         window.addEventListener("load", () => {
             createSliderNew();
             createSliderHome();
             createSliderRecommendation();
+
         })
         const checkboxAll = document.querySelectorAll(".checkbox-user");
         checkboxAll.forEach((el) => el.addEventListener("input", () => {
@@ -214,7 +222,6 @@ class App {
         const userPurposes = document.querySelector('.user-purposes');
         userPurposes?.addEventListener('click', (e) => {
             let tmpArr: string[] = []
-            /*   console.log (e.target); */
             let element = e.target as HTMLInputElement;
             if (element.tagName === "INPUT") {
                 tmpArr = checkUserPurposes();
@@ -243,120 +250,165 @@ class App {
     }
 
     callRenderContainerVideos() {
+       let urlObj = new URL(window.location.href);
+       if((urlObj.hash) === '#training-page'){
+        let trainingSearchContainer = document.querySelector('.training_search_container');
 
-        window.addEventListener('hashchange', () => {
+        trainingSearchContainer?.addEventListener('click', (e) => {
+          const target = e.target as HTMLElement;
+            if (target.closest('.training_category_list')) {
+              const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+              if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
+              renderContainerVideo(target.innerText);
+            }
+            if(target.closest('.short_training')){
+              const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+              if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
+              renderContainerVideo('short_training');
+            }
 
-            const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
 
-
-            trainingSearchContainer?.addEventListener('click', (e) => {
-                const target = e.target as HTMLElement;
-                if (target.closest('.training_category_list')) {
-                    const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-                    if (trainingSearchContainer) trainingSearchContainer.style.display = 'none'
-                    renderContainerVideo(target.innerText);
-                }
-                if (target.closest('.short_training')) {
-                    const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-                    if (trainingSearchContainer) trainingSearchContainer.style.display = 'none'
-                    renderContainerVideo('short_training');
-                }
-
-                if (target.closest('.all_training')) {
-                    const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-                    if (trainingSearchContainer) trainingSearchContainer.style.display = 'none'
-                    renderContainerVideo('all_training');
-                }
-
-                let trainingSearchContainer = document.querySelector('.training_search_container');
-
-                trainingSearchContainer?.addEventListener('click', (e) => {
-                    const target = e.target as HTMLElement;
-                    if (target.closest('.training_category_list')) {
-                        const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-                        if (trainingSearchContainer) trainingSearchContainer.style.display = 'none'
-                        renderContainerVideo(target.innerText);
-                    }
-                    if (target.closest('.short_training')) {
-                        const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-                        if (trainingSearchContainer) trainingSearchContainer.style.display = 'none'
-                        renderContainerVideo('short_training');
-                    }
-
-                    if (target.closest('.all_training')) {
-                        const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-                        if (trainingSearchContainer) trainingSearchContainer.style.display = 'none'
-                        renderContainerVideo('all_training');
-                    }
-                })
-            });
-        })
+            if(target.closest('.all_training')){
+              const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+              if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
+              renderContainerVideo('all_training');
+            }
+          })
+       }
     }
 
-    playVideoSearch() {
-        window.addEventListener('hashchange', () => {
-            const trainingContainerVideos = document.querySelector('.training_container_videos') as HTMLElement;
-            const fon = document.querySelector(".training_fon") as HTMLElement;
-            const buttonClose = document.querySelector(".close_modal_window");
-            trainingContainerVideos?.addEventListener('click', (e) => {
-                const target = e.target as HTMLElement;
-                if (target.closest('.workout-card')) {
-                    openModalWindowPlay(String(target.closest('.workout-card')?.getAttribute('data-index')))
-                }
-            })
+ 
+   callRenderContainerVideos() {
+       let urlObj = new URL(window.location.href);
+       if((urlObj.hash) === '#training-page'){
+        let trainingSearchContainer = document.querySelector('.training_search_container');
 
-            buttonClose?.addEventListener("click", () => {
-                const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
-                modalWindow.classList.add("training_none");
-                fon.classList.add("training_none");
-            })
-            fon?.addEventListener("click", () => {
-                const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
-                modalWindow.classList.add("training_none");
-                fon.classList.add("training_none");
-            })
+        trainingSearchContainer?.addEventListener('click', (e) => {
+          const target = e.target as HTMLElement;
+            if (target.closest('.training_category_list')) {
+              const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+              if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
+              renderContainerVideo(target.innerText);
+            }
+            if(target.closest('.short_training')){
+              const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+              if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
+              renderContainerVideo('short_training');
+            }
 
+            if(target.closest('.all_training')){
+              const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+              if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
+              renderContainerVideo('all_training');
+            }
+          })
+       }
+    }
+
+
+  playVideoSearch(){
+    let urlObj = new URL(window.location.href);
+    if((urlObj.hash) === '#training-page'){
+        const trainingContainerVideos = document.querySelector('.training_container_videos') as HTMLElement;
+        const fon = document.querySelector(".training_fon") as HTMLElement;
+        const buttonClose = document.querySelector(".close_modal_window");
+        trainingContainerVideos?.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement;
+            if (target.closest('.workout-card')) {
+                openModalWindowPlay(String(target.closest('.workout-card')?.getAttribute('data-index')))
+            }
+        })
+
+        buttonClose?.addEventListener("click", () => {
+            const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
+            modalWindow.classList.add("training_none");
+            fon.classList.add("training_none");
+        })
+        fon?.addEventListener("click", () => {
+            const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
+            modalWindow.classList.add("training_none");
+            fon.classList.add("training_none");
         })
 
     }
 
-    getValueInputSearch() {
-        window.addEventListener('hashchange', () => {
-            const trainingInputSearch = document.querySelector('.training_input_search') as HTMLInputElement;
-            trainingInputSearch?.addEventListener('keyup', () => {
-                renderListSearch(trainingInputSearch.value)
-            })
+  }
+
+  getValueInputSearch(){
+    let urlObj = new URL(window.location.href);
+    if((urlObj.hash) === '#training-page'){
+        const trainingInputSearch = document.querySelector('.training_input_search') as HTMLInputElement;
+        trainingInputSearch?.addEventListener('keyup', () => {
+            renderListSearch(trainingInputSearch.value)
         })
     }
+  }
 
-    playListVideoSearch() {
-        window.addEventListener('hashchange', () => {
-            const optionsSearch = document.querySelector('.options_search') as HTMLElement;
-            const trainingInputSearch = document.querySelector('.training_input_search') as HTMLInputElement;
-            optionsSearch?.addEventListener('click', (e) => {
-                const target = e.target as HTMLElement;
-                playVideoSearch(target.innerText);
-                trainingInputSearch.value = '';
-                optionsSearch.style.display = 'none';
-            })
+  playListVideoSearch(){
+   let urlObj = new URL(window.location.href);
+   if((urlObj.hash) === '#training-page'){
+        const optionsSearch = document.querySelector('.options_search') as HTMLElement;
+        const trainingInputSearch = document.querySelector('.training_input_search') as HTMLInputElement;
+        optionsSearch?.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement;
+            playVideoSearch(target.innerText);
+            trainingInputSearch.value = '';
+            optionsSearch.style.display = 'none';
         })
     }
+  }
 
-    closeRenderContainerVideo() {
-        window.addEventListener('hashchange', () => {
-            const trainingContainerVideos = document.querySelector('.training_container_videos') as HTMLElement;
-            const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-            const buttonForYou = document.querySelector('.button_for_you') as HTMLElement;
-            const buttonSearch = document.querySelector('.button_search') as HTMLElement;
+  closeRenderContainerVideo(){
+   let urlObj = new URL(window.location.href);
+   if((urlObj.hash) === '#training-page'){
+        const trainingContainerVideos = document.querySelector('.training_container_videos') as HTMLElement;
+        const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+        const buttonForYou = document.querySelector('.button_for_you') as HTMLElement;
+        const buttonSearch = document.querySelector('.button_search') as HTMLElement;
 
-            buttonForYou?.addEventListener('click', () => {
-                trainingContainerVideos.innerHTML = '';
-                trainingSearchContainer.style.display = 'none';
-            });
-            buttonSearch?.addEventListener('click', () => trainingSearchContainer.style.display = 'block')
-        })
+        buttonForYou?.addEventListener('click', () => {
+            trainingContainerVideos.innerHTML = '';
+            trainingSearchContainer.style.display = 'none';
+         });
+
+        buttonSearch?.addEventListener('click', () => trainingSearchContainer.style.display = 'block')
+
     }
+  }
 
+  openBurgerMenu(){
+    const menuBtn = document.querySelector('.menu-btn') as HTMLElement;
+    const headerNav = document.querySelector('.header-nav') as HTMLElement;
+    const body = document.body as HTMLElement;
+    menuBtn?.addEventListener('click',(e) => {
+        menuBtn.classList.toggle('openBRM');
+        headerNav.classList.toggle('navBRM');
+        (menuBtn.classList.contains('openBRM') ? headerNav.style.display = 'block': headerNav.style.display = 'none')
+        body.classList.toggle('shadowBody');
+        (body.classList.contains('shadowBody')) ? body.style.overflow = 'hidden' :body.style.overflow = 'auto';
+        closeBurgerMenu()
+    })
+  }
+
+  checkResizeWindow(){
+    window.addEventListener(`resize`, (e) => {
+        const headerNav = document.querySelector('.header-nav') as HTMLElement;
+        const menuBtn = document.querySelector('.menu-btn') as HTMLElement;
+        const body = document.body as HTMLElement;
+        if(!headerNav.classList.contains('navBRM'))
+        (window.innerWidth >= 1001) ? headerNav.style.display = 'block' : headerNav.style.display = 'none';
+
+        if (window.innerWidth >= 1001){
+            menuBtn.classList.remove('openBRM')
+            headerNav.classList.remove('navBRM');
+            /* headerNav.style.display = 'none'; */
+            body.classList.remove('shadowBody');
+        }
+
+        (body.classList.contains('shadowBody')) ? body.style.overflow = 'hidden' :body.style.overflow = 'auto';
+
+      })
+  }
 
     run() {
         const hash = window.location.hash.slice(1);
@@ -364,6 +416,8 @@ class App {
         hash ? App.renderNewPage(hash) : App.renderNewPage('main-page');
         App.container.append(this.footer.render());
         this.enableRouterChange();
+        this.openBurgerMenu();
+        this.checkResizeWindow();
         this.closeForms();
         this.btnSignIn();
         this.btnSignUp();
@@ -379,6 +433,7 @@ class App {
         this.getValueInputSearch();
         this.playListVideoSearch();
         this.closeRenderContainerVideo();
+
         if (hash === "training-page") {
             this.clickBtnTraining();
         }
