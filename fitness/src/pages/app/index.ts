@@ -277,35 +277,6 @@ class App {
        }
     }
 
- 
-   callRenderContainerVideos() {
-       let urlObj = new URL(window.location.href);
-       if((urlObj.hash) === '#training-page'){
-        let trainingSearchContainer = document.querySelector('.training_search_container');
-
-        trainingSearchContainer?.addEventListener('click', (e) => {
-          const target = e.target as HTMLElement;
-            if (target.closest('.training_category_list')) {
-              const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-              if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
-              renderContainerVideo(target.innerText);
-            }
-            if(target.closest('.short_training')){
-              const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-              if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
-              renderContainerVideo('short_training');
-            }
-
-            if(target.closest('.all_training')){
-              const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-              if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
-              renderContainerVideo('all_training');
-            }
-          })
-       }
-    }
-
-
   playVideoSearch(){
     let urlObj = new URL(window.location.href);
     if((urlObj.hash) === '#training-page'){
