@@ -698,7 +698,7 @@ main {
   }
   .container-header .container-header__user {
     max-width: 82px;
-    right: 35px;
+    right: 46px;
   }
   .container-header .container-header__user .nickUser {
     width: 7px;
@@ -1207,6 +1207,10 @@ body {
 
 .training_arrow:hover {
   opacity: 0.6;
+}
+
+.button_for_you__point {
+  display: none;
 }
 
 .training_kind {

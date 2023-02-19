@@ -10,6 +10,7 @@ class Header extends Component {
 
         this.container.innerHTML = `
         <div class="container container-header">
+        <div id="ytWidget" style="display: none;"></div>
             <div class="logo">
                 <img src="./src/imgs/gym-dumbbell-icon.svg" alt="gym">
             </div>
@@ -23,9 +24,9 @@ class Header extends Component {
             </nav>
             <div class="header-customization">
                 <div class="choose-language">
-                    <div class="lanRu language-choose">Ру</div>
+                    <div class="lanRu language-choose" data-ya-lang="ru">Руc</div>
                     <span>/</span>
-                    <div class="lanEn">En</div>
+                    <div class="lanEn" data-ya-lang="en">En</div>
                 </div>
                 <div class="switch-theme">
                     <div class="switch-theme__white theme-choose">

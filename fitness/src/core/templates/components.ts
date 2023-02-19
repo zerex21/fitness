@@ -8,6 +8,7 @@ abstract class Component {
 
     render() {
         return this.container;
+
     }
 }
 

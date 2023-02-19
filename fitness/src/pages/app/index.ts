@@ -1,3 +1,5 @@
+import { yaTranslateInit } from './../../scripts/language/language';
+
 import { closeBurgerMenu } from './../../scripts/header/burgerMenu';
 import MainPage from "../main";
 import Page from "../../core/templates/pages";
@@ -69,11 +71,13 @@ class App {
                 document.querySelector('header')?.after(pageHTML);
             }
         }
+
     }
 
     private enableRouterChange() {
         window.addEventListener('hashchange', () => {
             const hash = window.location.hash.slice(1);
+
             App.renderNewPage(hash);
 
             this.callRenderContainerVideos();
@@ -85,6 +89,7 @@ class App {
             if (hash === "training-page") {
                 this.clickBtnTraining();
             }
+
         });
     }
     clickBtnTraining() {
@@ -381,6 +386,16 @@ class App {
       })
   }
 
+   yaTranslateForPages = () =>{
+    document.addEventListener('DOMContentLoaded', function () {
+        // Start
+
+        yaTranslateInit()
+    })
+}
+
+
+
     run() {
         const hash = window.location.hash.slice(1);
         App.container.append(this.header.render());
@@ -408,7 +423,7 @@ class App {
         if (hash === "training-page") {
             this.clickBtnTraining();
         }
-
+        this.yaTranslateForPages()
     }
 }
 

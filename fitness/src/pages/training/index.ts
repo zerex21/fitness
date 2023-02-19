@@ -12,8 +12,8 @@ class TrainingPage extends Page{
         <div class="training_container">
         <h1 class="training_title">Тренировки</h1>
         <div class="training_buttons">
-            <button class="button_for_you" disabled><span >Для тебя</span></button>
-            <button class="button_search"><span>Поиск</span></button>
+            <button class="button_for_you" disabled><span> Для тебя<span class="button_for_you__point">.</span></span></button>
+            <button class="button_search"><span> Поиск </span></button>
         </div>
         <div class="training_content">
             <div class="training_kind">

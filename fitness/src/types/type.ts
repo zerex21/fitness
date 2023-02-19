@@ -44,3 +44,8 @@ export interface ITraining {
   forHome: boolean,
   outfit: string
 }
+
+export type Yatranslate = {
+  lang: string,
+  langFirstVisit: string,
+}
