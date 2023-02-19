@@ -13,7 +13,15 @@ let checkValue = (value: string): { typeVideo: IVideosCategory, tmpString: strin
       typeVideo = VIDEOS.pressAndBody;
       break;
 
+    case 'Press and housing':
+      typeVideo = VIDEOS.pressAndBody;
+      break;
+
     case 'Руки и плечи':
+      typeVideo = VIDEOS.armAndShoulder;
+      break;
+
+    case 'Arms and shoulders':
       typeVideo = VIDEOS.armAndShoulder;
       break;
 
@@ -21,7 +29,15 @@ let checkValue = (value: string): { typeVideo: IVideosCategory, tmpString: strin
       typeVideo = VIDEOS.cheekAndFeet;
       break;
 
+    case 'Buttocks and shoulders':
+      typeVideo = VIDEOS.cheekAndFeet;
+      break;
+
     case 'Выносливость':
+      tmpString = 'stamina';
+      break;
+
+    case 'Endurance':
       tmpString = 'stamina';
       break;
 
@@ -29,7 +45,15 @@ let checkValue = (value: string): { typeVideo: IVideosCategory, tmpString: strin
       tmpString = 'move';
       break;
 
+    case 'Mobility':
+      tmpString = 'move';
+      break;
+
     case 'Сила':
+      tmpString = 'strength';
+      break;
+
+    case 'Power':
       tmpString = 'strength';
       break;
 
@@ -37,7 +61,15 @@ let checkValue = (value: string): { typeVideo: IVideosCategory, tmpString: strin
       typeVideo = VIDEOS.yoga;
       break;
 
+    case 'Yoga':
+      typeVideo = VIDEOS.yoga;
+      break;
+
     case 'Без снаряжения':
+      tmpString = 'none'
+      break;
+
+    case 'Without equipment':
       tmpString = 'none'
       break;
 
@@ -45,7 +77,15 @@ let checkValue = (value: string): { typeVideo: IVideosCategory, tmpString: strin
       tmpString = 'base'
       break;
 
+    case 'Basic equipment':
+      tmpString = 'base'
+      break;
+
     case 'Все снаряжения зала':
+      tmpString = 'all'
+      break;
+
+    case 'All equipment of the hall':
       tmpString = 'all'
       break;
 
