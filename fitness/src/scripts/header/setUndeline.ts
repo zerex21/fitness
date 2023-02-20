@@ -39,4 +39,4 @@ export let changeActiveLang = () => {
    } else {
       lanEn?.classList.add('language-choose')
    }
-}
+}  
