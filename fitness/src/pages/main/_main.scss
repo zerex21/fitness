@@ -45,3 +45,52 @@
         justify-content: center;
     }
 }
+
+@media (max-width:772px) {
+    .main-page__container{
+        .main-page__description-app{
+                h3{
+                    font-size: 20px;
+                }
+               div{
+                     font-size: 20px;
+                    &:nth-child(2){
+                       margin: 0px 100px;
+                   }
+               }
+           }
+    }
+}
+
+@media (max-width:630px) {
+    .main-page__container{
+        .main-page__btn-trainings{
+            .button-black{
+                font-size: 18px;
+            }
+        }
+        .connection-friends{
+            .text-connection{
+                font-size: 20px;
+            }
+            .main-page__btn-join{
+                .button-black{
+                    padding: 7px 7px;
+                    font-size: 18px;
+                }
+            }
+        }
+        .main-page__description-app{
+                h3{
+                    font-size: 15px;
+                }
+               div{
+                     font-size: 15px;
+                    &:nth-child(2){
+                       margin: 0px 50px;
+                   }
+                   margin: 0px 50px;
+               }
+           }
+    }
+}
