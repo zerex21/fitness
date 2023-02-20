@@ -51,7 +51,9 @@ body {
 .training_arrow:hover {
     opacity: 0.6;
 }
-
+.button_for_you__point{
+    display: none;
+}
 .training_kind {
     display: flex;
     flex-direction: column;
