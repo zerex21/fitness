@@ -1,3 +1,5 @@
+import { changeActiveLang } from './../../scripts/header/setUndeline';
+import { changeActiveNavLink } from '../../scripts/header/setUndeline';
 import { yaTranslateInit } from './../../scripts/language/language';
 
 import { closeBurgerMenu } from './../../scripts/header/burgerMenu';
@@ -85,6 +87,7 @@ class App {
             this.playListVideoSearch();
             this.getValueInputSearch();
             this.playVideoSearch();
+            this.getNavLink()
             // this.clickBtnTraining();
             if (hash === "training-page") {
                 this.clickBtnTraining();
@@ -394,7 +397,13 @@ class App {
     })
 }
 
+ getNavLink(){
+    changeActiveNavLink();
+ }
 
+ getCurrLang(){
+    changeActiveLang()
+ }
 
     run() {
         const hash = window.location.hash.slice(1);
@@ -419,11 +428,12 @@ class App {
         this.getValueInputSearch();
         this.playListVideoSearch();
         this.closeRenderContainerVideo();
-
+        this.getNavLink()
         if (hash === "training-page") {
             this.clickBtnTraining();
         }
-        this.yaTranslateForPages()
+        this.yaTranslateForPages();
+        this.getCurrLang();
     }
 }
 

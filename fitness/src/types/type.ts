@@ -49,3 +49,8 @@ export type Yatranslate = {
   lang: string,
   langFirstVisit: string,
 }
+
+export type TmpObj ={
+  lang:string;
+  active:boolean;
+ }
