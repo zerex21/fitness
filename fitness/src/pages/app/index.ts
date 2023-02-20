@@ -1,7 +1,7 @@
-
 import { changeActiveLang } from './../../scripts/header/setUndeline';
 import { changeActiveNavLink } from '../../scripts/header/setUndeline';
 import { yaTranslateInit } from './../../scripts/language/language';
+
 import { closeBurgerMenu } from './../../scripts/header/burgerMenu';
 import MainPage from "../main";
 import Page from "../../core/templates/pages";
@@ -23,7 +23,6 @@ import { renderContainerVideo } from "../../scripts/training/renderContainerVide
 import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRecommendationSlider } from "../../scripts/training/modalWindow";
 import { openModalWindowPlay } from "../../scripts/training/playVideoTrainingSearch";
 import { playVideoSearch, renderListSearch } from "../../scripts/training/playSearchVideo";
-
 
 export const enum PageIds {
     MainPage = 'main-page',
@@ -82,6 +81,7 @@ class App {
             const hash = window.location.hash.slice(1);
 
             App.renderNewPage(hash);
+
             this.callRenderContainerVideos();
             this.closeRenderContainerVideo();
             this.playListVideoSearch();
@@ -134,10 +134,12 @@ class App {
             modalWindow.classList.add("training_none");
             fon.classList.add("training_none")
         });
+
         window.addEventListener("load", () => {
             createSliderNew();
             createSliderHome();
             createSliderRecommendation();
+
         })
         const checkboxAll = document.querySelectorAll(".checkbox-user");
         checkboxAll.forEach((el) => el.addEventListener("input", () => {
@@ -254,8 +256,8 @@ class App {
     userPurposes() {
         checkPurposes();
     }
-    
- callRenderContainerVideos() {
+
+    callRenderContainerVideos() {
        let urlObj = new URL(window.location.href);
        if((urlObj.hash) === '#training-page'){
         let trainingSearchContainer = document.querySelector('.training_search_container');
@@ -282,7 +284,7 @@ class App {
           })
        }
     }
-   
+
   playVideoSearch(){
     let urlObj = new URL(window.location.href);
     if((urlObj.hash) === '#training-page'){
@@ -311,7 +313,6 @@ class App {
 
   }
 
-
   getValueInputSearch(){
     let urlObj = new URL(window.location.href);
     if((urlObj.hash) === '#training-page'){
@@ -336,7 +337,7 @@ class App {
     }
   }
 
-     closeRenderContainerVideo(){
+  closeRenderContainerVideo(){
    let urlObj = new URL(window.location.href);
    if((urlObj.hash) === '#training-page'){
         const trainingContainerVideos = document.querySelector('.training_container_videos') as HTMLElement;
@@ -353,8 +354,8 @@ class App {
 
     }
   }
-  
-    openBurgerMenu(){
+
+  openBurgerMenu(){
     const menuBtn = document.querySelector('.menu-btn') as HTMLElement;
     const headerNav = document.querySelector('.header-nav') as HTMLElement;
     const body = document.body as HTMLElement;
@@ -367,8 +368,8 @@ class App {
         closeBurgerMenu()
     })
   }
-  
-    checkResizeWindow(){
+
+  checkResizeWindow(){
     window.addEventListener(`resize`, (e) => {
         const headerNav = document.querySelector('.header-nav') as HTMLElement;
         const menuBtn = document.querySelector('.menu-btn') as HTMLElement;
@@ -387,7 +388,6 @@ class App {
 
       })
   }
-
 
    yaTranslateForPages = () =>{
     document.addEventListener('DOMContentLoaded', function () {
@@ -411,6 +411,8 @@ class App {
         hash ? App.renderNewPage(hash) : App.renderNewPage('main-page');
         App.container.append(this.footer.render());
         this.enableRouterChange();
+        this.openBurgerMenu();
+        this.checkResizeWindow();
         this.closeForms();
         this.btnSignIn();
         this.btnSignUp();
