@@ -16,10 +16,10 @@ class Header extends Component {
             </div>
             <nav class="header-nav">
                 <ul class="list-navigation">
-                    <li class="nav-list__item active-list"><a href="#main-page">Главная</a></li>
-                    <li class="nav-list__item"><a href="#training-page">Тренировки</a></li>
-                    <li class="nav-list__item"><a href="#activity-page">Активность</a></li>
-                    <li class="nav-list__item"><a href="#program-page">Программы</a></li>
+                    <li class="active-list"><a href="#main-page">Главная</a></li>
+                    <li><a href="#training-page">Тренировки</a></li>
+                    <li><a href="#activity-page">Активность</a></li>
+                    <li><a href="#program-page">Программы</a></li>
                 </ul>
             </nav>
             <div class="header-customization">
@@ -74,11 +74,6 @@ class Header extends Component {
                 <button>Выйти</button>
             </div>
         </div>
-        <div class="menu-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
         <div class="formSingIn">
         <div class="container container-formSingIn">
             <div class="container-form">
@@ -120,7 +115,7 @@ class Header extends Component {
           <button class="registerBtn">Зарегистрироваться</button>
         </div>
         <div class="container-signInUp">
-          <p>Уже есть аккаун? <p class="linkToSignIn">Войти.</p></p>
+          <p>Уже есть аккаун? <a href="#" class="linkToSignIn">Войти</a>.</p>
         </div>
       </div>
 </div>

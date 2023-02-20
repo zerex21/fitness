@@ -17,17 +17,6 @@
     &-formSignUp,
     &-formSingIn{
 
-    .container-signInUp{
-      display: flex;
-
-      .linkToSignIn{
-        padding-left: 5px;
-        cursor: pointer;
-        color: #0085ef;
-        text-decoration: underline;
-      }
-    }
-
     .container-form{
       width: 500px;
       height: 475px;
@@ -147,59 +136,3 @@
   }
 
 
-  @media (max-width:600px) {
-    .container{
-      &-formSignUp,
-      &-formSingIn{
-        .container-form{
-          width: 420px;
-          height: 440px;
-        }
-
-    }
-  }
-  }
-
-
-  @media (max-width:500px) {
-    .container{
-      &-formSignUp,
-      &-formSingIn{
-
-        .container-form{
-          width: 270px;
-          height: 380px;
-        }
-        .enterBtn,
-        .registerBtn{
-          padding: 14px 20px;
-          font-size: 19px;
-        }
-
-        h3{
-          font-size: 20px;
-      }
-
-      hr{
-        margin-bottom: 10px;
-      }
-
-      p{
-        font-size: 17px;
-      }
-
-
-      .nickNameSignIn,
-      .pswSignIn,
-      .nickNameSignUp,
-      .pswSignUp {
-
-          padding: 11px 0;
-          margin: 5px 0 22px 0;
-          font-size: 17px;
-
-        }
-
-    }
-  }
-  }
