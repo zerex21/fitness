@@ -7,31 +7,31 @@ class ProgramPage extends Page{
 
     render() {
         this.container.innerHTML = `
-        <div class="programms_container">
+        <div class="programms_container container">
             <h1 class="programms_title">Программы</h1>
             <div class="programms_card">
                 <div class="programms_content">
-                    <img src="./imgs/children_training.jpg" alt="">
-                    <h2>Тренировки для детей: сила игры</h2>
+                    <img src="./imgs/children_training.jpg" alt="img">
+                    <h2>Тренировка на силу</h2>
                 </div>
-                <p class="programms_card_text_1">Узнай, как увлечь детей спортом с помощью игры</p>
-                <p class="programms_card_text_2">3 этапа и советы экспертов - программа на 3 недели</p>
+                <p class="programms_card_text_1">Узнай, как стать сильнее</p>
+                <p class="programms_card_text_2">3 видео для всех групп мышц</p>
             </div>
             <div class="programms_card">
                 <div class="programms_content">
-                    <img src="./imgs/training_basic.jpg" alt="">
-                    <h2>Начни с основ</h2>
+                    <img src="./imgs/training_basic.jpg" alt="img">
+                    <h2>Тренировка на все тело</h2>
                 </div>
                 <p class="programms_card_text_1">база для твоих результатов</p>
-                <p class="programms_card_text_2">4 недели, без снаряжения</p>
+                <p class="programms_card_text_2">без снаряжения</p>
             </div>
             <div class="programms_card">
                 <div class="programms_content">
-                    <img src="./imgs/training_core.jpg" alt="">
-                    <h2>2 недели для сильного кора</h2>
+                    <img src="./imgs/training_core.jpg" alt="img">
+                    <h2>Йога на весь день</h2>
                 </div>
-                <p class="programms_card_text_1">Укрепи мышцы пресса с этой подборкой тренировок</p>
-                <p class="programms_card_text_2">2 недели, без снаряжения</p>
+                <p class="programms_card_text_1">Познай дзен</p>
+                <p class="programms_card_text_2">Утро, День, Вечер</p>
             </div>
         </div>
         <div class="program-card" style="display: none">
