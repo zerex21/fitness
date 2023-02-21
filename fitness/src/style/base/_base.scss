@@ -18,6 +18,19 @@ html {
 body {
     display: flex;
     flex-direction: column;
+    color: var(--color1);
+
+    .container-form, .text-connection{
+        color: black;
+    }
+
+    .js{
+        fill: black;
+    }
+}
+
+header, main, footer {
+    background-color: var(--color2);
 }
 
 main {

@@ -1,4 +1,4 @@
-/* @import "../../style/base/constants"; */
+@import "../../style/base/constants";
 
 
 * {
@@ -79,6 +79,7 @@ body {
     position: relative;
     cursor: pointer;
     transition: 0.3s;
+    margin: 0 3px;
 }
 
 .training_card:hover {
@@ -89,7 +90,7 @@ body {
     width: 400px;
     height: 267px;
     object-fit: cover;
-    border-radius: 5px;
+    
 }
 
 .training_card_content {
@@ -114,12 +115,27 @@ body {
     width: 200px;
     height: 30px;
     margin: 20px 0;
+    background-color: var(--color2);
+    background-color: $color-light-grey;
+    border-radius: 25px;
+    border: none;
+    padding-left: 20px;
+    outline-color: var(--color2);
+
+    :focus, :focus-visible{
+        border: none;
+    }
+}
+
+.training_input_search:active{
+    border: none;
 }
 
 .options_search{
     padding-bottom: 10px;
     max-height: 160px;
-    background-color: white;
+    background-color: var(--color2);
+    color: var(--color1);
     width: 330px;
     overflow: auto;
     overflow-y: scroll;
@@ -131,10 +147,13 @@ body {
     li{
         list-style-type: none;
         padding: 5px 0px;
-        border: 1px solid black;
-        background-color: white;
+        background-color: var(--color2);
         margin: 5px 0px;
         cursor: pointer;
+    }
+
+    li:not(:last-child){
+        border-bottom: 1px solid var(--color1);
     }
 }
 
@@ -146,7 +165,6 @@ body {
 }
 
 .training_category img {
-    border-radius: 20px;
     width: 640px;
     height: 430px;
     object-fit: cover;
@@ -168,22 +186,11 @@ body {
 
 .training_category_list li {
     list-style-type: none;
-    border: 1px solid black;
-    border-top-style: none;
     width: 623px;
     padding: 15px 0 15px 15px;
     font-size: 16px;
     font-family: sans-serif;
     cursor: pointer;
-}
-
-.training_category_list li:last-child {
-    border-radius: 0 0 10px 10px;
-}
-
-.training_category_list li:first-child {
-    border-top: 1px solid black;
-    border-radius: 10px 10px 0 0;
 }
 
 .training_modal_window {
@@ -287,4 +294,22 @@ body {
         width: 247px;
         padding: 7px 0px 7px 11px;
     }
+}
+
+
+.button_for_you, .button_search {
+    border: none;
+    background-color: var(--color2);
+    color: $color-grey;
+
+
+}
+
+.training_buttons{
+    button:disabled{
+        color: var(--color1);
+        border-bottom: 1px solid var(--color1);
+    }
+
+    border-bottom: 1px solid $color-grey;
 }
