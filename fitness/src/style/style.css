@@ -1190,6 +1190,7 @@ body {
 .training_slider {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -1435,6 +1436,68 @@ body {
   .training_category_list li {
     width: 247px;
     padding: 7px 0px 7px 11px;
+  }
+}
+@media screen and (min-width: 740px) and (max-width: 1399px) {
+  .training_arrow {
+    width: 25px;
+    font-size: 20px;
+  }
+  .training_slider {
+    gap: 5px;
+  }
+  .training_kind_container {
+    width: 605px;
+  }
+  .training_list {
+    gap: 5px;
+  }
+  .training_card {
+    width: 300px;
+    height: 200px;
+  }
+  .training_card img {
+    width: 300px;
+    height: 200px;
+  }
+  .training_video {
+    width: 560px;
+    height: 315px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 739px) {
+  .training_arrow {
+    width: 25px;
+    font-size: 20px;
+  }
+  .training_slider {
+    gap: 5px;
+  }
+  .training_kind_container {
+    width: 240px;
+  }
+  .training_list {
+    gap: 5px;
+  }
+  .training_card {
+    width: 240px;
+    height: 160px;
+  }
+  .training_card img {
+    width: 240px;
+    height: 160px;
+  }
+  .training_card_content_text {
+    font-size: 16px;
+  }
+  .training_video {
+    width: 300px;
+    height: 170px;
+  }
+  .close_modal_window {
+    top: -25px;
+    width: 20px;
+    right: 0;
   }
 }
 .workout-card {
@@ -1702,6 +1765,24 @@ body {
   margin: 10px 0 10px 10px;
 }
 
+@media screen and (min-width: 320px) and (max-width: 639px) {
+  .programms_container {
+    gap: 20px;
+    width: 320px;
+  }
+  .programms_card {
+    width: 300px;
+  }
+  .programms_content {
+    width: 300px;
+    height: 200px;
+  }
+  .programms_content img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+  }
+}
 .program-card {
   background-color: black;
   color: gray;
@@ -1864,5 +1945,5 @@ body {
     padding: 20px 15px;
   }
 }
- 
+
 /*# sourceMappingURL=style.css.map */
