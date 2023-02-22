@@ -36,8 +36,6 @@ function shiftLeft(i: number): void {
         sliderContainerAll[i].style.transform = `translateX(${positionAll[i]}px)`;
         countAll[i] += 1;
     };
-    console.log(step);
-    console.log(window.innerWidth);
 }
 
 function shiftRight(i: number): void {
@@ -55,7 +53,6 @@ function shiftRight(i: number): void {
         sliderContainerAll[i].style.transform = `translateX(${positionAll[i]}px)`;
         countAll[i] -= 1;
     };
-    console.log(step);
 }
 
 function createSliderNew(): void {
