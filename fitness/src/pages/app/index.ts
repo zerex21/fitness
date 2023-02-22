@@ -368,6 +368,29 @@ class App {
         closeBurgerMenu()
     })
   }
+    
+  changeTheme() {
+    const switchTheme = document.querySelector('.switch-theme') as HTMLAnchorElement;
+    
+    switchTheme?.addEventListener('click', (event) => {
+        const target = event.target as HTMLElement;
+        const theme = target.closest('div') as HTMLElement;
+        const theme__white = document.querySelector('.switch-theme__white') as HTMLElement;
+        const theme__black = document.querySelector('.switch-theme__black') as HTMLElement;
+        if (theme.classList.contains('switch-theme__white')) {
+            document.body.classList.remove('dark', 'light');
+            document.body.classList.add('light');
+            theme__white.classList.add('theme-choose');
+            theme__black.classList.remove('theme-choose');
+        } else if (theme.classList.contains('switch-theme__black')) {
+            document.body.classList.remove('dark', 'light');
+            document.body.classList.add('dark');
+            theme__black.classList.add('theme-choose');
+            theme__white.classList.remove('theme-choose');
+        }
+        
+    })
+  }
 
   checkResizeWindow(){
     window.addEventListener(`resize`, (e) => {
@@ -428,7 +451,8 @@ class App {
         this.getValueInputSearch();
         this.playListVideoSearch();
         this.closeRenderContainerVideo();
-        this.getNavLink()
+        this.getNavLink();
+        this.changeTheme();
         if (hash === "training-page") {
             this.clickBtnTraining();
         }
