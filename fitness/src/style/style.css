@@ -671,7 +671,8 @@ svg {
   margin-left: -135px;
   width: 260px;
   z-index: 1;
-  background-color: white;
+  background-color: var(--color2);
+  color: var(--color1);
 }
 .container-header .container-header__user .user-purposes div {
   padding-top: 5px;
