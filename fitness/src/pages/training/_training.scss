@@ -16,7 +16,7 @@ body {
 }
 
 .training_container {
-    margin: 20px;
+    margin: 20px 0;
 }
 
 .training_title {
@@ -82,7 +82,7 @@ body {
     position: relative;
     cursor: pointer;
     transition: 0.3s;
-    margin: 0 3px;
+    // margin: 0 3px;
 }
 
 .training_card:hover {
@@ -93,7 +93,7 @@ body {
     width: 400px;
     height: 267px;
     object-fit: cover;
-    
+
 }
 
 .training_card_content {
@@ -110,7 +110,7 @@ body {
 
 .training_content,
 .training_search_container {
-    margin: 20px;
+    margin: 20px 0;
     /* display: none; */
 }
 
@@ -125,12 +125,13 @@ body {
     padding-left: 20px;
     outline-color: var(--color2);
 
-    :focus, :focus-visible{
+    :focus,
+    :focus-visible {
         border: none;
     }
 }
 
-.training_input_search:active{
+.training_input_search:active {
     border: none;
 }
 
@@ -155,7 +156,7 @@ body {
         cursor: pointer;
     }
 
-    li:not(:last-child){
+    li:not(:last-child) {
         border-bottom: 1px solid var(--color1);
     }
 }
@@ -300,7 +301,8 @@ body {
     }
 }
 
-.button_for_you, .button_search {
+.button_for_you,
+.button_search {
     border: none;
     background-color: var(--color2);
     color: $color-grey;
@@ -308,8 +310,8 @@ body {
 
 }
 
-.training_buttons{
-    button:disabled{
+.training_buttons {
+    button:disabled {
         color: var(--color1);
         border-bottom: 1px solid var(--color1);
     }
