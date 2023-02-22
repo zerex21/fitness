@@ -1377,7 +1377,7 @@ body {
 }
 
 .training_container {
-  margin: 20px;
+  margin: 20px 0;
 }
 
 .training_title {
@@ -1443,7 +1443,6 @@ body {
   position: relative;
   cursor: pointer;
   transition: 0.3s;
-  margin: 0 3px;
 }
 
 .training_card:hover {
@@ -1470,7 +1469,7 @@ body {
 
 .training_content,
 .training_search_container {
-  margin: 20px;
+  margin: 20px 0;
   /* display: none; */
 }
 
@@ -1485,7 +1484,8 @@ body {
   padding-left: 20px;
   outline-color: var(--color2);
 }
-.training_input_search :focus, .training_input_search :focus-visible {
+.training_input_search :focus,
+.training_input_search :focus-visible {
   border: none;
 }
 
@@ -1646,8 +1646,8 @@ body {
     padding: 7px 0px 7px 11px;
   }
 }
-
-.button_for_you, .button_search {
+.button_for_you,
+.button_search {
   border: none;
   background-color: var(--color2);
   color: #848484;
@@ -1723,7 +1723,6 @@ body {
     right: 0;
   }
 }
-
 .workout-card {
   background-color: black;
   color: gray;
