@@ -51,12 +51,11 @@ const checkUserInSystem = () =>{
   const containerHeaderUser = document.querySelector('.container-header__user') as HTMLElement;
   const containerHeaderBnt = document.querySelector('.container-header__bnt') as HTMLElement;
   const nickUser = document.querySelector('.nickUser') as HTMLElement;
-
   for (let i = 0; i < newArr.length; i++){
     if (newArr[i].inSystem === true) {
       containerHeaderUser.style.display = 'flex';
       containerHeaderBnt.style.display ='none';
-      nickUser.innerHTML = newArr[i].login;
+      nickUser.innerHTML = newArr[i].login[0];
     }
   }
 }
