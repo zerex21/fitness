@@ -785,6 +785,13 @@ main {
   color: red;
   text-align: center;
 }
+.container-formSignUp .correctCallFriend, .container-formSingIn .correctCallFriend, .container-formCallFriend .correctCallFriend {
+  display: none;
+  padding-bottom: 20px;
+  font-size: 20px;
+  color: greenyellow;
+  text-align: center;
+}
 .container-formSignUp h3, .container-formSingIn h3, .container-formCallFriend h3 {
   padding: 10px 0;
   font-size: 24px;

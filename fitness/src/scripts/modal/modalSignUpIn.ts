@@ -63,18 +63,30 @@ const checkUserInSystem = () =>{
 const openFormCallFriends = ():void => {
   const formCallFriends = document.querySelector('.formCallFriends') as HTMLElement;
   const correctCallFriend= document.querySelector('.correctCallFriend') as HTMLElement;
-        correctCallFriend.style.display = 'none';
+  const incorrectCallFriend= document.querySelector('.incorrectCallFriend') as HTMLElement;
+  const inputEmail = document.querySelector('.inputEmail') as HTMLInputElement;
+
+    incorrectCallFriend.style.display = 'none';
+    correctCallFriend.style.display = 'none';
+    inputEmail.value = '';
      if (formCallFriends) formCallFriends.style.display = 'block';
 }
 
 const openSignIn = ():void => {
  const formSingIn = document.querySelector('.formSingIn') as HTMLElement;
-
+ const nickNameSignIn = document.querySelector('.nickNameSignIn') as HTMLInputElement;
+ const pswSignIn = document.querySelector('.pswSignIn') as HTMLInputElement;
+ nickNameSignIn.value = ''
+ pswSignIn.value = ''
     if (formSingIn) formSingIn.style.display = 'block';
 }
 
 const openSignUp = ():void => {
   const formSignUp = document.querySelector('.formSignUp') as HTMLElement;
+  const nickNameSignUp = document.querySelector('.nickNameSignUp') as HTMLInputElement;
+  const pswSignUp = document.querySelector('.pswSignUp') as HTMLInputElement;
+  nickNameSignUp.value = ''
+  pswSignUp.value = ''
 
     if (formSignUp) formSignUp.style.display = 'block';
 }
