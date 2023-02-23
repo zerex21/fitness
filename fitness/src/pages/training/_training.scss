@@ -1,4 +1,4 @@
-/* @import "../../style/base/constants"; */
+@import "../../style/base/constants";
 
 
 * {
@@ -16,7 +16,7 @@ body {
 }
 
 .training_container {
-    margin: 20px;
+    margin: 20px 0;
 }
 
 .training_title {
@@ -33,6 +33,7 @@ body {
 .training_slider {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -51,9 +52,11 @@ body {
 .training_arrow:hover {
     opacity: 0.6;
 }
-.button_for_you__point{
+
+.button_for_you__point {
     display: none;
 }
+
 .training_kind {
     display: flex;
     flex-direction: column;
@@ -79,6 +82,7 @@ body {
     position: relative;
     cursor: pointer;
     transition: 0.3s;
+    // margin: 0 3px;
 }
 
 .training_card:hover {
@@ -89,7 +93,7 @@ body {
     width: 400px;
     height: 267px;
     object-fit: cover;
-    border-radius: 5px;
+
 }
 
 .training_card_content {
@@ -106,7 +110,7 @@ body {
 
 .training_content,
 .training_search_container {
-    margin: 20px;
+    margin: 20px 0;
     /* display: none; */
 }
 
@@ -114,27 +118,46 @@ body {
     width: 200px;
     height: 30px;
     margin: 20px 0;
+    background-color: var(--color2);
+    background-color: $color-light-grey;
+    border-radius: 25px;
+    border: none;
+    padding-left: 20px;
+    outline-color: var(--color2);
+
+    :focus,
+    :focus-visible {
+        border: none;
+    }
 }
 
-.options_search{
+.training_input_search:active {
+    border: none;
+}
+
+.options_search {
     padding-bottom: 10px;
     max-height: 160px;
-    background-color: white;
+    background-color: var(--color2);
+    color: var(--color1);
     width: 330px;
     overflow: auto;
     overflow-y: scroll;
     position: absolute;
     z-index: 2;
-    margin-top: -15px ;
+    margin-top: -15px;
     display: none;
 
-    li{
+    li {
         list-style-type: none;
         padding: 5px 0px;
-        border: 1px solid black;
-        background-color: white;
+        background-color: var(--color2);
         margin: 5px 0px;
         cursor: pointer;
+    }
+
+    li:not(:last-child) {
+        border-bottom: 1px solid var(--color1);
     }
 }
 
@@ -146,7 +169,6 @@ body {
 }
 
 .training_category img {
-    border-radius: 20px;
     width: 640px;
     height: 430px;
     object-fit: cover;
@@ -168,22 +190,11 @@ body {
 
 .training_category_list li {
     list-style-type: none;
-    border: 1px solid black;
-    border-top-style: none;
     width: 623px;
     padding: 15px 0 15px 15px;
     font-size: 16px;
     font-family: sans-serif;
     cursor: pointer;
-}
-
-.training_category_list li:last-child {
-    border-radius: 0 0 10px 10px;
-}
-
-.training_category_list li:first-child {
-    border-top: 1px solid black;
-    border-radius: 10px 10px 0 0;
 }
 
 .training_modal_window {
@@ -241,7 +252,7 @@ iframe{
     display: none;
 }
 
-.training_container_videos{
+.training_container_videos {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -249,7 +260,7 @@ iframe{
 
 @media (max-width:740px) {
 
-    .training_container{
+    .training_container {
         margin: 0px;
     }
 
@@ -273,12 +284,13 @@ iframe{
         width: 290px;
     }
 
-    .options_search{
+    .options_search {
         width: 245px;
     }
-    .training_name_category{
-      top: 30px;
-      font-size: 25px;
+
+    .training_name_category {
+        top: 30px;
+        font-size: 25px;
     }
 
     .training_category img {
@@ -289,5 +301,101 @@ iframe{
     .training_category_list li {
         width: 247px;
         padding: 7px 0px 7px 11px;
+    }
+}
+
+.button_for_you,
+.button_search {
+    border: none;
+    background-color: var(--color2);
+    color: $color-grey;
+
+
+}
+
+.training_buttons {
+    button:disabled {
+        color: var(--color1);
+        border-bottom: 1px solid var(--color1);
+    }
+
+    border-bottom: 1px solid $color-grey;
+}
+
+@media screen and (min-width: 740px) and (max-width: 1399px) {
+    .training_arrow {
+        width: 25px;
+        font-size: 20px;
+    }
+
+    .training_slider {
+        gap: 5px;
+    }
+
+    .training_kind_container {
+        width: 605px;
+    }
+
+    .training_list {
+        gap: 5px;
+    }
+
+    .training_card {
+        width: 300px;
+        height: 200px;
+    }
+
+    .training_card img {
+        width: 300px;
+        height: 200px;
+    }
+
+    .training_video {
+        width: 560px;
+        height: 315px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 739px) {
+    .training_arrow {
+        width: 25px;
+        font-size: 20px;
+    }
+
+    .training_slider {
+        gap: 5px;
+    }
+
+    .training_kind_container {
+        width: 240px;
+    }
+
+    .training_list {
+        gap: 5px;
+    }
+
+    .training_card {
+        width: 240px;
+        height: 160px;
+    }
+
+    .training_card img {
+        width: 240px;
+        height: 160px;
+    }
+
+    .training_card_content_text {
+        font-size: 16px;
+    }
+
+    .training_video {
+        width: 300px;
+        height: 170px;
+    }
+
+    .close_modal_window {
+        top: -25px;
+        width: 20px;
+        right: 0;
     }
 }

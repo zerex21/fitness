@@ -16,8 +16,6 @@
     display: flex;
     width: 600px;
     flex-direction: column;
-    border: 1px solid black;
-    border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
 
@@ -39,7 +37,6 @@
     width: 600px;
     height: 400px;
     object-fit: cover;
-    border-radius: 20px;
     transition: 0.5s;
 }
 
@@ -63,6 +60,7 @@
     font-family: sans-serif;
     margin: 10px 0 10px 10px
 }
+
 
 .programms_container_videos{
     text-align: center;
@@ -113,8 +111,6 @@
 
 @media (max-width:380px) {
     .programms_container_videos{
-
-
         .workout-card{
           width: 300px;
         }
