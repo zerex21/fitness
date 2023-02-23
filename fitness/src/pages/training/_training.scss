@@ -203,7 +203,10 @@ body {
     height: 563px;
     border: 2px solid black;
 }
-
+iframe{
+    position: relative;
+    z-index: 9;
+}
 .close_modal_window {
     position: absolute;
     right: -50px;

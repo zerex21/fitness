@@ -510,7 +510,7 @@ export const VIDEOSPROGRAMMS:IVideos = {
   strenght:[ {
     id: 3,
     name:'Тренировка бицепсов Sergio Oliva',
-    tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/nO6_fnA_R1I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    tag:'<iframe width="560" height="315"  src="https://www.youtube.com/embed/nO6_fnA_R1I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
     previewPhoto:'./src/imgs/preview/3.jpg',
     purpose: 'strength',
     muscle: 'armAndShoulder',
@@ -518,16 +518,16 @@ export const VIDEOSPROGRAMMS:IVideos = {
     forHome: false,
     outfit: 'all'
   },
-   {
-    id: 7,
-    name:'The Rock. Тренировка Дуэйна Джонсона - НОГИ!!!',
-    tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/hkgcsbOkKzw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-    previewPhoto:'./src/imgs/preview/7.jpg',
-    purpose: 'strength',
+  {
+    id: 10,
+    name:'АКТИВАЦИЯ ЯГОДИЦ НА 99% | ТРЕНИРОВКА ДЛЯ ПОЛНОГО КОНТРОЛЯ МЫШЦ',
+    tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/WBVl85HFP58" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    previewPhoto:'./src/imgs/preview/10.jpg',
+    purpose: 'stamina',
     muscle: 'cheekAndFeet',
-    duration: 8.29,
-    forHome: false,
-    outfit: 'all'
+    duration: 15.07,
+    forHome: true,
+    outfit: 'none'
   },
   {
     id: 12,

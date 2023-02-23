@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
- /*    width: 1000px; */
+    max-width: 604px;
    /*  margin: 0 auto; */
 }
 
@@ -62,4 +62,41 @@
     font-size: 16px;
     font-family: sans-serif;
     margin: 10px 0 10px 10px
+}
+
+.programms_container_videos{
+    text-align: center;
+
+    .wrapper_container_videos{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .workout-card{
+        height: 89%;
+    }
+
+    .programms_container_videos__text{
+        font-size: 21px;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: justify;
+        padding-bottom: 20px;
+    }
+}
+
+.programms_current_video__num{
+    font-size: 25px;
+}
+
+
+@media (max-width:380px) {
+    .programms_container_videos{
+
+
+        .workout-card{
+          width: 300px;
+        }
+    }
 }

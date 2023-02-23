@@ -1362,6 +1362,11 @@ body {
   border: 2px solid black;
 }
 
+iframe {
+  position: relative;
+  z-index: 9;
+}
+
 .close_modal_window {
   position: absolute;
   right: -50px;
@@ -1444,6 +1449,9 @@ body {
   position: relative;
   margin: 10px 10px;
 }
+.workout-card:hover {
+  cursor: pointer;
+}
 .workout-card .container .workout-card__image {
   width: 100%;
 }
@@ -1499,7 +1507,7 @@ body {
 .workout-card .container .workout-card__description {
   color: navajowhite;
   font-size: 1.1rem;
-  margin-left: 25px;
+  /* margin-left: 25px; */
 }
 .workout-card .container .workout-card__start {
   margin: 25px auto;
@@ -1511,6 +1519,9 @@ body {
   width: 50%;
   border-radius: 50px;
   border: none;
+}
+.workout-card .container .workout-card__start:hover {
+  cursor: pointer;
 }
 
 .button-black {
@@ -1641,7 +1652,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /*    width: 1000px; */
+  max-width: 604px;
   /*  margin: 0 auto; */
 }
 
@@ -1702,6 +1713,34 @@ body {
   margin: 10px 0 10px 10px;
 }
 
+.programms_container_videos {
+  text-align: center;
+}
+.programms_container_videos .wrapper_container_videos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.programms_container_videos .workout-card {
+  height: 89%;
+}
+.programms_container_videos .programms_container_videos__text {
+  font-size: 21px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: justify;
+  padding-bottom: 20px;
+}
+
+.programms_current_video__num {
+  font-size: 25px;
+}
+
+@media (max-width: 380px) {
+  .programms_container_videos .workout-card {
+    width: 300px;
+  }
+}
 .program-card {
   background-color: black;
   color: gray;

@@ -1,3 +1,5 @@
+import { getCurVideo } from './../../scripts/training/changeCurVideoProgramms';
+import { renderContainerProgrammsVideos } from './../../scripts/training/renderContainerProgrammsVideos';
 import { changeActiveLang } from './../../scripts/header/setUndeline';
 import { changeActiveNavLink } from '../../scripts/header/setUndeline';
 import { yaTranslateInit } from './../../scripts/language/language';
@@ -21,7 +23,7 @@ import { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderR
 
 import { renderContainerVideo } from "../../scripts/training/renderContainerVideo";
 import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRecommendationSlider } from "../../scripts/training/modalWindow";
-import { openModalWindowPlay } from "../../scripts/training/playVideoTrainingSearch";
+import { openModalWindowPlay, openModalWindowPlayProgramms } from "../../scripts/training/playVideoTrainingSearch";
 import { playVideoSearch, renderListSearch } from "../../scripts/training/playSearchVideo";
 
 export const enum PageIds {
@@ -92,6 +94,9 @@ class App {
             if (hash === "training-page") {
                 this.clickBtnTraining();
             }
+            this.callRenderContainerProgrammsVideos();
+            this.playVideoProgramms();
+
 
         });
     }
@@ -299,11 +304,15 @@ class App {
         })
 
         buttonClose?.addEventListener("click", () => {
+            const player = document.querySelector("iframe") as HTMLElement;
+            player.remove();
             const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
             modalWindow.classList.add("training_none");
             fon.classList.add("training_none");
         })
         fon?.addEventListener("click", () => {
+            const player = document.querySelector("iframe") as HTMLElement;
+            player.remove();
             const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
             modalWindow.classList.add("training_none");
             fon.classList.add("training_none");
@@ -405,6 +414,68 @@ class App {
     changeActiveLang()
  }
 
+ callRenderContainerProgrammsVideos(){
+   let urlObj = new URL(window.location.href);
+   if((urlObj.hash) === '#program-page'){
+
+    const programmsContainer = document.querySelector('.programms_container') as HTMLElement;
+
+    programmsContainer?.addEventListener('click', (e) => {
+       let element = e.target as HTMLInputElement;
+       renderContainerProgrammsVideos(String(element.closest('.programms_card')?.getAttribute('data-videoTypeProgramms')))
+       programmsContainer.style.display = "none";
+    })
+   }
+ }
+
+
+ playVideoProgramms(){
+    let urlObj = new URL(window.location.href);
+    let tmpNum = 1;
+
+    if((urlObj.hash) === '#program-page'){
+        const trainingContainerProgrammsVideos = document.querySelector('.programms_container_videos') as HTMLElement;
+        const fon = document.querySelector(".training_fon") as HTMLElement;
+        const buttonClose = document.querySelector(".close_modal_window");
+        trainingContainerProgrammsVideos?.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+
+            if (target.closest('.workout-card')) {
+            let dataIndex = target.closest('.programms_current_video')?.getAttribute('data-curvideo')
+
+            if (tmpNum >= 4) {
+                tmpNum = 1;
+
+                if(Number(dataIndex) === tmpNum){
+                    openModalWindowPlayProgramms(String(target.closest('.workout-card')?.getAttribute('data-index')))
+                    tmpNum++;
+                }
+
+                } else if (Number(dataIndex) === tmpNum) {
+                    openModalWindowPlayProgramms(String(target.closest('.workout-card')?.getAttribute('data-index')))
+                    tmpNum++
+                    }
+               }
+          })
+
+        buttonClose?.addEventListener("click", () => {
+            const player = document.querySelector("iframe") as HTMLElement;
+            player.remove();
+            const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
+            modalWindow.classList.add("training_none");
+            fon.classList.add("training_none");
+        })
+
+        fon?.addEventListener("click", () => {
+            const player = document.querySelector("iframe") as HTMLElement;
+            player.remove();
+            const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
+            modalWindow.classList.add("training_none");
+            fon.classList.add("training_none");
+        })
+    }
+ }
+
     run() {
         const hash = window.location.hash.slice(1);
         App.container.append(this.header.render());
@@ -434,6 +505,8 @@ class App {
         }
         this.yaTranslateForPages();
         this.getCurrLang();
+        this.callRenderContainerProgrammsVideos();
+        this.playVideoProgramms();
     }
 }
 
