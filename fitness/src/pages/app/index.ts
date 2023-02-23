@@ -15,7 +15,7 @@ import Header from "../../core/components/header";
 import Footer from "../../core/components/footer";
 import ErrorPage, { ErrorTypes } from "../error";
 
-import { checkPurposes, checkUserInSystem, checkUserPurposes, closeSignInUp, logOut, openSignIn, openSignUp, singIn, singUp, toOpenSingIn, } from "../../scripts/modal/modalSignUpIn";
+import { checkPurposes, checkUserInSystem, checkUserPurposes, closeFormCallFriends, closeSignInUp, formFrinedUp, logOut, openFormCallFriends, openSignIn, openSignUp, singIn, singUp, toOpenSingIn, } from "../../scripts/modal/modalSignUpIn";
 import { clickForYou, clickSearch } from "../../scripts/training/clickButton";
 import openCloseList from "../../scripts/training/openCloseList";
 
@@ -96,6 +96,9 @@ class App {
             }
             this.callRenderContainerProgrammsVideos();
             this.playVideoProgramms();
+            this.btnSendInvite();
+            this.closeForms();
+            this.callFormFriends();
 
 
         });
@@ -160,6 +163,14 @@ class App {
         })
     }
 
+    btnSendInvite() {
+        let btnSendInvite = document.querySelector('.main-page__btn-join');
+
+        btnSendInvite?.addEventListener('click', () => {
+            openFormCallFriends();
+        })
+    }
+
     btnSignIn() {
         let btnSignIn = document.querySelector('.btn-signIn');
 
@@ -188,6 +199,8 @@ class App {
     closeForms() {
         let closeSingUp = document.querySelector('.closeSingUp');
         let closeSingIn = document.querySelector('.closeSingIn');
+        let closeCallFriends = document.querySelector('.closeCallFriend');
+
 
         closeSingUp?.addEventListener('click', () => {
             closeSignInUp()
@@ -195,6 +208,10 @@ class App {
 
         closeSingIn?.addEventListener('click', () => {
             closeSignInUp()
+        })
+
+        closeCallFriends?.addEventListener('click', () => {
+            closeFormCallFriends()
         })
     }
 
@@ -205,6 +222,17 @@ class App {
             toOpenSingIn();
         })
 
+    }
+
+    callFormFriends() {
+        const sendBtn = document.querySelector('.sendBtn') as HTMLButtonElement;
+        const inputEmail = document.querySelector('.inputEmail') as HTMLInputElement;
+
+
+        sendBtn?.addEventListener('click', () => {
+            let nickName = inputEmail.value.toLowerCase();
+            formFrinedUp(nickName);
+        })
     }
 
     callSingUp() {
@@ -487,10 +515,12 @@ class App {
         this.closeForms();
         this.btnSignIn();
         this.btnSignUp();
+        this.btnSendInvite();
         this.btnLogOut();
         this.linkToOpenSingIn();
         this.callSingUp();
         this.callSingIn();
+        this.callFormFriends()
         this.modalUserPurposes();
         this.userInSystem();
         this.userPurposes();

@@ -41,6 +41,24 @@ class MainPage extends Page{
                 <div class="main-page__btn-trainings">
                     <button class="button-black" onclick="window.location.href='#training-page'">Перейти к тренировкам</button>
                 </div>
+                <div class="formCallFriends">
+                <div class="container container-formCallFriend">
+                    <div class="container-form">
+                        <div>
+                          <span class="closeCallFriend">&times;</span>
+                          <h3>Отправте приглашение вашим друзьям!</h3>
+                          <p>Пожалуйста заполните форму</p>
+                          <hr>
+                          <label for="email"><b>Почта</b></label>
+                          <input class="inputEmail" type="email" pattern=".+@globex\.com" size="30" placeholder="Введите почту" required>
+                          <hr>
+                          <div class="incorrectCallFriend"></div>
+                          <div class="correctCallFriend"></div>
+                          <button class="sendBtn">Отправить</button>
+                        </div>
+                      </div>
+                </div>
+            </div>
             </div>
         </div>`;
         return this.container;

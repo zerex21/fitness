@@ -733,7 +733,8 @@ main {
   }
 }
 .formSingIn,
-.formSignUp {
+.formSignUp,
+.formCallFriends {
   display: none;
   position: fixed;
   z-index: 1;
@@ -747,16 +748,16 @@ main {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.container-formSignUp .container-signInUp, .container-formSingIn .container-signInUp {
+.container-formSignUp .container-signInUp, .container-formSingIn .container-signInUp, .container-formCallFriend .container-signInUp {
   display: flex;
 }
-.container-formSignUp .container-signInUp .linkToSignIn, .container-formSingIn .container-signInUp .linkToSignIn {
+.container-formSignUp .container-signInUp .linkToSignIn, .container-formSingIn .container-signInUp .linkToSignIn, .container-formCallFriend .container-signInUp .linkToSignIn {
   padding-left: 5px;
   cursor: pointer;
   color: #0085ef;
   text-decoration: underline;
 }
-.container-formSignUp .container-form, .container-formSingIn .container-form {
+.container-formSignUp .container-form, .container-formSingIn .container-form, .container-formCallFriend .container-form {
   width: 500px;
   height: 475px;
   background-color: white;
@@ -772,28 +773,38 @@ main {
   animation-duration: 0.4s;
 }
 .container-formSignUp .incorrectDataSignIn,
-.container-formSignUp .incorrectDataSignUp, .container-formSingIn .incorrectDataSignIn,
-.container-formSingIn .incorrectDataSignUp {
+.container-formSignUp .incorrectDataSignUp,
+.container-formSignUp .incorrectCallFriend, .container-formSingIn .incorrectDataSignIn,
+.container-formSingIn .incorrectDataSignUp,
+.container-formSingIn .incorrectCallFriend, .container-formCallFriend .incorrectDataSignIn,
+.container-formCallFriend .incorrectDataSignUp,
+.container-formCallFriend .incorrectCallFriend {
   display: none;
   padding-bottom: 20px;
   font-size: 20px;
   color: red;
   text-align: center;
 }
-.container-formSignUp h3, .container-formSingIn h3 {
+.container-formSignUp h3, .container-formSingIn h3, .container-formCallFriend h3 {
   padding: 10px 0;
   font-size: 24px;
 }
-.container-formSignUp p, .container-formSignUp b, .container-formSingIn p, .container-formSingIn b {
+.container-formSignUp p, .container-formSignUp b, .container-formSingIn p, .container-formSingIn b, .container-formCallFriend p, .container-formCallFriend b {
   font-size: 20px;
 }
 .container-formSignUp .nickNameSignIn,
 .container-formSignUp .pswSignIn,
 .container-formSignUp .nickNameSignUp,
-.container-formSignUp .pswSignUp, .container-formSingIn .nickNameSignIn,
+.container-formSignUp .pswSignUp,
+.container-formSignUp .inputEmail, .container-formSingIn .nickNameSignIn,
 .container-formSingIn .pswSignIn,
 .container-formSingIn .nickNameSignUp,
-.container-formSingIn .pswSignUp {
+.container-formSingIn .pswSignUp,
+.container-formSingIn .inputEmail, .container-formCallFriend .nickNameSignIn,
+.container-formCallFriend .pswSignIn,
+.container-formCallFriend .nickNameSignUp,
+.container-formCallFriend .pswSignUp,
+.container-formCallFriend .inputEmail {
   width: 100%;
   padding: 15px 0;
   margin: 5px 0 22px 0;
@@ -805,20 +816,30 @@ main {
 .container-formSignUp .nickNameSignUp:focus,
 .container-formSignUp .pswSignUp:focus,
 .container-formSignUp .nickNameSignIn:focus,
-.container-formSignUp .pswSignIn:focus, .container-formSingIn .nickNameSignUp:focus,
+.container-formSignUp .pswSignIn:focus,
+.container-formSignUp .inputEmail:focus, .container-formSingIn .nickNameSignUp:focus,
 .container-formSingIn .pswSignUp:focus,
 .container-formSingIn .nickNameSignIn:focus,
-.container-formSingIn .pswSignIn:focus {
+.container-formSingIn .pswSignIn:focus,
+.container-formSingIn .inputEmail:focus, .container-formCallFriend .nickNameSignUp:focus,
+.container-formCallFriend .pswSignUp:focus,
+.container-formCallFriend .nickNameSignIn:focus,
+.container-formCallFriend .pswSignIn:focus,
+.container-formCallFriend .inputEmail:focus {
   background-color: #ddd;
   outline: none;
 }
-.container-formSignUp hr, .container-formSingIn hr {
+.container-formSignUp hr, .container-formSingIn hr, .container-formCallFriend hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
 .container-formSignUp .registerBtn,
-.container-formSignUp .enterBtn, .container-formSingIn .registerBtn,
-.container-formSingIn .enterBtn {
+.container-formSignUp .enterBtn,
+.container-formSignUp .sendBtn, .container-formSingIn .registerBtn,
+.container-formSingIn .enterBtn,
+.container-formSingIn .sendBtn, .container-formCallFriend .registerBtn,
+.container-formCallFriend .enterBtn,
+.container-formCallFriend .sendBtn {
   border: 1px solid white;
   color: white;
   border-radius: 25px;
@@ -831,15 +852,19 @@ main {
   width: 100%;
 }
 .container-formSignUp .registerBtn:hover,
-.container-formSignUp .enterBtn:hover, .container-formSingIn .registerBtn:hover,
-.container-formSingIn .enterBtn:hover {
+.container-formSignUp .enterBtn:hover,
+.container-formSignUp .sendBtn:hover, .container-formSingIn .registerBtn:hover,
+.container-formSingIn .enterBtn:hover,
+.container-formSingIn .sendBtn:hover, .container-formCallFriend .registerBtn:hover,
+.container-formCallFriend .enterBtn:hover,
+.container-formCallFriend .sendBtn:hover {
   opacity: 1;
   cursor: pointer;
 }
-.container-formSignUp a, .container-formSingIn a {
+.container-formSignUp a, .container-formSingIn a, .container-formCallFriend a {
   color: dodgerblue;
 }
-.container-formSignUp .signin, .container-formSingIn .signin {
+.container-formSignUp .signin, .container-formSingIn .signin, .container-formCallFriend .signin {
   background-color: #f1f1f1;
   text-align: center;
 }
@@ -864,8 +889,12 @@ main {
   }
 }
 .container-formSignUp .closeSingUp,
-.container-formSignUp .closeSingIn, .container-formSingIn .closeSingUp,
-.container-formSingIn .closeSingIn {
+.container-formSignUp .closeSingIn,
+.container-formSignUp .closeCallFriend, .container-formSingIn .closeSingUp,
+.container-formSingIn .closeSingIn,
+.container-formSingIn .closeCallFriend, .container-formCallFriend .closeSingUp,
+.container-formCallFriend .closeSingIn,
+.container-formCallFriend .closeCallFriend {
   color: black;
   float: right;
   font-size: 28px;
@@ -874,48 +903,64 @@ main {
 .container-formSignUp .closeSingUp:hover,
 .container-formSignUp .closeSingUp:focus,
 .container-formSignUp .closeSingIn:hover,
-.container-formSignUp .closeSingIn:focus, .container-formSingIn .closeSingUp:hover,
+.container-formSignUp .closeSingIn:focus,
+.container-formSignUp .closeCallFriend:focus, .container-formSingIn .closeSingUp:hover,
 .container-formSingIn .closeSingUp:focus,
 .container-formSingIn .closeSingIn:hover,
-.container-formSingIn .closeSingIn:focus {
+.container-formSingIn .closeSingIn:focus,
+.container-formSingIn .closeCallFriend:focus, .container-formCallFriend .closeSingUp:hover,
+.container-formCallFriend .closeSingUp:focus,
+.container-formCallFriend .closeSingIn:hover,
+.container-formCallFriend .closeSingIn:focus,
+.container-formCallFriend .closeCallFriend:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
 
 @media (max-width: 600px) {
-  .container-formSignUp .container-form, .container-formSingIn .container-form {
+  .container-formSignUp .container-form, .container-formSingIn .container-form, .container-formCallFriend .container-form {
     width: 420px;
     height: 440px;
   }
 }
 @media (max-width: 500px) {
-  .container-formSignUp .container-form, .container-formSingIn .container-form {
+  .container-formSignUp .container-form, .container-formSingIn .container-form, .container-formCallFriend .container-form {
     width: 270px;
     height: 380px;
   }
   .container-formSignUp .enterBtn,
-  .container-formSignUp .registerBtn, .container-formSingIn .enterBtn,
-  .container-formSingIn .registerBtn {
+  .container-formSignUp .registerBtn,
+  .container-formSignUp .sendBtn, .container-formSingIn .enterBtn,
+  .container-formSingIn .registerBtn,
+  .container-formSingIn .sendBtn, .container-formCallFriend .enterBtn,
+  .container-formCallFriend .registerBtn,
+  .container-formCallFriend .sendBtn {
     padding: 14px 20px;
     font-size: 19px;
   }
-  .container-formSignUp h3, .container-formSingIn h3 {
+  .container-formSignUp h3, .container-formSingIn h3, .container-formCallFriend h3 {
     font-size: 20px;
   }
-  .container-formSignUp hr, .container-formSingIn hr {
+  .container-formSignUp hr, .container-formSingIn hr, .container-formCallFriend hr {
     margin-bottom: 10px;
   }
-  .container-formSignUp p, .container-formSingIn p {
+  .container-formSignUp p, .container-formSingIn p, .container-formCallFriend p {
     font-size: 17px;
   }
   .container-formSignUp .nickNameSignIn,
   .container-formSignUp .pswSignIn,
   .container-formSignUp .nickNameSignUp,
-  .container-formSignUp .pswSignUp, .container-formSingIn .nickNameSignIn,
+  .container-formSignUp .pswSignUp,
+  .container-formSignUp .inputEmail, .container-formSingIn .nickNameSignIn,
   .container-formSingIn .pswSignIn,
   .container-formSingIn .nickNameSignUp,
-  .container-formSingIn .pswSignUp {
+  .container-formSingIn .pswSignUp,
+  .container-formSingIn .inputEmail, .container-formCallFriend .nickNameSignIn,
+  .container-formCallFriend .pswSignIn,
+  .container-formCallFriend .nickNameSignUp,
+  .container-formCallFriend .pswSignUp,
+  .container-formCallFriend .inputEmail {
     padding: 11px 0;
     margin: 5px 0 22px 0;
     font-size: 17px;
