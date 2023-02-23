@@ -53,7 +53,7 @@ class TrainingPage extends Page{
         <div class="training_search_container training_none">
 
         <form class = "form_search">
-        <input class="training_input_search" type="text" name="" id="" placeholder="Поиск">
+        <input class="training_input_search" type="text" name="" id="" placeholder="🔍 Поиск">
         <ul class = "options_search">
         <li>список</li>
         </ul>
