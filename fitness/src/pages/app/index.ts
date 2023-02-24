@@ -1,3 +1,4 @@
+import { renderContainerProgrammsVideos } from './../../scripts/training/renderContainerProgrammsVideos';
 import { changeActiveLang } from './../../scripts/header/setUndeline';
 import { changeActiveNavLink } from '../../scripts/header/setUndeline';
 import { yaTranslateInit } from './../../scripts/language/language';
@@ -13,7 +14,7 @@ import Header from "../../core/components/header";
 import Footer from "../../core/components/footer";
 import ErrorPage, { ErrorTypes } from "../error";
 
-import { checkPurposes, checkUserInSystem, checkUserPurposes, closeSignInUp, logOut, openSignIn, openSignUp, singIn, singUp, toOpenSingIn, } from "../../scripts/modal/modalSignUpIn";
+import { checkPurposes, checkUserInSystem, checkUserPurposes, closeFormCallFriends, closeSignInUp, formFrinedUp, logOut, openFormCallFriends, openSignIn, openSignUp, singIn, singUp, toOpenSingIn, } from "../../scripts/modal/modalSignUpIn";
 import { clickForYou, clickSearch } from "../../scripts/training/clickButton";
 import openCloseList from "../../scripts/training/openCloseList";
 
@@ -21,7 +22,7 @@ import { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderR
 
 import { renderContainerVideo } from "../../scripts/training/renderContainerVideo";
 import { openModalWindowNewSlider, openModalWindowHomeSlider, openModalWindowRecommendationSlider } from "../../scripts/training/modalWindow";
-import { openModalWindowPlay } from "../../scripts/training/playVideoTrainingSearch";
+import { openModalWindowPlay, openModalWindowPlayProgramms } from "../../scripts/training/playVideoTrainingSearch";
 import { playVideoSearch, renderListSearch } from "../../scripts/training/playSearchVideo";
 
 export const enum PageIds {
@@ -92,6 +93,12 @@ class App {
             if (hash === "training-page") {
                 this.clickBtnTraining();
             }
+            this.callRenderContainerProgrammsVideos();
+            this.playVideoProgramms();
+            this.btnSendInvite();
+            this.closeForms();
+            this.callFormFriends();
+
 
         });
     }
@@ -155,6 +162,14 @@ class App {
         })
     }
 
+    btnSendInvite() {
+        let btnSendInvite = document.querySelector('.main-page__btn-join');
+
+        btnSendInvite?.addEventListener('click', () => {
+            openFormCallFriends();
+        })
+    }
+
     btnSignIn() {
         let btnSignIn = document.querySelector('.btn-signIn');
 
@@ -183,6 +198,8 @@ class App {
     closeForms() {
         let closeSingUp = document.querySelector('.closeSingUp');
         let closeSingIn = document.querySelector('.closeSingIn');
+        let closeCallFriends = document.querySelector('.closeCallFriend');
+
 
         closeSingUp?.addEventListener('click', () => {
             closeSignInUp()
@@ -190,6 +207,10 @@ class App {
 
         closeSingIn?.addEventListener('click', () => {
             closeSignInUp()
+        })
+
+        closeCallFriends?.addEventListener('click', () => {
+            closeFormCallFriends()
         })
     }
 
@@ -200,6 +221,17 @@ class App {
             toOpenSingIn();
         })
 
+    }
+
+    callFormFriends() {
+        const sendBtn = document.querySelector('.sendBtn') as HTMLButtonElement;
+        const inputEmail = document.querySelector('.inputEmail') as HTMLInputElement;
+
+
+        sendBtn?.addEventListener('click', () => {
+            let nickName = inputEmail.value.toLowerCase();
+            formFrinedUp(nickName);
+        })
     }
 
     callSingUp() {
@@ -299,11 +331,15 @@ class App {
         })
 
         buttonClose?.addEventListener("click", () => {
+            const player = document.querySelector("iframe") as HTMLElement;
+            player.remove();
             const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
             modalWindow.classList.add("training_none");
             fon.classList.add("training_none");
         })
         fon?.addEventListener("click", () => {
+            const player = document.querySelector("iframe") as HTMLElement;
+            player.remove();
             const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
             modalWindow.classList.add("training_none");
             fon.classList.add("training_none");
@@ -368,10 +404,10 @@ class App {
         closeBurgerMenu()
     })
   }
-    
+
   changeTheme() {
     const switchTheme = document.querySelector('.switch-theme') as HTMLAnchorElement;
-    
+
     switchTheme?.addEventListener('click', (event) => {
         const target = event.target as HTMLElement;
         const theme = target.closest('div') as HTMLElement;
@@ -388,7 +424,7 @@ class App {
             theme__black.classList.add('theme-choose');
             theme__white.classList.remove('theme-choose');
         }
-        
+
     })
   }
 
@@ -428,6 +464,68 @@ class App {
     changeActiveLang()
  }
 
+ callRenderContainerProgrammsVideos(){
+   let urlObj = new URL(window.location.href);
+   if((urlObj.hash) === '#program-page'){
+
+    const programmsContainer = document.querySelector('.programms_container') as HTMLElement;
+
+    programmsContainer?.addEventListener('click', (e) => {
+       let element = e.target as HTMLInputElement;
+       renderContainerProgrammsVideos(String(element.closest('.programms_card')?.getAttribute('data-videoTypeProgramms')))
+       programmsContainer.style.display = "none";
+    })
+   }
+ }
+
+
+ playVideoProgramms(){
+    let urlObj = new URL(window.location.href);
+    let tmpNum = 1;
+
+    if((urlObj.hash) === '#program-page'){
+        const trainingContainerProgrammsVideos = document.querySelector('.programms_container_videos') as HTMLElement;
+        const fon = document.querySelector(".training_fon") as HTMLElement;
+        const buttonClose = document.querySelector(".close_modal_window");
+        trainingContainerProgrammsVideos?.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+
+            if (target.closest('.workout-card')) {
+            let dataIndex = target.closest('.programms_current_video')?.getAttribute('data-curvideo')
+
+            if (tmpNum >= 4) {
+                tmpNum = 1;
+
+                if(Number(dataIndex) === tmpNum){
+                    openModalWindowPlayProgramms(String(target.closest('.workout-card')?.getAttribute('data-index')))
+                    tmpNum++;
+                }
+
+                } else if (Number(dataIndex) === tmpNum) {
+                    openModalWindowPlayProgramms(String(target.closest('.workout-card')?.getAttribute('data-index')))
+                    tmpNum++
+                    }
+               }
+          })
+
+        buttonClose?.addEventListener("click", () => {
+            const player = document.querySelector("iframe") as HTMLElement;
+            player.remove();
+            const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
+            modalWindow.classList.add("training_none");
+            fon.classList.add("training_none");
+        })
+
+        fon?.addEventListener("click", () => {
+            const player = document.querySelector("iframe") as HTMLElement;
+            player.remove();
+            const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
+            modalWindow.classList.add("training_none");
+            fon.classList.add("training_none");
+        })
+    }
+ }
+
     run() {
         const hash = window.location.hash.slice(1);
         App.container.append(this.header.render());
@@ -439,10 +537,12 @@ class App {
         this.closeForms();
         this.btnSignIn();
         this.btnSignUp();
+        this.btnSendInvite();
         this.btnLogOut();
         this.linkToOpenSingIn();
         this.callSingUp();
         this.callSingIn();
+        this.callFormFriends()
         this.modalUserPurposes();
         this.userInSystem();
         this.userPurposes();
@@ -458,6 +558,8 @@ class App {
         }
         this.yaTranslateForPages();
         this.getCurrLang();
+        this.callRenderContainerProgrammsVideos();
+        this.playVideoProgramms();
     }
 }
 
