@@ -1,4 +1,3 @@
-import { getCurVideo } from './../../scripts/training/changeCurVideoProgramms';
 import { renderContainerProgrammsVideos } from './../../scripts/training/renderContainerProgrammsVideos';
 import { changeActiveLang } from './../../scripts/header/setUndeline';
 import { changeActiveNavLink } from '../../scripts/header/setUndeline';
@@ -405,10 +404,10 @@ class App {
         closeBurgerMenu()
     })
   }
-    
+
   changeTheme() {
     const switchTheme = document.querySelector('.switch-theme') as HTMLAnchorElement;
-    
+
     switchTheme?.addEventListener('click', (event) => {
         const target = event.target as HTMLElement;
         const theme = target.closest('div') as HTMLElement;
@@ -425,7 +424,7 @@ class App {
             theme__black.classList.add('theme-choose');
             theme__white.classList.remove('theme-choose');
         }
-        
+
     })
   }
 
