@@ -3,50 +3,68 @@
 
 .activity-page {
 
-        .active-page__total-workouts,
-        .active-page__total-time{
+    .active-page__total-workouts,
+    .active-page__total-time {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .active-page__workout-quantity {
+        font-size: $size-large;
+        font-weight: 900;
+    }
+
+    .active-page__workout-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .active-page__video img {
+            width: 370px;
+        }
+    }
+
+    .active-page__workouts-list {
+        border-top: 2px solid $color-grey;
+        border-bottom: 1px solid $color-grey;
+
+        .active-page__workout-details {
+            border-top: 1px solid $color-grey;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-        }
+            width: 100%;
 
-        .active-page__workout-quantity {
-            font-size: $size-large;
-            font-weight: 900;
-        }
-
-        .active-page__workout-item{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: space-between;
-
-            .active-page__video img{
-                width: 370px;
+            .active-page__aim-muscles-time {
+                margin-left: 20px;
             }
         }
+    }
 
-        .active-page__workouts-list{
-            border-top: 2px solid $color-grey;
-            border-bottom: 1px solid $color-grey;
+}
 
-            .active-page__workout-details{
-                border-top: 1px solid $color-grey;
-                display: flex;
-                flex-direction: column;
-                width: 100%;
+.pagination_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
 
-                .active-page__aim-muscles-time{
-                    margin-left: 20px;
-                }
-            }
-        }
-    
+.pagination_arrow_left,
+.pagination_arrow_right {
+    cursor: pointer;
 }
 
 @media (min-width: $screen-mobile) {
-    .active-page__workout-details{
+    .active-page__workout-details {
         flex-direction: row !important;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 400px) {
+    .activity-page .active-page__workout-item .active-page__video img {
+        width: 300px;
     }
 }
