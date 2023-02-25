@@ -103,6 +103,9 @@ class App {
                 createItemsActivity();
                 this.paginationActivity();
             }
+            if (hash === "program-page") {
+                this.programmsActivity();
+            }
         });
     }
     clickBtnTraining() {
@@ -542,6 +545,12 @@ class App {
         arrowRightActivity.addEventListener("click", shiftRightActivity);
     }
 
+    programmsActivity() {
+        const programmContainer = document.querySelectorAll(".programms_container_videos") as NodeListOf<HTMLElement>;
+        programmContainer?.forEach((el) => el.addEventListener("click", activityTrainingSearch));
+
+    }
+
     run() {
         const hash = window.location.hash.slice(1);
         App.container.append(this.header.render());
@@ -580,6 +589,9 @@ class App {
         if (hash === "activity-page") {
             createItemsActivity();
             this.paginationActivity();
+        }
+        if (hash === "program-page") {
+            this.programmsActivity();
         }
     }
 }
