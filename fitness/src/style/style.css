@@ -622,9 +622,6 @@ svg {
   width: 85px;
   justify-content: space-between;
 }
-.container-header .header-customization .switch-theme .theme-choose {
-  border-bottom: 2px solid var(--color1);
-}
 .container-header .header-customization .switch-theme .switch-theme__white,
 .container-header .header-customization .switch-theme .switch-theme__black {
   display: flex;
@@ -882,6 +879,20 @@ svg {
     display: block;
   }
 }
+body.light .switch-theme__white {
+  border-bottom: 2px solid var(--color1);
+}
+body.light .switch-theme__black {
+  border: none;
+}
+
+body.dark .switch-theme__black {
+  border-bottom: 2px solid var(--color1);
+}
+body.dark .switch-theme__white {
+  border: none;
+}
+
 .formSingIn,
 .formSignUp {
   display: none;

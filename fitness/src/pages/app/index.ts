@@ -368,28 +368,59 @@ class App {
         closeBurgerMenu()
     })
   }
-    
+
   changeTheme() {
+
+
     const switchTheme = document.querySelector('.switch-theme') as HTMLAnchorElement;
-    
+
     switchTheme?.addEventListener('click', (event) => {
         const target = event.target as HTMLElement;
         const theme = target.closest('div') as HTMLElement;
-        const theme__white = document.querySelector('.switch-theme__white') as HTMLElement;
-        const theme__black = document.querySelector('.switch-theme__black') as HTMLElement;
+        let url = new URL(window.location.href);
+
         if (theme.classList.contains('switch-theme__white')) {
             document.body.classList.remove('dark', 'light');
             document.body.classList.add('light');
-            theme__white.classList.add('theme-choose');
-            theme__black.classList.remove('theme-choose');
+            localStorage.setItem('theme', 'light');
+            url.searchParams.set('theme', 'light');
+           history.pushState(null, '', url);
+            console.log(url);
         } else if (theme.classList.contains('switch-theme__black')) {
             document.body.classList.remove('dark', 'light');
             document.body.classList.add('dark');
-            theme__black.classList.add('theme-choose');
-            theme__white.classList.remove('theme-choose');
+            localStorage.setItem('theme', 'dark');
+            url.searchParams.set('theme', 'dark');
+            history.pushState(null, '', url);
+            console.log(url);
         }
-        
+
     })
+  }
+
+  getQueryParams() {
+    const url = new URL(window.location.href);
+    if (url.searchParams.get('theme')) {
+        document.body.classList.remove('dark', 'light');
+        document.body.classList.add(url.searchParams.get('theme')!);
+    } else if (localStorage.getItem('theme')) {
+        document.body.classList.remove('dark', 'light');
+        document.body.classList.add(localStorage.getItem('theme')!);
+    }
+    if (url.searchParams.get('lan')) {
+        document.body.classList.remove('ru', 'en');
+        document.body.classList.add(url.searchParams.get('lan')!);
+    } else if (localStorage.getItem('yt-widget') && (JSON.parse(localStorage.getItem('yt-widget')!)).lang) {
+        document.body.classList.remove('ru', 'en');
+        document.body.classList.add((JSON.parse(localStorage.getItem('yt-widget')!)).lang);
+    }
+    if (url.searchParams.get('training')) {
+        document.body.classList.remove('forYou', 'search');
+        document.body.classList.add(url.searchParams.get('training')!);
+    } else if (localStorage.getItem('training')) {
+        document.body.classList.remove('forYou', 'search');
+        document.body.classList.add(localStorage.getItem('training')!);
+    }
   }
 
   checkResizeWindow(){
@@ -413,10 +444,136 @@ class App {
   }
 
    yaTranslateForPages = () =>{
-    document.addEventListener('DOMContentLoaded', function () {
-        // Start
+    /************************* */
+    let url = new URL(window.location.href);
 
-        yaTranslateInit()
+    let hideBlocks = () => {
+        const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+        const trainingContent = document.querySelector('.training_content') as HTMLElement;;
+        if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
+        if(trainingContent) trainingContent.style.display = 'none'
+    }
+
+
+    let checkButtons = () =>{
+        if(url.searchParams.get('training') === 'forYou') {
+            const buttonForYou = document.querySelector(".button_for_you") as HTMLElement;
+            const buttonSearch = document.querySelector(".button_search") as HTMLElement;
+            const trainingForYou = document.querySelector(".training_content") as HTMLElement;
+            const trainingSearch = document.querySelector(".training_search_container") as HTMLElement;
+            buttonSearch.removeAttribute("disabled");
+            trainingForYou.classList.remove("training_none");
+            trainingSearch.classList.add("training_none");
+            buttonForYou.setAttribute("disabled", "disabled");
+            trainingForYou.style.display = 'block'
+            trainingSearch.style.display = 'none'
+
+
+        } else if (url.searchParams.get('training') === 'search'){
+            const buttonForYou = document.querySelector(".button_for_you") as HTMLElement;
+            const buttonSearch = document.querySelector(".button_search") as HTMLElement;
+            const trainingForYou = document.querySelector(".training_content") as HTMLElement;
+            const trainingSearch = document.querySelector(".training_search_container") as HTMLElement;
+            buttonForYou.removeAttribute("disabled");
+            trainingForYou.classList.add("training_none");
+            trainingSearch.classList.remove("training_none");
+            buttonSearch.setAttribute("disabled", "disabled");
+            trainingForYou.style.display = 'none'
+            trainingSearch.style.display = 'block'
+        }
+    }
+
+
+    let lang:string;
+    document.addEventListener('DOMContentLoaded', function () {
+
+
+        if (url.searchParams.get('training') === 'press') {
+
+
+            renderContainerVideo('Press and housing');
+            hideBlocks()
+            checkButtons()
+
+        } else if (url.searchParams.get('training') === 'arms') {
+
+            renderContainerVideo('Arms and shoulders');
+            hideBlocks()
+            checkButtons()
+        } else if (url.searchParams.get('training') === 'buttocks') {
+
+
+            renderContainerVideo('Buttocks and shoulders');
+            hideBlocks()
+            checkButtons()
+        }else if (url.searchParams.get('training') === 'endurance') {
+
+
+            renderContainerVideo('Endurance');
+            hideBlocks()
+            checkButtons()
+        }else if (url.searchParams.get('training') === 'mobility') {
+
+
+            renderContainerVideo('Mobility');
+            hideBlocks()
+            checkButtons()
+        }else if (url.searchParams.get('training') === 'strength') {
+
+
+            renderContainerVideo('Power');
+            hideBlocks()
+            checkButtons()
+        }else if (url.searchParams.get('training') === 'yoga') {
+
+
+            renderContainerVideo('Yoga');
+            hideBlocks()
+            checkButtons()
+        }else if (url.searchParams.get('training') === 'none') {
+
+
+            renderContainerVideo('Without equipment');
+            hideBlocks()
+            checkButtons()
+        }else if (url.searchParams.get('training') === 'base') {
+
+
+            renderContainerVideo('Basic equipment');
+            hideBlocks()
+            checkButtons()
+        }else if (url.searchParams.get('training') === 'all') {
+
+
+            renderContainerVideo('All equipment of the hall');
+            hideBlocks()
+            checkButtons()
+        }else if (url.searchParams.get('training') === 'allTraining') {
+
+
+            renderContainerVideo('all_training')
+            hideBlocks()
+            checkButtons()
+        }else if (url.searchParams.get('training') === 'shortTraining') {
+
+
+            renderContainerVideo('short_training');
+            hideBlocks()
+            checkButtons()
+        }
+
+
+        checkButtons()
+
+
+
+        if (url.searchParams.get('lan') === 'en') {
+            lang ='en';
+        } else if (url.searchParams.get('lan') === 'ru') {
+          lang ='ru';
+        }
+        yaTranslateInit(lang)
+        /********************* */
     })
 }
 
@@ -429,6 +586,7 @@ class App {
  }
 
     run() {
+        this.getQueryParams();
         const hash = window.location.hash.slice(1);
         App.container.append(this.header.render());
         hash ? App.renderNewPage(hash) : App.renderNewPage('main-page');
@@ -436,6 +594,7 @@ class App {
         this.enableRouterChange();
         this.openBurgerMenu();
         this.checkResizeWindow();
+        this.yaTranslateForPages();
         this.closeForms();
         this.btnSignIn();
         this.btnSignUp();
@@ -456,7 +615,7 @@ class App {
         if (hash === "training-page") {
             this.clickBtnTraining();
         }
-        this.yaTranslateForPages();
+
         this.getCurrLang();
     }
 }

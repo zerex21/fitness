@@ -42,7 +42,7 @@ class Header extends Component {
                     <div class="lanEn" data-ya-lang="en">En</div>
                 </div>
                 <div class="switch-theme">
-                    <div class="switch-theme__white theme-choose  theme">
+                    <div class="switch-theme__white theme">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 50 50"
