@@ -1,6 +1,6 @@
 import Page from "../../core/templates/pages";
 
-class DevelopersPage extends Page{
+class DevelopersPage extends Page {
     constructor(id: string) {
         super(id);
     }
@@ -30,10 +30,9 @@ class DevelopersPage extends Page{
                     </div>
                     <h3 class="developer-name">Vadim</h3>
                     <div class="developer-description">
-                        Разработчик – широкий термин для группы специалистов, работа которых направлена на создание
-                        мобильных и компьютерных приложений, игр, баз данных и прочего программного обеспечения самых
-                        различных устройств. Разработчики в своей деятельности умело совмещают творческий подход и
-                        строгий язык программирования.
+                        Отвечал за верстку страниц Тренировки >«для тебя», «Программы». Работал с LocalStorage для 
+                        хранения информации о активности. Рендер видео в соответсвии с выбранными целями. 
+                        Рендер контента на странице «Активность» с учетом действий пользователя.
                     </div>
                     <div class="developer-github">
                         <a href="https://github.com/vadim-sid1993" target="_blank">GitHub</a>
