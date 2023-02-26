@@ -18,11 +18,11 @@ export const VIDEOS:IVideos = {
       {
       id: 1,
       name:'Как накачать большой бицепс! Секретами делится Jay Hardbody',
-      tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/ILmPlfpzFdI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-      previewPhoto:'./src/imgs/preview/011.jpg',
+      tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/Y3FHMXGx34A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+      previewPhoto:'./src/imgs/preview/maxresdefault.jpg',
       purpose: 'strength',
       muscle: 'armAndShoulder',
-      duration: 8.24,
+      duration: 15.57,
       forHome: false,
       outfit: 'all'
     }, 
@@ -48,14 +48,14 @@ export const VIDEOS:IVideos = {
       forHome: false,
       outfit: 'all'
     },
-    {
+     {
       id: 4,
       name:'Супер плечи',
-      tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/ep1XhVpH7rw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-      previewPhoto:'./src/imgs/preview/4.jpg',
+      tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/yHcw2kNMTDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+      previewPhoto:'./src/imgs/preview/010.jpg',
       purpose: 'strength',
       muscle: 'armAndShoulder',
-      duration: 3.01,
+      duration: 6.04,
       forHome: false,
       outfit: 'base'
     },
