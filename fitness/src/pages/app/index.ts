@@ -140,18 +140,18 @@ class App {
         trainingSearch?.addEventListener("click", activityTrainingSearch);
         const buttonClose = document.querySelector(".close_modal_window");
         buttonClose?.addEventListener("click", () => {
-            const player = document.querySelector("iframe") as HTMLElement;
-            player.remove();
+            // const player = document.querySelector("iframe") as HTMLElement;
+            // player.remove();
             const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
             modalWindow.classList.add("training_none");
             fon.classList.add("training_none");
         })
         fon?.addEventListener("click", () => {
-            const player = document.querySelector("iframe") as HTMLElement;
-            player.remove();
+            // const player = document.querySelector("iframe") as HTMLElement;
+            // player.remove();
             const modalWindow = document.querySelector(".training_modal_window") as HTMLElement;
             modalWindow.classList.add("training_none");
-            fon.classList.add("training_none")
+            fon.classList.add("training_none");
         });
 
         window.addEventListener("load", () => {
@@ -428,20 +428,20 @@ class App {
         })
     }
 
-    yaTranslateForPages = () =>{
+    yaTranslateForPages = () => {
         /************************* */
         let url = new URL(window.location.href);
 
         let hideBlocks = () => {
             const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
             const trainingContent = document.querySelector('.training_content') as HTMLElement;;
-            if(trainingSearchContainer) trainingSearchContainer.style.display = 'none'
-            if(trainingContent) trainingContent.style.display = 'none'
+            if (trainingSearchContainer) trainingSearchContainer.style.display = 'none'
+            if (trainingContent) trainingContent.style.display = 'none'
         }
 
 
-        let checkButtons = () =>{
-            if(url.searchParams.get('training') === 'forYou') {
+        let checkButtons = () => {
+            if (url.searchParams.get('training') === 'forYou') {
                 const buttonForYou = document.querySelector(".button_for_you") as HTMLElement;
                 const buttonSearch = document.querySelector(".button_search") as HTMLElement;
                 const trainingForYou = document.querySelector(".training_content") as HTMLElement;
@@ -454,7 +454,7 @@ class App {
                 trainingSearch.style.display = 'none'
 
 
-            } else if (url.searchParams.get('training') === 'search'){
+            } else if (url.searchParams.get('training') === 'search') {
                 const buttonForYou = document.querySelector(".button_for_you") as HTMLElement;
                 const buttonSearch = document.querySelector(".button_search") as HTMLElement;
                 const trainingForYou = document.querySelector(".training_content") as HTMLElement;
@@ -469,7 +469,7 @@ class App {
         }
 
 
-        let lang:string;
+        let lang: string;
         document.addEventListener('DOMContentLoaded', function () {
 
 
@@ -491,55 +491,55 @@ class App {
                 renderContainerVideo('Buttocks and shoulders');
                 hideBlocks()
                 checkButtons()
-            }else if (url.searchParams.get('training') === 'endurance') {
+            } else if (url.searchParams.get('training') === 'endurance') {
 
 
                 renderContainerVideo('Endurance');
                 hideBlocks()
                 checkButtons()
-            }else if (url.searchParams.get('training') === 'mobility') {
+            } else if (url.searchParams.get('training') === 'mobility') {
 
 
                 renderContainerVideo('Mobility');
                 hideBlocks()
                 checkButtons()
-            }else if (url.searchParams.get('training') === 'strength') {
+            } else if (url.searchParams.get('training') === 'strength') {
 
 
                 renderContainerVideo('Power');
                 hideBlocks()
                 checkButtons()
-            }else if (url.searchParams.get('training') === 'yoga') {
+            } else if (url.searchParams.get('training') === 'yoga') {
 
 
                 renderContainerVideo('Yoga');
                 hideBlocks()
                 checkButtons()
-            }else if (url.searchParams.get('training') === 'none') {
+            } else if (url.searchParams.get('training') === 'none') {
 
 
                 renderContainerVideo('Without equipment');
                 hideBlocks()
                 checkButtons()
-            }else if (url.searchParams.get('training') === 'base') {
+            } else if (url.searchParams.get('training') === 'base') {
 
 
                 renderContainerVideo('Basic equipment');
                 hideBlocks()
                 checkButtons()
-            }else if (url.searchParams.get('training') === 'all') {
+            } else if (url.searchParams.get('training') === 'all') {
 
 
                 renderContainerVideo('All equipment of the hall');
                 hideBlocks()
                 checkButtons()
-            }else if (url.searchParams.get('training') === 'allTraining') {
+            } else if (url.searchParams.get('training') === 'allTraining') {
 
 
                 renderContainerVideo('all_training')
                 hideBlocks()
                 checkButtons()
-            }else if (url.searchParams.get('training') === 'shortTraining') {
+            } else if (url.searchParams.get('training') === 'shortTraining') {
 
 
                 renderContainerVideo('short_training');
@@ -553,9 +553,9 @@ class App {
 
 
             if (url.searchParams.get('lan') === 'en') {
-                lang ='en';
+                lang = 'en';
             } else if (url.searchParams.get('lan') === 'ru') {
-              lang ='ru';
+                lang = 'ru';
             }
             yaTranslateInit(lang)
             /********************* */
@@ -564,62 +564,62 @@ class App {
 
 
 
-  closeRenderContainerVideo(){
-   let urlObj = new URL(window.location.href);
-   if((urlObj.hash) === '#training-page'){
-        const trainingContainerVideos = document.querySelector('.training_container_videos') as HTMLElement;
-        const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
-        const buttonForYou = document.querySelector('.button_for_you') as HTMLElement;
-        const buttonSearch = document.querySelector('.button_search') as HTMLElement;
+    closeRenderContainerVideo() {
+        let urlObj = new URL(window.location.href);
+        if ((urlObj.hash) === '#training-page') {
+            const trainingContainerVideos = document.querySelector('.training_container_videos') as HTMLElement;
+            const trainingSearchContainer = document.querySelector('.training_search_container') as HTMLElement;
+            const buttonForYou = document.querySelector('.button_for_you') as HTMLElement;
+            const buttonSearch = document.querySelector('.button_search') as HTMLElement;
 
-        buttonForYou?.addEventListener('click', () => {
-            trainingContainerVideos.innerHTML = '';
-            trainingSearchContainer.style.display = 'none';
-         });
+            buttonForYou?.addEventListener('click', () => {
+                trainingContainerVideos.innerHTML = '';
+                trainingSearchContainer.style.display = 'none';
+            });
 
-        buttonSearch?.addEventListener('click', () => trainingSearchContainer.style.display = 'block')
+            buttonSearch?.addEventListener('click', () => trainingSearchContainer.style.display = 'block')
 
+        }
     }
-  }
 
-  openBurgerMenu(){
-    const menuBtn = document.querySelector('.menu-btn') as HTMLElement;
-    const headerNav = document.querySelector('.header-nav') as HTMLElement;
-    const body = document.body as HTMLElement;
-    menuBtn?.addEventListener('click',(e) => {
-        menuBtn.classList.toggle('openBRM');
-        headerNav.classList.toggle('navBRM');
-        (menuBtn.classList.contains('openBRM') ? headerNav.style.display = 'block': headerNav.style.display = 'none')
-        body.classList.toggle('shadowBody');
-        (body.classList.contains('shadowBody')) ? body.style.overflow = 'hidden' :body.style.overflow = 'auto';
-        closeBurgerMenu()
-    })
-  }
+    openBurgerMenu() {
+        const menuBtn = document.querySelector('.menu-btn') as HTMLElement;
+        const headerNav = document.querySelector('.header-nav') as HTMLElement;
+        const body = document.body as HTMLElement;
+        menuBtn?.addEventListener('click', (e) => {
+            menuBtn.classList.toggle('openBRM');
+            headerNav.classList.toggle('navBRM');
+            (menuBtn.classList.contains('openBRM') ? headerNav.style.display = 'block' : headerNav.style.display = 'none')
+            body.classList.toggle('shadowBody');
+            (body.classList.contains('shadowBody')) ? body.style.overflow = 'hidden' : body.style.overflow = 'auto';
+            closeBurgerMenu()
+        })
+    }
 
-  getQueryParams() {
-    const url = new URL(window.location.href);
-    if (url.searchParams.get('theme')) {
-        document.body.classList.remove('dark', 'light');
-        document.body.classList.add(url.searchParams.get('theme')!);
-    } else if (localStorage.getItem('theme')) {
-        document.body.classList.remove('dark', 'light');
-        document.body.classList.add(localStorage.getItem('theme')!);
+    getQueryParams() {
+        const url = new URL(window.location.href);
+        if (url.searchParams.get('theme')) {
+            document.body.classList.remove('dark', 'light');
+            document.body.classList.add(url.searchParams.get('theme')!);
+        } else if (localStorage.getItem('theme')) {
+            document.body.classList.remove('dark', 'light');
+            document.body.classList.add(localStorage.getItem('theme')!);
+        }
+        if (url.searchParams.get('lan')) {
+            document.body.classList.remove('ru', 'en');
+            document.body.classList.add(url.searchParams.get('lan')!);
+        } else if (localStorage.getItem('yt-widget') && (JSON.parse(localStorage.getItem('yt-widget')!)).lang) {
+            document.body.classList.remove('ru', 'en');
+            document.body.classList.add((JSON.parse(localStorage.getItem('yt-widget')!)).lang);
+        }
+        if (url.searchParams.get('training')) {
+            document.body.classList.remove('forYou', 'search');
+            document.body.classList.add(url.searchParams.get('training')!);
+        } else if (localStorage.getItem('training')) {
+            document.body.classList.remove('forYou', 'search');
+            document.body.classList.add(localStorage.getItem('training')!);
+        }
     }
-    if (url.searchParams.get('lan')) {
-        document.body.classList.remove('ru', 'en');
-        document.body.classList.add(url.searchParams.get('lan')!);
-    } else if (localStorage.getItem('yt-widget') && (JSON.parse(localStorage.getItem('yt-widget')!)).lang) {
-        document.body.classList.remove('ru', 'en');
-        document.body.classList.add((JSON.parse(localStorage.getItem('yt-widget')!)).lang);
-    }
-    if (url.searchParams.get('training')) {
-        document.body.classList.remove('forYou', 'search');
-        document.body.classList.add(url.searchParams.get('training')!);
-    } else if (localStorage.getItem('training')) {
-        document.body.classList.remove('forYou', 'search');
-        document.body.classList.add(localStorage.getItem('training')!);
-    }
-  }
 
     getNavLink() {
         changeActiveNavLink();
