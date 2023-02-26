@@ -10,7 +10,7 @@ class ActivityPage extends Page {
         <div class="activity-page">
             <div class="container">
                 <div class="active-page__total-workouts">
-                    <p class="active-page__workout-quantity bold">1</p>
+                    <p class="active-page__workout-quantity bold">0</p>
                     <p class="active-page__workout-quantity-description">Всего тренировок</p>
                 </div>
                 <div class="active-page__total-time">
