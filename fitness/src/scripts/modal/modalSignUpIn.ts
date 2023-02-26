@@ -76,6 +76,8 @@ const openSignIn = ():void => {
  const formSingIn = document.querySelector('.formSingIn') as HTMLElement;
  const nickNameSignIn = document.querySelector('.nickNameSignIn') as HTMLInputElement;
  const pswSignIn = document.querySelector('.pswSignIn') as HTMLInputElement;
+ const incorrectDataSignIn = document.querySelector('.incorrectDataSignIn') as HTMLElement;
+ if (incorrectDataSignIn) incorrectDataSignIn.innerHTML = ''
  nickNameSignIn.value = ''
  pswSignIn.value = ''
     if (formSingIn) formSingIn.style.display = 'block';
@@ -111,6 +113,13 @@ const closeSignInUp = ():void => {
 const toOpenSingIn = ():void => {
   const formSignUp = document.querySelector('.formSignUp') as HTMLElement;
   const formSingIn = document.querySelector('.formSingIn') as HTMLElement;
+  const nickNameSignIn = document.querySelector('.nickNameSignIn') as HTMLInputElement;
+  const pswSignIn = document.querySelector('.pswSignIn') as HTMLInputElement;
+  const incorrectDataSignIn = document.querySelector('.incorrectDataSignIn') as HTMLElement;
+
+  incorrectDataSignIn.style.display = 'none';
+  nickNameSignIn.value = '';
+  pswSignIn.value = '';
 
       formSignUp.style.display = 'none';
       formSingIn.style.display = 'block';
@@ -249,7 +258,10 @@ const checkUserSignIn = (nickName:string, password:string) =>{
   let getPassword = password;
   const incorrectDataSignIn = document.querySelector('.incorrectDataSignIn') as HTMLElement;
 
-  if (!localStorage.getItem('users')) return false;
+  if (!localStorage.getItem('users')) {
+    incorrectDataSignIn.style.display = 'block';
+    incorrectDataSignIn.innerHTML = `Неверный ник или пароль !`;
+    return false;}
 
   let arr: string | null = localStorage.getItem('users');
   let newArr = JSON.parse(String(arr));
