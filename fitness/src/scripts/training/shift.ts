@@ -10,7 +10,7 @@ for (let key in VIDEOS) {
     }
 }
 
-allTraining.splice(29, 16);
+allTraining.splice(30, 16);
 
 let sliderRecommendationContent: ITraining[] = [];
 let countAll = new Array(3).fill(0);
@@ -191,4 +191,4 @@ function createSliderRecommendation(): void {
 
 
 
-export { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderRecommendation, sliderRecommendationContent };
+export { shiftLeft, shiftRight, createSliderNew, createSliderHome, createSliderRecommendation, sliderRecommendationContent, allTraining };

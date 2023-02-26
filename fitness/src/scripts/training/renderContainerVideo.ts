@@ -124,11 +124,13 @@ let checkValue = (value: string): { typeVideo: IVideosCategory, tmpString: strin
   return { typeVideo, tmpString, tmpStringType }
 }
 export let renderContainerVideo = (value: string) => {
+
   const buttonForYou = document.querySelector(".button_for_you") as HTMLElement;
   const buttonSearch = document.querySelector(".button_search") as HTMLElement;
   buttonForYou.removeAttribute("disabled");
   buttonSearch.setAttribute("disabled", "disabled");
   
+
   tmpString = '' ;
   tmpStringType = '';
   ({ typeVideo, tmpString, tmpStringType } = checkValue(value))

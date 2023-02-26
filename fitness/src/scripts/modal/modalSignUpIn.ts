@@ -51,28 +51,50 @@ const checkUserInSystem = () =>{
   const containerHeaderUser = document.querySelector('.container-header__user') as HTMLElement;
   const containerHeaderBnt = document.querySelector('.container-header__bnt') as HTMLElement;
   const nickUser = document.querySelector('.nickUser') as HTMLElement;
-
   for (let i = 0; i < newArr.length; i++){
     if (newArr[i].inSystem === true) {
       containerHeaderUser.style.display = 'flex';
       containerHeaderBnt.style.display ='none';
-      nickUser.innerHTML = newArr[i].login;
+      nickUser.innerHTML = newArr[i].login[0];
     }
   }
 }
 
+const openFormCallFriends = ():void => {
+  const formCallFriends = document.querySelector('.formCallFriends') as HTMLElement;
+  const correctCallFriend= document.querySelector('.correctCallFriend') as HTMLElement;
+  const incorrectCallFriend= document.querySelector('.incorrectCallFriend') as HTMLElement;
+  const inputEmail = document.querySelector('.inputEmail') as HTMLInputElement;
+
+    incorrectCallFriend.style.display = 'none';
+    correctCallFriend.style.display = 'none';
+    inputEmail.value = '';
+     if (formCallFriends) formCallFriends.style.display = 'block';
+}
+
 const openSignIn = ():void => {
  const formSingIn = document.querySelector('.formSingIn') as HTMLElement;
-
+ const nickNameSignIn = document.querySelector('.nickNameSignIn') as HTMLInputElement;
+ const pswSignIn = document.querySelector('.pswSignIn') as HTMLInputElement;
+ nickNameSignIn.value = ''
+ pswSignIn.value = ''
     if (formSingIn) formSingIn.style.display = 'block';
 }
 
 const openSignUp = ():void => {
   const formSignUp = document.querySelector('.formSignUp') as HTMLElement;
+  const nickNameSignUp = document.querySelector('.nickNameSignUp') as HTMLInputElement;
+  const pswSignUp = document.querySelector('.pswSignUp') as HTMLInputElement;
+  nickNameSignUp.value = ''
+  pswSignUp.value = ''
 
     if (formSignUp) formSignUp.style.display = 'block';
 }
 
+const closeFormCallFriends = ():void => {
+  const formCallFriends = document.querySelector('.formCallFriends') as HTMLElement;
+  if (formCallFriends) formCallFriends.style.display = 'none';
+}
 
 const closeSignInUp = ():void => {
   const formSignUp = document.querySelector('.formSignUp') as HTMLElement;
@@ -116,6 +138,24 @@ const singUp = (nickName:string, password:string) => {
     }
 
 };
+
+const formFrinedUp = (email:string) => {
+
+  const incorrectCallFriend = document.querySelector('.incorrectCallFriend') as HTMLElement;
+  const inputEmail = document.querySelector('.inputEmail') as HTMLInputElement;
+  const formCallFriends = document.querySelector('.formCallFriends') as HTMLElement;
+
+  if ( checkformFrinedUp(email) ) {
+    /* containerHeaderUser.style.display = 'flex';
+    containerHeaderBnt.style.display ='none'; */
+    inputEmail.value = '';
+    incorrectCallFriend.style.display = 'none';
+
+    setTimeout(()=>{
+      formCallFriends.style.display = 'none';
+    },2000)
+  }
+}
 
 const singIn = (nickName:string, password:string) => {
   const containerHeaderUser = document.querySelector('.container-header__user') as HTMLElement;
@@ -182,6 +222,28 @@ const checkUserSignUp = (nickName:string, password:string) =>{
     return true;
 };
 
+const checkformFrinedUp = (email:string) => {
+  const incorrectCallFriend = document.querySelector('.incorrectCallFriend') as HTMLElement;
+  const correctCallFriend= document.querySelector('.correctCallFriend') as HTMLElement;
+  let getEmail = email;
+  incorrectCallFriend.style.display = 'none';
+  correctCallFriend.style.display = 'none';
+  if( !getEmail ) return false
+
+  var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  var address = getEmail;
+
+  if(reg.test(address) == false) {
+    incorrectCallFriend.style.display = 'block';
+    incorrectCallFriend.innerHTML = `Неверный адрес почты !`;
+  } else {
+    correctCallFriend.style.display = 'block';
+    correctCallFriend.innerHTML = `Письмо отправленно !`;
+    return true;
+  }
+  return false;
+}
+
 const checkUserSignIn = (nickName:string, password:string) =>{
   let getNickName = nickName
   let getPassword = password;
@@ -231,4 +293,4 @@ const logOut = () => {
 
 
 
-export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, logOut, checkUserPurposes, checkUserInSystem, checkPurposes,};
+export {closeSignInUp, openSignIn, openSignUp, toOpenSingIn, singUp, singIn, logOut, checkUserPurposes, checkUserInSystem, checkPurposes,closeFormCallFriends, openFormCallFriends, formFrinedUp};
