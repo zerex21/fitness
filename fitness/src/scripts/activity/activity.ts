@@ -29,6 +29,7 @@ export function createItemsActivity() {
                 time += arrLocal[i].duration;
             }
         }
+        time = Math.floor(time * 100) / 100;
         const timeTraining = document.querySelector(".time-training") as HTMLElement;
         timeTraining.innerHTML = `${time}`;
         pages = Math.ceil(arrLocal.length / 5);
