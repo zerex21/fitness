@@ -1,13 +1,12 @@
 let count = 1;
 let arrJson: string | null = localStorage.getItem('activity');
 let arrLocal = JSON.parse(String(arrJson));
-let pages = Math.ceil(arrLocal.length / 5);
+let pages = 0;
 export function createItemsActivity() {
     arrJson = localStorage.getItem('activity');
     arrLocal = JSON.parse(String(arrJson));
-    pages = Math.ceil(arrLocal.length / 5);
     const containerActivity = document.querySelector(".active-page__workout-item") as HTMLElement;
-    if (arrLocal.length !== 0) {
+    if (arrLocal) {
         containerActivity.innerHTML = "";
         for (let i = (count - 1) * 5; i < arrLocal.length && i < count * 5; i++) {
             const containerItem = document.createElement("div") as HTMLDivElement;
@@ -32,13 +31,12 @@ export function createItemsActivity() {
         }
         const timeTraining = document.querySelector(".time-training") as HTMLElement;
         timeTraining.innerHTML = `${time}`;
+        pages = Math.ceil(arrLocal.length / 5);
+        const amountTr = document.querySelector(".active-page__workout-quantity") as HTMLElement;
+        amountTr.innerHTML = `${arrLocal.length}`;
+        const numPage = document.querySelector(".pagination_number") as HTMLElement;
+        numPage.innerHTML = `${count}/${pages}`;
     }
-
-
-    const amountTr = document.querySelector(".active-page__workout-quantity") as HTMLElement;
-    amountTr.innerHTML = `${arrLocal.length}`;
-    const numPage = document.querySelector(".pagination_number") as HTMLElement;
-    numPage.innerHTML = `${count}/${pages}`
 }
 
 export function shiftLeftActivity() {
