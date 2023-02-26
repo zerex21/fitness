@@ -440,18 +440,18 @@ class App {
         }
 
 
-        let checkButtons = () => {
+       let checkButtons = () => {
             if (url.searchParams.get('training') === 'forYou') {
                 const buttonForYou = document.querySelector(".button_for_you") as HTMLElement;
                 const buttonSearch = document.querySelector(".button_search") as HTMLElement;
                 const trainingForYou = document.querySelector(".training_content") as HTMLElement;
                 const trainingSearch = document.querySelector(".training_search_container") as HTMLElement;
-                buttonSearch.removeAttribute("disabled");
-                trainingForYou.classList.remove("training_none");
-                trainingSearch.classList.add("training_none");
-                buttonForYou.setAttribute("disabled", "disabled");
-                trainingForYou.style.display = 'block'
-                trainingSearch.style.display = 'none'
+                if( buttonSearch) buttonSearch?.removeAttribute("disabled");
+                if( trainingForYou) trainingForYou?.classList.remove("training_none");
+                if( trainingSearch) trainingSearch?.classList.add("training_none");
+                if( buttonForYou) buttonForYou?.setAttribute("disabled", "disabled");
+                if( trainingForYou) trainingForYou.style.display = 'block'
+                if( trainingSearch) trainingSearch.style.display = 'none'
 
 
             } else if (url.searchParams.get('training') === 'search') {
@@ -459,12 +459,12 @@ class App {
                 const buttonSearch = document.querySelector(".button_search") as HTMLElement;
                 const trainingForYou = document.querySelector(".training_content") as HTMLElement;
                 const trainingSearch = document.querySelector(".training_search_container") as HTMLElement;
-                buttonForYou.removeAttribute("disabled");
-                trainingForYou.classList.add("training_none");
-                trainingSearch.classList.remove("training_none");
-                buttonSearch.setAttribute("disabled", "disabled");
-                trainingForYou.style.display = 'none'
-                trainingSearch.style.display = 'block'
+                if( buttonForYou) buttonForYou.removeAttribute("disabled");
+                if( trainingForYou) trainingForYou.classList.add("training_none");
+                if( trainingSearch) trainingSearch.classList.remove("training_none");
+                if( buttonSearch) buttonSearch.setAttribute("disabled", "disabled");
+                if( trainingForYou) trainingForYou.style.display = 'none'
+                if( trainingSearch)trainingSearch.style.display = 'block'
             }
         }
 
