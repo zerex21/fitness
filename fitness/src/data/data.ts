@@ -15,7 +15,7 @@ import { IVideos } from './../types/type';
 
 export const VIDEOS:IVideos = {
   armAndShoulder:[
-    {
+   /*   {
       id: 1,
       name:'Как накачать большой бицепс! Секретами делится Jay Hardbody',
       tag:'<iframe width="560" height="315" src="https://www.youtube.com/embed/Y3FHMXGx34A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
@@ -25,7 +25,7 @@ export const VIDEOS:IVideos = {
       duration: 15.57,
       forHome: false,
       outfit: 'all'
-    },
+    }, */
     {
       id: 2,
       name:'Проработка БИЦЕПСА на скамье Скотта. Набор упражнений.',
