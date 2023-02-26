@@ -2,11 +2,13 @@ import { VideosCategory } from "../types/type";
 
 export const sliderNewContent: VideosCategory[] = [
     {
-        tag: '<iframe width="560" height="315" src="https://www.youtube.com/embed/ep1XhVpH7rw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-        previewPhoto: './src/imgs/preview/4.jpg',
+        id: 4,
+        name: 'Супер плечи',
+        tag: '<iframe width="560" height="315" src="https://www.youtube.com/embed/yHcw2kNMTDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+        previewPhoto: './src/imgs/preview/010.jpg',
         purpose: 'strength',
         muscle: 'armAndShoulder',
-        duration: 3.01,
+        duration: 6.04,
         forHome: false,
         outfit: 'base'
     },
