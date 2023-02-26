@@ -68,10 +68,6 @@
                 width: 85px;
                 justify-content: space-between;
 
-                .theme-choose{
-                    border-bottom: 2px solid var(--color1);
-                }
-
                 .switch-theme__white,
                 .switch-theme__black{
                     display: flex;
@@ -109,7 +105,7 @@
                 }
             }
 
-            .down-list_user:hover .user-purposes {display: block;};
+            .down-list_user:hover .user-purposes {display: block;}
 
             input[type="checkbox"]:hover{
                 cursor: pointer;
@@ -398,3 +394,22 @@
     }
 }
 
+body.light{
+    .switch-theme__white{
+        border-bottom: 2px solid var(--color1);
+    }
+
+    .switch-theme__black{
+        border: none;
+    }
+}
+
+body.dark{
+    .switch-theme__black{
+        border-bottom: 2px solid var(--color1);
+    }
+
+    .switch-theme__white{
+        border: none;
+    }
+}
