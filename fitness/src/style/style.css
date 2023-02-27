@@ -625,6 +625,7 @@ svg {
 .container-header .header-customization .switch-theme .switch-theme__white,
 .container-header .header-customization .switch-theme .switch-theme__black {
   display: flex;
+  align-items: center;
 }
 .container-header .header-customization .switch-theme .switch-theme__white img,
 .container-header .header-customization .switch-theme .switch-theme__black img {
@@ -870,8 +871,8 @@ svg {
     align-items: center;
     font-size: 20px;
   }
-  .container-header .header-customization .switch-theme .switch-theme__white img,
-  .container-header .header-customization .switch-theme .switch-theme__black img {
+  .container-header .header-customization .switch-theme .switch-theme__white svg,
+  .container-header .header-customization .switch-theme .switch-theme__black svg {
     width: 20px;
     height: 20px;
   }
