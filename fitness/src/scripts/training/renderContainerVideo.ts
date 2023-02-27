@@ -35,7 +35,7 @@ let checkValue = (value: string): { typeVideo: IVideosCategory, tmpString: strin
       url.searchParams.set('training', 'buttocks');
       break;
 
-    case 'Buttocks and shoulders':
+    case 'Buttocks and legs':
       typeVideo = VIDEOS.cheekAndFeet;
       url.searchParams.set('training', 'buttocks');
       break;
